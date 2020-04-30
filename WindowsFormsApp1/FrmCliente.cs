@@ -16,5 +16,61 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbx_actividad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_test_Click(object sender, EventArgs e)
+        {
+            Boolean existe;
+            existe = true;
+            if (existe)
+            {
+                txt_rut.Enabled = false;
+                txt_nombre.Enabled = true;
+                txt_direccionCliente.Enabled = true;
+                txt_mail.Enabled = true;
+                txt_razonSocial.Enabled = true;
+                txt_telefono.Enabled = true;
+                cbx_actividad.Enabled = true;
+                cbx_tipoCliente.Enabled = true;
+                btn_regCliente.Enabled = true;
+            }
+            else
+            {
+                txt_rut.Enabled = true;
+                txt_nombre.Enabled = false;
+                txt_direccionCliente.Enabled = false;
+                txt_mail.Enabled = false;
+                txt_razonSocial.Enabled = false;
+                txt_telefono.Enabled = false;
+                cbx_actividad.Enabled = false;
+                cbx_tipoCliente.Enabled = false;
+                btn_regCliente.Enabled = false;
+            }
+            
+        }
     }
 }
