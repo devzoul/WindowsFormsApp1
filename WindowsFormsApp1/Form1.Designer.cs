@@ -28,58 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // menuStrip1
             // 
-            this.button1.Location = new System.Drawing.Point(79, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(609, 352);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Clickme";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.salirToolStripMenuItem,
+            this.salirToolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1196, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // progressBar1
+            // archivoToolStripMenuItem
             // 
-            this.progressBar1.Location = new System.Drawing.Point(197, 476);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(365, 68);
-            this.progressBar1.TabIndex = 1;
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(161, 20);
+            this.archivoToolStripMenuItem.Text = "Administracion de Clientes";
+            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
             // 
-            // label1
+            // salirToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(359, 448);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Acas";
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(171, 20);
+            this.salirToolStripMenuItem.Text = "Administracion de Contratos";
             // 
-            // label2
+            // salirToolStripMenuItem1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(919, 216);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Felipezzzz";
+            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem1.Text = "Salir";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1196, 612);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,10 +84,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
     }
 }
 
