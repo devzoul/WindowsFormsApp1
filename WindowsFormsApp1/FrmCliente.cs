@@ -39,7 +39,20 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Cliente cliente = new Cliente();
+            TCliente tcliente = new TCliente();
 
+
+            cliente.rutCli = txt_rut.Text;
+            cliente.razon_social = txt_razonSocial.Text;
+            cliente.nombreContactoCli = txt_nombre.Text;
+            cliente.mailContacto = txt_mail.Text;
+            cliente.direccionCli = txt_direccionCliente.Text;
+            cliente.telefono = Int32.Parse(txt_telefono.Text);
+            cliente.actividad = cbx_actividad.SelectedItem.ToString();
+            cliente.tipoCli = cbx_tipoCliente.SelectedItem.ToString();
+            tcliente.ingresarCliente(cliente);
+            MessageBox.Show("Cliente ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btn_test_Click(object sender, EventArgs e)
