@@ -6,8 +6,30 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class Cliente
+    public class Cliente
     {
+        public String rutCli { get; set;}
+        public String razon_social { get; set; }
+        public String nombreContactoCli { get; set; }
+        public String mailContacto { get; set; }
+        public String direccionCli { get; set; }
+        public int telefono { get; set; }
+        public String actividad { get; set; }
+        public String tipoCli { get; set; }
 
+        public Cliente()
+        {}
+
+        public Cliente(string rutCli, string razon_social, string nombreContactoCli, string mailContacto, string direccionCli, int telefono, string actividad, string tipoCli)
+        {
+            this.rutCli = rutCli;
+            this.razon_social = razon_social;
+            this.nombreContactoCli = nombreContactoCli;
+            this.mailContacto = mailContacto;
+            this.direccionCli = direccionCli;
+            this.telefono = telefono;
+            this.actividad = actividad;
+            this.tipoCli = tipoCli;
+        }
     }
 }
