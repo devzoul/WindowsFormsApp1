@@ -40,5 +40,62 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        public Cliente buscarCliente(String rutCli)
+        {
+
+            Cliente cliente = new Cliente();
+            MySqlConnection conexion = Conexion.abrirURL();
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM CABANA WHERE CODIGO =@codigo"), conexion);
+            orden.Parameters.AddWithValue("@codigo", rutCli);
+            MySqlDataReader lector = orden.ExecuteReader();
+            if (lector.Read())
+            {
+                cliente.rutCli = lector.GetString(0);
+                cliente.razon_social = lector.GetString(1);
+                cliente.nombreContactoCli = lector.GetString(2);
+                cliente.mailContacto = lector.GetString(3);
+                cliente.direccionCli = lector.GetString(4);
+                cliente.telefono = lector.GetInt32(5);
+                cliente.actividad = lector.GetString(6);
+                cliente.tipoCli = lector.GetString(7);
+            }
+            return cliente;
+        }
+
+        public int eliminarCliente(Cliente cliente)
+        {
+            int resp = 0;
+            MySqlConnection conexion = Conexion.abrirURL();
+            MySqlCommand orden = new MySqlCommand(string.Format("DELETE FROM CLIENTE WHERE CODIGO ='{0}'", cliente.rutCli), conexion);
+            resp = orden.ExecuteNonQuery();
+            conexion.Close();
+
+
+            return resp;
+        }
+
+        public static List<Cliente> ListarCliente()
+        {
+            List<Cliente> lista = new List<Cliente>();
+            MySqlConnection conexion = Conexion.abrirURL();
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM CLIENTE"), conexion);
+            MySqlDataReader lector = orden.ExecuteReader();
+            while (lector.Read())
+            {
+                Cliente cliente = new Cliente();
+                cliente.rutCli = lector.GetString(0);
+                cliente.razon_social = lector.GetString(1);
+                cliente.nombreContactoCli = lector.GetString(2);
+                cliente.mailContacto = lector.GetString(3);
+                cliente.direccionCli = lector.GetString(4);
+                cliente.telefono = lector.GetInt32(5);
+                cliente.actividad = lector.GetString(6);
+                cliente.tipoCli = lector.GetString(7);
+                lista.Add(cliente);
+            }
+
+            return lista;
+        }
     }
 }
