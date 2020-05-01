@@ -46,8 +46,8 @@ namespace WindowsFormsApp1
 
             Cliente cliente = new Cliente();
             MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM CABANA WHERE CODIGO =@codigo"), conexion);
-            orden.Parameters.AddWithValue("@codigo", rutCli);
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM CLIENTE WHERE rutCli =@rutCli"), conexion);
+            orden.Parameters.AddWithValue("@rutCli", rutCli);
             MySqlDataReader lector = orden.ExecuteReader();
             if (lector.Read())
             {
@@ -63,16 +63,33 @@ namespace WindowsFormsApp1
             return cliente;
         }
 
-        public int eliminarCliente(Cliente cliente)
+        public Boolean eliminarCliente(Cliente cliente)
         {
-            int resp = 0;
-            MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand(string.Format("DELETE FROM CLIENTE WHERE CODIGO ='{0}'", cliente.rutCli), conexion);
-            resp = orden.ExecuteNonQuery();
-            conexion.Close();
+            try
+            {
+                MySqlConnection conexion = Conexion.abrirURL();
+                MySqlCommand orden = new MySqlCommand(string.Format("DELETE FROM CLIENTE WHERE rutCli ='{0}'", cliente.rutCli), conexion);
+                MySqlDataReader lector = orden.ExecuteReader();
+                lector.Close();
+                conexion.Close();
+                return true;
+
+            }
+            catch (SqlException e)
+            {
+
+                MessageBox.Show("Problema al Eliminar Cliente (SqlException) ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Problema al Eliminar Cliente (Exception)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
 
-            return resp;
+
+
         }
 
         public static List<Cliente> ListarCliente()
@@ -96,6 +113,36 @@ namespace WindowsFormsApp1
             }
 
             return lista;
+        }
+
+        public Boolean modificarCliente(Cliente cliente)
+        {
+            try
+            {
+                MySqlConnection conexion = Conexion.abrirURL();
+                MySqlCommand orden = new MySqlCommand(string.Format("UPDATE CLIENTE SET razon_social='{0}', nombreContactoCli= '{1}', mailContacto='{2}', direccionCli='{3}',  telefono='{4}', actividad='{5}' , tipoCli='{6}'WHERE rutCli ='{7}'",
+                cliente.razon_social, cliente.nombreContactoCli, cliente.mailContacto, cliente.direccionCli, cliente.telefono, cliente.actividad, cliente.tipoCli, cliente.rutCli), conexion);
+                MySqlDataReader lector = orden.ExecuteReader();
+                lector.Close();
+                conexion.Close();
+                MessageBox.Show("Modificacion realizada con exito", "Edicion de Datos de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                return true;
+
+
+            }
+            catch (SqlException e)
+            {
+
+                MessageBox.Show("Problema al Modificar Cliente (SqlException) ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Problema al Modificar Cliente (Exception)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
         }
     }
 }

@@ -54,42 +54,43 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txt_raz = new System.Windows.Forms.GroupBox();
+            this.btn_del = new System.Windows.Forms.Button();
+            this.btn_mod = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cbx_actividadB = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cbx_tipoB = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_telefonoB = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_direccionCB = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_mailB = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_nombreB = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_razonSocialB = new System.Windows.Forms.TextBox();
+            this.txt_rutB = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.data_clientes = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_rutBusc = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btn_busc = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.txt_raz = new System.Windows.Forms.GroupBox();
-            this.btn_busc = new System.Windows.Forms.Button();
-            this.cbx_actividadB = new System.Windows.Forms.ComboBox();
-            this.cbx_tipoB = new System.Windows.Forms.ComboBox();
-            this.txt_telefonoB = new System.Windows.Forms.TextBox();
-            this.txt_direccionCB = new System.Windows.Forms.TextBox();
-            this.txt_mailB = new System.Windows.Forms.TextBox();
-            this.txt_nombreB = new System.Windows.Forms.TextBox();
-            this.txt_razonSocialB = new System.Windows.Forms.TextBox();
-            this.txr_rutB = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txt_rutBusc = new System.Windows.Forms.TextBox();
-            this.btn_mod = new System.Windows.Forms.Button();
-            this.btn_del = new System.Windows.Forms.Button();
-            this.data_clientes = new System.Windows.Forms.DataGridView();
+            this.btn_listarb = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.txt_raz.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_clientes)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -155,7 +156,6 @@
             // 
             // btn_regCliente
             // 
-            this.btn_regCliente.Enabled = false;
             this.btn_regCliente.Location = new System.Drawing.Point(290, 176);
             this.btn_regCliente.Name = "btn_regCliente";
             this.btn_regCliente.Size = new System.Drawing.Size(93, 53);
@@ -173,7 +173,6 @@
             "4",
             "5",
             "6"});
-            this.cbx_actividad.Enabled = false;
             this.cbx_actividad.FormattingEnabled = true;
             this.cbx_actividad.Items.AddRange(new object[] {
             "Agropecuaria",
@@ -199,7 +198,6 @@
             "4",
             "5",
             "6"});
-            this.cbx_tipoCliente.Enabled = false;
             this.cbx_tipoCliente.FormattingEnabled = true;
             this.cbx_tipoCliente.Items.AddRange(new object[] {
             "SPA",
@@ -214,7 +212,6 @@
             // 
             // txt_telefono
             // 
-            this.txt_telefono.Enabled = false;
             this.txt_telefono.Location = new System.Drawing.Point(105, 150);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(100, 20);
@@ -222,7 +219,6 @@
             // 
             // txt_direccionCliente
             // 
-            this.txt_direccionCliente.Enabled = false;
             this.txt_direccionCliente.Location = new System.Drawing.Point(105, 121);
             this.txt_direccionCliente.Name = "txt_direccionCliente";
             this.txt_direccionCliente.Size = new System.Drawing.Size(100, 20);
@@ -231,7 +227,6 @@
             // 
             // txt_mail
             // 
-            this.txt_mail.Enabled = false;
             this.txt_mail.Location = new System.Drawing.Point(105, 95);
             this.txt_mail.Name = "txt_mail";
             this.txt_mail.Size = new System.Drawing.Size(100, 20);
@@ -239,7 +234,6 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Enabled = false;
             this.txt_nombre.Location = new System.Drawing.Point(105, 69);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(100, 20);
@@ -247,7 +241,6 @@
             // 
             // txt_razonSocial
             // 
-            this.txt_razonSocial.Enabled = false;
             this.txt_razonSocial.Location = new System.Drawing.Point(105, 43);
             this.txt_razonSocial.Name = "txt_razonSocial";
             this.txt_razonSocial.Size = new System.Drawing.Size(100, 20);
@@ -346,57 +339,6 @@
             this.tabPage2.Text = "Buscar Cliente";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.data_clientes);
-            this.groupBox3.Location = new System.Drawing.Point(352, 19);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(339, 363);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Listado de Clientes";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txt_rutBusc);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.btn_busc);
-            this.groupBox2.Location = new System.Drawing.Point(20, 19);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(326, 112);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Buscar";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(710, 388);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Actualizar Cliente";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(673, 400);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Eliminar Cliente";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(673, 400);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Listado Clientes";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
             // txt_raz
             // 
             this.txt_raz.Controls.Add(this.btn_del);
@@ -416,7 +358,7 @@
             this.txt_raz.Controls.Add(this.txt_nombreB);
             this.txt_raz.Controls.Add(this.label9);
             this.txt_raz.Controls.Add(this.txt_razonSocialB);
-            this.txt_raz.Controls.Add(this.txr_rutB);
+            this.txt_raz.Controls.Add(this.txt_rutB);
             this.txt_raz.Location = new System.Drawing.Point(20, 137);
             this.txt_raz.Name = "txt_raz";
             this.txt_raz.Size = new System.Drawing.Size(326, 245);
@@ -424,14 +366,43 @@
             this.txt_raz.TabStop = false;
             this.txt_raz.Text = "Información";
             // 
-            // btn_busc
+            // btn_del
             // 
-            this.btn_busc.Location = new System.Drawing.Point(71, 64);
-            this.btn_busc.Name = "btn_busc";
-            this.btn_busc.Size = new System.Drawing.Size(78, 27);
-            this.btn_busc.TabIndex = 36;
-            this.btn_busc.Text = "Buscar";
-            this.btn_busc.UseVisualStyleBackColor = true;
+            this.btn_del.Location = new System.Drawing.Point(227, 61);
+            this.btn_del.Name = "btn_del";
+            this.btn_del.Size = new System.Drawing.Size(78, 27);
+            this.btn_del.TabIndex = 38;
+            this.btn_del.Text = "Eliminar";
+            this.btn_del.UseVisualStyleBackColor = true;
+            this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
+            // 
+            // btn_mod
+            // 
+            this.btn_mod.Location = new System.Drawing.Point(227, 19);
+            this.btn_mod.Name = "btn_mod";
+            this.btn_mod.Size = new System.Drawing.Size(78, 27);
+            this.btn_mod.TabIndex = 37;
+            this.btn_mod.Text = "Modificar";
+            this.btn_mod.UseVisualStyleBackColor = true;
+            this.btn_mod.Click += new System.EventHandler(this.btn_mod_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 16);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 13);
+            this.label16.TabIndex = 19;
+            this.label16.Text = "Rut";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 42);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(70, 13);
+            this.label15.TabIndex = 20;
+            this.label15.Text = "Razón Social";
             // 
             // cbx_actividadB
             // 
@@ -442,7 +413,6 @@
             "4",
             "5",
             "6"});
-            this.cbx_actividadB.Enabled = false;
             this.cbx_actividadB.FormattingEnabled = true;
             this.cbx_actividadB.Items.AddRange(new object[] {
             "Agropecuaria",
@@ -457,6 +427,16 @@
             this.cbx_actividadB.Name = "cbx_actividadB";
             this.cbx_actividadB.Size = new System.Drawing.Size(121, 21);
             this.cbx_actividadB.TabIndex = 34;
+            this.cbx_actividadB.SelectedIndexChanged += new System.EventHandler(this.cbx_actividadB_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 68);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(44, 13);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Nombre";
             // 
             // cbx_tipoB
             // 
@@ -467,7 +447,6 @@
             "4",
             "5",
             "6"});
-            this.cbx_tipoB.Enabled = false;
             this.cbx_tipoB.FormattingEnabled = true;
             this.cbx_tipoB.Items.AddRange(new object[] {
             "SPA",
@@ -479,80 +458,21 @@
             this.cbx_tipoB.Size = new System.Drawing.Size(121, 21);
             this.cbx_tipoB.TabIndex = 33;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 94);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(26, 13);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Mail";
+            // 
             // txt_telefonoB
             // 
-            this.txt_telefonoB.Enabled = false;
             this.txt_telefonoB.Location = new System.Drawing.Point(93, 146);
             this.txt_telefonoB.Name = "txt_telefonoB";
             this.txt_telefonoB.Size = new System.Drawing.Size(100, 20);
             this.txt_telefonoB.TabIndex = 32;
-            // 
-            // txt_direccionCB
-            // 
-            this.txt_direccionCB.Enabled = false;
-            this.txt_direccionCB.Location = new System.Drawing.Point(93, 117);
-            this.txt_direccionCB.Name = "txt_direccionCB";
-            this.txt_direccionCB.Size = new System.Drawing.Size(100, 20);
-            this.txt_direccionCB.TabIndex = 31;
-            // 
-            // txt_mailB
-            // 
-            this.txt_mailB.Enabled = false;
-            this.txt_mailB.Location = new System.Drawing.Point(93, 91);
-            this.txt_mailB.Name = "txt_mailB";
-            this.txt_mailB.Size = new System.Drawing.Size(100, 20);
-            this.txt_mailB.TabIndex = 30;
-            // 
-            // txt_nombreB
-            // 
-            this.txt_nombreB.Enabled = false;
-            this.txt_nombreB.Location = new System.Drawing.Point(93, 65);
-            this.txt_nombreB.Name = "txt_nombreB";
-            this.txt_nombreB.Size = new System.Drawing.Size(100, 20);
-            this.txt_nombreB.TabIndex = 29;
-            // 
-            // txt_razonSocialB
-            // 
-            this.txt_razonSocialB.Enabled = false;
-            this.txt_razonSocialB.Location = new System.Drawing.Point(93, 39);
-            this.txt_razonSocialB.Name = "txt_razonSocialB";
-            this.txt_razonSocialB.Size = new System.Drawing.Size(100, 20);
-            this.txt_razonSocialB.TabIndex = 28;
-            // 
-            // txr_rutB
-            // 
-            this.txr_rutB.Location = new System.Drawing.Point(93, 13);
-            this.txr_rutB.Name = "txr_rutB";
-            this.txr_rutB.Size = new System.Drawing.Size(100, 20);
-            this.txr_rutB.TabIndex = 27;
-            this.txr_rutB.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 205);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 13);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Tipo";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 175);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 13);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Actividad";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 149);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 13);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Teléfono";
             // 
             // label12
             // 
@@ -563,41 +483,107 @@
             this.label12.TabIndex = 23;
             this.label12.Text = "Direccion";
             // 
-            // label13
+            // txt_direccionCB
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 94);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(26, 13);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Mail";
+            this.txt_direccionCB.Location = new System.Drawing.Point(93, 117);
+            this.txt_direccionCB.Name = "txt_direccionCB";
+            this.txt_direccionCB.Size = new System.Drawing.Size(100, 20);
+            this.txt_direccionCB.TabIndex = 31;
             // 
-            // label14
+            // label11
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 68);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 13);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Nombre";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 149);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Teléfono";
             // 
-            // label15
+            // txt_mailB
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 42);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 13);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "Razón Social";
+            this.txt_mailB.Location = new System.Drawing.Point(93, 91);
+            this.txt_mailB.Name = "txt_mailB";
+            this.txt_mailB.Size = new System.Drawing.Size(100, 20);
+            this.txt_mailB.TabIndex = 30;
             // 
-            // label16
+            // label10
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 16);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(24, 13);
-            this.label16.TabIndex = 19;
-            this.label16.Text = "Rut";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 175);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Actividad";
+            // 
+            // txt_nombreB
+            // 
+            this.txt_nombreB.Location = new System.Drawing.Point(93, 65);
+            this.txt_nombreB.Name = "txt_nombreB";
+            this.txt_nombreB.Size = new System.Drawing.Size(100, 20);
+            this.txt_nombreB.TabIndex = 29;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 205);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Tipo";
+            // 
+            // txt_razonSocialB
+            // 
+            this.txt_razonSocialB.Location = new System.Drawing.Point(93, 39);
+            this.txt_razonSocialB.Name = "txt_razonSocialB";
+            this.txt_razonSocialB.Size = new System.Drawing.Size(100, 20);
+            this.txt_razonSocialB.TabIndex = 28;
+            // 
+            // txt_rutB
+            // 
+            this.txt_rutB.Enabled = false;
+            this.txt_rutB.Location = new System.Drawing.Point(93, 13);
+            this.txt_rutB.Name = "txt_rutB";
+            this.txt_rutB.Size = new System.Drawing.Size(100, 20);
+            this.txt_rutB.TabIndex = 27;
+            this.txt_rutB.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btn_listarb);
+            this.groupBox3.Controls.Add(this.data_clientes);
+            this.groupBox3.Location = new System.Drawing.Point(352, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(339, 363);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Listado de Clientes";
+            // 
+            // data_clientes
+            // 
+            this.data_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_clientes.Location = new System.Drawing.Point(7, 64);
+            this.data_clientes.Name = "data_clientes";
+            this.data_clientes.Size = new System.Drawing.Size(326, 293);
+            this.data_clientes.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txt_rutBusc);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.btn_busc);
+            this.groupBox2.Location = new System.Drawing.Point(20, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(326, 112);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Buscar";
+            // 
+            // txt_rutBusc
+            // 
+            this.txt_rutBusc.Location = new System.Drawing.Point(71, 24);
+            this.txt_rutBusc.Name = "txt_rutBusc";
+            this.txt_rutBusc.Size = new System.Drawing.Size(100, 20);
+            this.txt_rutBusc.TabIndex = 36;
             // 
             // label17
             // 
@@ -608,38 +594,54 @@
             this.label17.TabIndex = 36;
             this.label17.Text = "Rut";
             // 
-            // txt_rutBusc
+            // btn_busc
             // 
-            this.txt_rutBusc.Location = new System.Drawing.Point(71, 24);
-            this.txt_rutBusc.Name = "txt_rutBusc";
-            this.txt_rutBusc.Size = new System.Drawing.Size(100, 20);
-            this.txt_rutBusc.TabIndex = 36;
+            this.btn_busc.Location = new System.Drawing.Point(71, 64);
+            this.btn_busc.Name = "btn_busc";
+            this.btn_busc.Size = new System.Drawing.Size(78, 27);
+            this.btn_busc.TabIndex = 36;
+            this.btn_busc.Text = "Buscar";
+            this.btn_busc.UseVisualStyleBackColor = true;
+            this.btn_busc.Click += new System.EventHandler(this.btn_busc_Click);
             // 
-            // btn_mod
+            // tabPage3
             // 
-            this.btn_mod.Location = new System.Drawing.Point(227, 19);
-            this.btn_mod.Name = "btn_mod";
-            this.btn_mod.Size = new System.Drawing.Size(78, 27);
-            this.btn_mod.TabIndex = 37;
-            this.btn_mod.Text = "Modificar";
-            this.btn_mod.UseVisualStyleBackColor = true;
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(710, 388);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Actualizar Cliente";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // btn_del
+            // tabPage4
             // 
-            this.btn_del.Location = new System.Drawing.Point(227, 61);
-            this.btn_del.Name = "btn_del";
-            this.btn_del.Size = new System.Drawing.Size(78, 27);
-            this.btn_del.TabIndex = 38;
-            this.btn_del.Text = "Eliminar";
-            this.btn_del.UseVisualStyleBackColor = true;
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(710, 388);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Eliminar Cliente";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // data_clientes
+            // tabPage5
             // 
-            this.data_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_clientes.Location = new System.Drawing.Point(7, 20);
-            this.data_clientes.Name = "data_clientes";
-            this.data_clientes.Size = new System.Drawing.Size(326, 337);
-            this.data_clientes.TabIndex = 0;
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(710, 388);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Listado Clientes";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btn_listarb
+            // 
+            this.btn_listarb.Location = new System.Drawing.Point(101, 19);
+            this.btn_listarb.Name = "btn_listarb";
+            this.btn_listarb.Size = new System.Drawing.Size(135, 27);
+            this.btn_listarb.TabIndex = 37;
+            this.btn_listarb.Text = "Listar Clientes";
+            this.btn_listarb.UseVisualStyleBackColor = true;
+            this.btn_listarb.Click += new System.EventHandler(this.btn_listarb_Click);
             // 
             // FrmCliente
             // 
@@ -654,12 +656,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.txt_raz.ResumeLayout(false);
             this.txt_raz.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_clientes)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -700,7 +702,6 @@
         private System.Windows.Forms.Button btn_mod;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cbx_actividadB;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cbx_tipoB;
         private System.Windows.Forms.Label label13;
@@ -713,11 +714,13 @@
         private System.Windows.Forms.TextBox txt_nombreB;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_razonSocialB;
-        private System.Windows.Forms.TextBox txr_rutB;
+        private System.Windows.Forms.TextBox txt_rutB;
         private System.Windows.Forms.TextBox txt_rutBusc;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btn_busc;
         private System.Windows.Forms.DataGridView data_clientes;
+        private System.Windows.Forms.ComboBox cbx_actividadB;
+        private System.Windows.Forms.Button btn_listarb;
     }
     
 }
