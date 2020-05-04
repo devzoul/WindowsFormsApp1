@@ -26,5 +26,15 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtp_horaIni_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

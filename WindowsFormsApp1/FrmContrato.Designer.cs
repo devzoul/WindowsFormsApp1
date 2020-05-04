@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿using System.Windows.Forms;
+
+namespace WindowsFormsApp1
 {
     partial class FrmContrato
     {
@@ -30,11 +32,21 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_limpiarCC = new System.Windows.Forms.Button();
+            this.txt_razonCliente = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_monto = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_rutCliente = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtp_horaTerm = new System.Windows.Forms.DateTimePicker();
+            this.dtp_horaIni = new System.Windows.Forms.DateTimePicker();
+            this.dtp_termino = new System.Windows.Forms.DateTimePicker();
+            this.dtp_creacion = new System.Windows.Forms.DateTimePicker();
+            this.txt_observaciones = new System.Windows.Forms.TextBox();
+            this.txt_vigente = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btn_buscarCC = new System.Windows.Forms.Button();
             this.btn_regContrato = new System.Windows.Forms.Button();
             this.cbx_tipoContrato = new System.Windows.Forms.ComboBox();
@@ -46,21 +58,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txt_vigente = new System.Windows.Forms.TextBox();
-            this.txt_observaciones = new System.Windows.Forms.TextBox();
-            this.dtp_creacion = new System.Windows.Forms.DateTimePicker();
-            this.dtp_termino = new System.Windows.Forms.DateTimePicker();
-            this.dtp_horaIni = new System.Windows.Forms.DateTimePicker();
-            this.dtp_horaTerm = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_rutCliente = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt_monto = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txt_razonCliente = new System.Windows.Forms.TextBox();
-            this.btn_limpiarCC = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.btn_limpiarC = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -86,10 +86,13 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,47 +119,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Crear Contrato";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(673, 364);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Buscar Contrato";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(673, 364);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Actualizar Contrato";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabPage4.Size = new System.Drawing.Size(673, 288);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Terminar Contrato";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(673, 288);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Listado Contratos";
-            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -191,6 +153,129 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Contrato";
+            // 
+            // btn_limpiarCC
+            // 
+            this.btn_limpiarCC.Location = new System.Drawing.Point(318, 73);
+            this.btn_limpiarCC.Name = "btn_limpiarCC";
+            this.btn_limpiarCC.Size = new System.Drawing.Size(78, 27);
+            this.btn_limpiarCC.TabIndex = 32;
+            this.btn_limpiarCC.Text = "Limpiar";
+            this.btn_limpiarCC.UseVisualStyleBackColor = true;
+            // 
+            // txt_razonCliente
+            // 
+            this.txt_razonCliente.Enabled = false;
+            this.txt_razonCliente.Location = new System.Drawing.Point(132, 58);
+            this.txt_razonCliente.Name = "txt_razonCliente";
+            this.txt_razonCliente.Size = new System.Drawing.Size(100, 20);
+            this.txt_razonCliente.TabIndex = 31;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 58);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 13);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Razon Cliente";
+            // 
+            // txt_monto
+            // 
+            this.txt_monto.Enabled = false;
+            this.txt_monto.Location = new System.Drawing.Point(132, 311);
+            this.txt_monto.Name = "txt_monto";
+            this.txt_monto.Size = new System.Drawing.Size(100, 20);
+            this.txt_monto.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(21, 314);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Monto";
+            // 
+            // txt_rutCliente
+            // 
+            this.txt_rutCliente.Enabled = false;
+            this.txt_rutCliente.Location = new System.Drawing.Point(132, 29);
+            this.txt_rutCliente.Name = "txt_rutCliente";
+            this.txt_rutCliente.Size = new System.Drawing.Size(100, 20);
+            this.txt_rutCliente.TabIndex = 27;
+            this.txt_rutCliente.TextChanged += new System.EventHandler(this.txt_rutCliente_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Rut Cliente";
+            // 
+            // dtp_horaTerm
+            // 
+            this.dtp_horaTerm.CustomFormat = "HH:mm";
+            this.dtp_horaTerm.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_horaTerm.Location = new System.Drawing.Point(130, 165);
+            this.dtp_horaTerm.Name = "dtp_horaTerm";
+            this.dtp_horaTerm.ShowUpDown = true;
+            this.dtp_horaTerm.Size = new System.Drawing.Size(149, 20);
+            this.dtp_horaTerm.TabIndex = 25;
+            // 
+            // dtp_horaIni
+            // 
+            this.dtp_horaIni.CustomFormat = "HH:mm";
+            this.dtp_horaIni.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_horaIni.Location = new System.Drawing.Point(132, 139);
+            this.dtp_horaIni.Name = "dtp_horaIni";
+            this.dtp_horaIni.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtp_horaIni.ShowUpDown = true;
+            this.dtp_horaIni.Size = new System.Drawing.Size(147, 20);
+            this.dtp_horaIni.TabIndex = 24;
+            this.dtp_horaIni.ValueChanged += new System.EventHandler(this.dtp_horaIni_ValueChanged);
+            // 
+            // dtp_termino
+            // 
+            this.dtp_termino.Location = new System.Drawing.Point(132, 113);
+            this.dtp_termino.Name = "dtp_termino";
+            this.dtp_termino.Size = new System.Drawing.Size(147, 20);
+            this.dtp_termino.TabIndex = 23;
+            // 
+            // dtp_creacion
+            // 
+            this.dtp_creacion.Location = new System.Drawing.Point(132, 87);
+            this.dtp_creacion.Name = "dtp_creacion";
+            this.dtp_creacion.Size = new System.Drawing.Size(147, 20);
+            this.dtp_creacion.TabIndex = 22;
+            this.dtp_creacion.Value = new System.DateTime(2020, 4, 30, 21, 6, 27, 0);
+            // 
+            // txt_observaciones
+            // 
+            this.txt_observaciones.Enabled = false;
+            this.txt_observaciones.Location = new System.Drawing.Point(132, 280);
+            this.txt_observaciones.Name = "txt_observaciones";
+            this.txt_observaciones.Size = new System.Drawing.Size(100, 20);
+            this.txt_observaciones.TabIndex = 21;
+            // 
+            // txt_vigente
+            // 
+            this.txt_vigente.Enabled = false;
+            this.txt_vigente.Location = new System.Drawing.Point(132, 217);
+            this.txt_vigente.Name = "txt_vigente";
+            this.txt_vigente.Size = new System.Drawing.Size(100, 20);
+            this.txt_vigente.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 283);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Observaciones";
             // 
             // btn_buscarCC
             // 
@@ -303,124 +388,20 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Creacion";
             // 
-            // label9
+            // tabPage2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 283);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Observaciones";
-            // 
-            // txt_vigente
-            // 
-            this.txt_vigente.Enabled = false;
-            this.txt_vigente.Location = new System.Drawing.Point(132, 217);
-            this.txt_vigente.Name = "txt_vigente";
-            this.txt_vigente.Size = new System.Drawing.Size(100, 20);
-            this.txt_vigente.TabIndex = 20;
-            // 
-            // txt_observaciones
-            // 
-            this.txt_observaciones.Enabled = false;
-            this.txt_observaciones.Location = new System.Drawing.Point(132, 280);
-            this.txt_observaciones.Name = "txt_observaciones";
-            this.txt_observaciones.Size = new System.Drawing.Size(100, 20);
-            this.txt_observaciones.TabIndex = 21;
-            // 
-            // dtp_creacion
-            // 
-            this.dtp_creacion.Location = new System.Drawing.Point(132, 87);
-            this.dtp_creacion.Name = "dtp_creacion";
-            this.dtp_creacion.Size = new System.Drawing.Size(147, 20);
-            this.dtp_creacion.TabIndex = 22;
-            this.dtp_creacion.Value = new System.DateTime(2020, 4, 30, 21, 6, 27, 0);
-            // 
-            // dtp_termino
-            // 
-            this.dtp_termino.Location = new System.Drawing.Point(132, 113);
-            this.dtp_termino.Name = "dtp_termino";
-            this.dtp_termino.Size = new System.Drawing.Size(147, 20);
-            this.dtp_termino.TabIndex = 23;
-            // 
-            // dtp_horaIni
-            // 
-            this.dtp_horaIni.Location = new System.Drawing.Point(132, 139);
-            this.dtp_horaIni.Name = "dtp_horaIni";
-            this.dtp_horaIni.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtp_horaIni.Size = new System.Drawing.Size(147, 20);
-            this.dtp_horaIni.TabIndex = 24;
-            // 
-            // dtp_horaTerm
-            // 
-            this.dtp_horaTerm.Location = new System.Drawing.Point(130, 165);
-            this.dtp_horaTerm.Name = "dtp_horaTerm";
-            this.dtp_horaTerm.Size = new System.Drawing.Size(149, 20);
-            this.dtp_horaTerm.TabIndex = 25;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Rut Cliente";
-            // 
-            // txt_rutCliente
-            // 
-            this.txt_rutCliente.Enabled = false;
-            this.txt_rutCliente.Location = new System.Drawing.Point(132, 29);
-            this.txt_rutCliente.Name = "txt_rutCliente";
-            this.txt_rutCliente.Size = new System.Drawing.Size(100, 20);
-            this.txt_rutCliente.TabIndex = 27;
-            this.txt_rutCliente.TextChanged += new System.EventHandler(this.txt_rutCliente_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 314);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Monto";
-            // 
-            // txt_monto
-            // 
-            this.txt_monto.Enabled = false;
-            this.txt_monto.Location = new System.Drawing.Point(132, 311);
-            this.txt_monto.Name = "txt_monto";
-            this.txt_monto.Size = new System.Drawing.Size(100, 20);
-            this.txt_monto.TabIndex = 29;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 58);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 13);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "Razon Cliente";
-            // 
-            // txt_razonCliente
-            // 
-            this.txt_razonCliente.Enabled = false;
-            this.txt_razonCliente.Location = new System.Drawing.Point(132, 58);
-            this.txt_razonCliente.Name = "txt_razonCliente";
-            this.txt_razonCliente.Size = new System.Drawing.Size(100, 20);
-            this.txt_razonCliente.TabIndex = 31;
-            // 
-            // btn_limpiarCC
-            // 
-            this.btn_limpiarCC.Location = new System.Drawing.Point(318, 73);
-            this.btn_limpiarCC.Name = "btn_limpiarCC";
-            this.btn_limpiarCC.Size = new System.Drawing.Size(78, 27);
-            this.btn_limpiarCC.TabIndex = 32;
-            this.btn_limpiarCC.Text = "Limpiar";
-            this.btn_limpiarCC.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(673, 364);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Buscar Contrato";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dateTimePicker5);
             this.groupBox2.Controls.Add(this.btn_limpiarC);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label12);
@@ -452,6 +433,13 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Contrato";
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Location = new System.Drawing.Point(383, 285);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker5.TabIndex = 33;
             // 
             // btn_limpiarC
             // 
@@ -545,6 +533,7 @@
             this.dateTimePicker4.Size = new System.Drawing.Size(147, 20);
             this.dateTimePicker4.TabIndex = 22;
             this.dateTimePicker4.Value = new System.DateTime(2020, 4, 30, 21, 6, 27, 0);
+            this.dateTimePicker4.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
             // 
             // textBox4
             // 
@@ -682,6 +671,36 @@
             this.label22.TabIndex = 1;
             this.label22.Text = "Creacion";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(673, 364);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Actualizar Contrato";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabPage4.Size = new System.Drawing.Size(673, 364);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Terminar Contrato";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(673, 364);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Listado Contratos";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // FrmContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,9 +711,9 @@
             this.Text = "FrmContrato";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -761,5 +780,8 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        
+
     }
 }
