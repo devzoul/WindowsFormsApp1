@@ -45,7 +45,6 @@ namespace WindowsFormsApp1
             this.dtp_termino = new System.Windows.Forms.DateTimePicker();
             this.dtp_creacion = new System.Windows.Forms.DateTimePicker();
             this.txt_observaciones = new System.Windows.Forms.TextBox();
-            this.txt_vigente = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_buscarCC = new System.Windows.Forms.Button();
             this.btn_regContrato = new System.Windows.Forms.Button();
@@ -89,6 +88,7 @@ namespace WindowsFormsApp1
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.cbx_vigente = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -122,6 +122,7 @@ namespace WindowsFormsApp1
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbx_vigente);
             this.groupBox1.Controls.Add(this.btn_limpiarCC);
             this.groupBox1.Controls.Add(this.txt_razonCliente);
             this.groupBox1.Controls.Add(this.label11);
@@ -134,7 +135,6 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.dtp_termino);
             this.groupBox1.Controls.Add(this.dtp_creacion);
             this.groupBox1.Controls.Add(this.txt_observaciones);
-            this.groupBox1.Controls.Add(this.txt_vigente);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btn_buscarCC);
             this.groupBox1.Controls.Add(this.btn_regContrato);
@@ -165,7 +165,6 @@ namespace WindowsFormsApp1
             // 
             // txt_razonCliente
             // 
-            this.txt_razonCliente.Enabled = false;
             this.txt_razonCliente.Location = new System.Drawing.Point(132, 58);
             this.txt_razonCliente.Name = "txt_razonCliente";
             this.txt_razonCliente.Size = new System.Drawing.Size(100, 20);
@@ -182,7 +181,6 @@ namespace WindowsFormsApp1
             // 
             // txt_monto
             // 
-            this.txt_monto.Enabled = false;
             this.txt_monto.Location = new System.Drawing.Point(132, 311);
             this.txt_monto.Name = "txt_monto";
             this.txt_monto.Size = new System.Drawing.Size(100, 20);
@@ -199,7 +197,6 @@ namespace WindowsFormsApp1
             // 
             // txt_rutCliente
             // 
-            this.txt_rutCliente.Enabled = false;
             this.txt_rutCliente.Location = new System.Drawing.Point(132, 29);
             this.txt_rutCliente.Name = "txt_rutCliente";
             this.txt_rutCliente.Size = new System.Drawing.Size(100, 20);
@@ -254,19 +251,10 @@ namespace WindowsFormsApp1
             // 
             // txt_observaciones
             // 
-            this.txt_observaciones.Enabled = false;
             this.txt_observaciones.Location = new System.Drawing.Point(132, 280);
             this.txt_observaciones.Name = "txt_observaciones";
             this.txt_observaciones.Size = new System.Drawing.Size(100, 20);
             this.txt_observaciones.TabIndex = 21;
-            // 
-            // txt_vigente
-            // 
-            this.txt_vigente.Enabled = false;
-            this.txt_vigente.Location = new System.Drawing.Point(132, 217);
-            this.txt_vigente.Name = "txt_vigente";
-            this.txt_vigente.Size = new System.Drawing.Size(100, 20);
-            this.txt_vigente.TabIndex = 20;
             // 
             // label9
             // 
@@ -288,13 +276,13 @@ namespace WindowsFormsApp1
             // 
             // btn_regContrato
             // 
-            this.btn_regContrato.Enabled = false;
             this.btn_regContrato.Location = new System.Drawing.Point(318, 145);
             this.btn_regContrato.Name = "btn_regContrato";
             this.btn_regContrato.Size = new System.Drawing.Size(93, 53);
             this.btn_regContrato.TabIndex = 17;
             this.btn_regContrato.Text = "Registrar Contrato";
             this.btn_regContrato.UseVisualStyleBackColor = true;
+            this.btn_regContrato.Click += new System.EventHandler(this.btn_regContrato_Click);
             // 
             // cbx_tipoContrato
             // 
@@ -302,16 +290,13 @@ namespace WindowsFormsApp1
             "1",
             "2",
             "3",
-            "4",
-            "5",
-            "6"});
-            this.cbx_tipoContrato.Enabled = false;
+            "4"});
             this.cbx_tipoContrato.FormattingEnabled = true;
             this.cbx_tipoContrato.Items.AddRange(new object[] {
-            "SPA",
-            "EIRL",
-            "Limitada",
-            "Sociedad Anónima"});
+            "Matrimonio",
+            "Bautizo",
+            "Cumpleaños",
+            "Aniversario"});
             this.cbx_tipoContrato.Location = new System.Drawing.Point(132, 250);
             this.cbx_tipoContrato.Name = "cbx_tipoContrato";
             this.cbx_tipoContrato.Size = new System.Drawing.Size(121, 21);
@@ -319,7 +304,6 @@ namespace WindowsFormsApp1
             // 
             // txt_direccionContrato
             // 
-            this.txt_direccionContrato.Enabled = false;
             this.txt_direccionContrato.Location = new System.Drawing.Point(132, 191);
             this.txt_direccionContrato.Name = "txt_direccionContrato";
             this.txt_direccionContrato.Size = new System.Drawing.Size(100, 20);
@@ -701,6 +685,24 @@ namespace WindowsFormsApp1
             this.tabPage5.Text = "Listado Contratos";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // cbx_vigente
+            // 
+            this.cbx_vigente.AutoCompleteCustomSource.AddRange(new string[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.cbx_vigente.FormattingEnabled = true;
+            this.cbx_vigente.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cbx_vigente.Location = new System.Drawing.Point(130, 217);
+            this.cbx_vigente.Name = "cbx_vigente";
+            this.cbx_vigente.Size = new System.Drawing.Size(121, 21);
+            this.cbx_vigente.TabIndex = 33;
+            // 
             // FrmContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,7 +743,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_observaciones;
-        private System.Windows.Forms.TextBox txt_vigente;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dtp_horaTerm;
         private System.Windows.Forms.DateTimePicker dtp_horaIni;
@@ -781,7 +782,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        
-
+        private ComboBox cbx_vigente;
     }
 }

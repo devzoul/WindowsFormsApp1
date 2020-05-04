@@ -36,5 +36,49 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void btn_regContrato_Click(object sender, EventArgs e)
+        {
+            TContrato tcontraro = new TContrato();
+            Contrato contrato = new Contrato();
+
+            contrato.numeroContrato = (1);
+            contrato.creacion = dtp_creacion.Value;
+            contrato.termino = dtp_termino.Value.Date;
+            contrato.fechaHoraInicio = dtp_horaIni.Value;
+            contrato.fechaHoraTermino = dtp_horaTerm.Value;
+            contrato.direccionCon = txt_direccionContrato.Text;
+            contrato.estaVigente = cbx_vigente.SelectedItem.ToString();
+            contrato.observaciones = txt_observaciones.Text;
+            contrato.rutCli = txt_rutCliente.Text;
+
+            if (cbx_tipoContrato.SelectedItem.ToString() == "Matrimonio")
+            {
+                contrato.idTipo = 1;
+
+            }
+            else if (cbx_tipoContrato.SelectedItem.ToString() == "Bautizo")
+            {
+                contrato.idTipo = 2;
+            }
+
+            else if (cbx_tipoContrato.SelectedItem.ToString() == "Cumpleaños")
+            {
+                contrato.idTipo = 3;
+            }
+
+            else if (cbx_tipoContrato.SelectedItem.ToString() == "Aniversario")
+            {
+                contrato.idTipo = 4;
+            }
+
+            tcontraro.ingresarContrato(contrato);
+
+
+
+
+
+
+        }
     }
 }
