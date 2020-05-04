@@ -59,8 +59,11 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txt_buscacon = new System.Windows.Forms.TextBox();
             this.btn_limpiarC = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbx_buscavig = new System.Windows.Forms.ComboBox();
             this.txt_buscarz = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_buscamonto = new System.Windows.Forms.TextBox();
@@ -73,7 +76,6 @@ namespace WindowsFormsApp1
             this.dtp_buscacreacion = new System.Windows.Forms.DateTimePicker();
             this.txt_buscaobs = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.cbx_buscatipo = new System.Windows.Forms.ComboBox();
             this.txt_buscadir = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -83,12 +85,10 @@ namespace WindowsFormsApp1
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.txt_buscacon = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.cbx_buscavig = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -149,7 +149,7 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(20, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(417, 341);
+            this.groupBox1.Size = new System.Drawing.Size(496, 341);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Contrato";
@@ -174,12 +174,13 @@ namespace WindowsFormsApp1
             // 
             // btn_limpiarCC
             // 
-            this.btn_limpiarCC.Location = new System.Drawing.Point(318, 73);
+            this.btn_limpiarCC.Location = new System.Drawing.Point(364, 80);
             this.btn_limpiarCC.Name = "btn_limpiarCC";
             this.btn_limpiarCC.Size = new System.Drawing.Size(78, 27);
             this.btn_limpiarCC.TabIndex = 32;
             this.btn_limpiarCC.Text = "Limpiar";
             this.btn_limpiarCC.UseVisualStyleBackColor = true;
+            this.btn_limpiarCC.Click += new System.EventHandler(this.btn_limpiarCC_Click);
             // 
             // txt_razonCliente
             // 
@@ -256,14 +257,14 @@ namespace WindowsFormsApp1
             // 
             this.dtp_termino.Location = new System.Drawing.Point(132, 113);
             this.dtp_termino.Name = "dtp_termino";
-            this.dtp_termino.Size = new System.Drawing.Size(147, 20);
+            this.dtp_termino.Size = new System.Drawing.Size(194, 20);
             this.dtp_termino.TabIndex = 23;
             // 
             // dtp_creacion
             // 
             this.dtp_creacion.Location = new System.Drawing.Point(132, 87);
             this.dtp_creacion.Name = "dtp_creacion";
-            this.dtp_creacion.Size = new System.Drawing.Size(147, 20);
+            this.dtp_creacion.Size = new System.Drawing.Size(194, 20);
             this.dtp_creacion.TabIndex = 22;
             this.dtp_creacion.Value = new System.DateTime(2020, 4, 30, 21, 6, 27, 0);
             // 
@@ -285,7 +286,7 @@ namespace WindowsFormsApp1
             // 
             // btn_buscarCC
             // 
-            this.btn_buscarCC.Location = new System.Drawing.Point(318, 22);
+            this.btn_buscarCC.Location = new System.Drawing.Point(364, 22);
             this.btn_buscarCC.Name = "btn_buscarCC";
             this.btn_buscarCC.Size = new System.Drawing.Size(78, 27);
             this.btn_buscarCC.TabIndex = 18;
@@ -295,7 +296,7 @@ namespace WindowsFormsApp1
             // 
             // btn_regContrato
             // 
-            this.btn_regContrato.Location = new System.Drawing.Point(318, 145);
+            this.btn_regContrato.Location = new System.Drawing.Point(364, 132);
             this.btn_regContrato.Name = "btn_regContrato";
             this.btn_regContrato.Size = new System.Drawing.Size(93, 53);
             this.btn_regContrato.TabIndex = 17;
@@ -406,6 +407,32 @@ namespace WindowsFormsApp1
             this.tabPage2.Text = "Buscar Contrato";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(502, 93);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(115, 13);
+            this.label23.TabIndex = 33;
+            this.label23.Text = "Ingrese N° de Contrato";
+            // 
+            // txt_buscacon
+            // 
+            this.txt_buscacon.Location = new System.Drawing.Point(505, 64);
+            this.txt_buscacon.Name = "txt_buscacon";
+            this.txt_buscacon.Size = new System.Drawing.Size(100, 20);
+            this.txt_buscacon.TabIndex = 32;
+            // 
+            // btn_limpiarC
+            // 
+            this.btn_limpiarC.Location = new System.Drawing.Point(515, 144);
+            this.btn_limpiarC.Name = "btn_limpiarC";
+            this.btn_limpiarC.Size = new System.Drawing.Size(78, 27);
+            this.btn_limpiarC.TabIndex = 32;
+            this.btn_limpiarC.Text = "Limpiar";
+            this.btn_limpiarC.UseVisualStyleBackColor = true;
+            this.btn_limpiarC.Click += new System.EventHandler(this.btn_limpiarC_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cbx_buscavig);
@@ -437,14 +464,24 @@ namespace WindowsFormsApp1
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Contrato";
             // 
-            // btn_limpiarC
+            // cbx_buscavig
             // 
-            this.btn_limpiarC.Location = new System.Drawing.Point(515, 144);
-            this.btn_limpiarC.Name = "btn_limpiarC";
-            this.btn_limpiarC.Size = new System.Drawing.Size(78, 27);
-            this.btn_limpiarC.TabIndex = 32;
-            this.btn_limpiarC.Text = "Limpiar";
-            this.btn_limpiarC.UseVisualStyleBackColor = true;
+            this.cbx_buscavig.AutoCompleteCustomSource.AddRange(new string[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.cbx_buscavig.Enabled = false;
+            this.cbx_buscavig.FormattingEnabled = true;
+            this.cbx_buscavig.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cbx_buscavig.Location = new System.Drawing.Point(130, 217);
+            this.cbx_buscavig.Name = "cbx_buscavig";
+            this.cbx_buscavig.Size = new System.Drawing.Size(123, 21);
+            this.cbx_buscavig.TabIndex = 32;
             // 
             // txt_buscarz
             // 
@@ -499,7 +536,9 @@ namespace WindowsFormsApp1
             // 
             // dtp_buscahorafin
             // 
+            this.dtp_buscahorafin.CustomFormat = "HH:mm";
             this.dtp_buscahorafin.Enabled = false;
+            this.dtp_buscahorafin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_buscahorafin.Location = new System.Drawing.Point(130, 165);
             this.dtp_buscahorafin.Name = "dtp_buscahorafin";
             this.dtp_buscahorafin.Size = new System.Drawing.Size(149, 20);
@@ -507,7 +546,9 @@ namespace WindowsFormsApp1
             // 
             // dtp_buscahoraini
             // 
+            this.dtp_buscahoraini.CustomFormat = "HH:mm";
             this.dtp_buscahoraini.Enabled = false;
+            this.dtp_buscahoraini.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_buscahoraini.Location = new System.Drawing.Point(132, 139);
             this.dtp_buscahoraini.Name = "dtp_buscahoraini";
             this.dtp_buscahoraini.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -519,7 +560,7 @@ namespace WindowsFormsApp1
             this.dtp_buscatermino.Enabled = false;
             this.dtp_buscatermino.Location = new System.Drawing.Point(132, 113);
             this.dtp_buscatermino.Name = "dtp_buscatermino";
-            this.dtp_buscatermino.Size = new System.Drawing.Size(147, 20);
+            this.dtp_buscatermino.Size = new System.Drawing.Size(213, 20);
             this.dtp_buscatermino.TabIndex = 23;
             // 
             // dtp_buscacreacion
@@ -527,7 +568,7 @@ namespace WindowsFormsApp1
             this.dtp_buscacreacion.Enabled = false;
             this.dtp_buscacreacion.Location = new System.Drawing.Point(132, 87);
             this.dtp_buscacreacion.Name = "dtp_buscacreacion";
-            this.dtp_buscacreacion.Size = new System.Drawing.Size(147, 20);
+            this.dtp_buscacreacion.Size = new System.Drawing.Size(213, 20);
             this.dtp_buscacreacion.TabIndex = 22;
             this.dtp_buscacreacion.Value = new System.DateTime(2020, 4, 30, 21, 6, 27, 0);
             this.dtp_buscacreacion.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
@@ -548,16 +589,6 @@ namespace WindowsFormsApp1
             this.label15.Size = new System.Drawing.Size(78, 13);
             this.label15.TabIndex = 19;
             this.label15.Text = "Observaciones";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(515, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 27);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // cbx_buscatipo
             // 
@@ -651,6 +682,16 @@ namespace WindowsFormsApp1
             this.label22.TabIndex = 1;
             this.label22.Text = "Creacion";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(515, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(78, 27);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -680,41 +721,6 @@ namespace WindowsFormsApp1
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Listado Contratos";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // txt_buscacon
-            // 
-            this.txt_buscacon.Location = new System.Drawing.Point(505, 64);
-            this.txt_buscacon.Name = "txt_buscacon";
-            this.txt_buscacon.Size = new System.Drawing.Size(100, 20);
-            this.txt_buscacon.TabIndex = 32;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(502, 93);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(115, 13);
-            this.label23.TabIndex = 33;
-            this.label23.Text = "Ingrese N° de Contrato";
-            // 
-            // cbx_buscavig
-            // 
-            this.cbx_buscavig.AutoCompleteCustomSource.AddRange(new string[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.cbx_buscavig.Enabled = false;
-            this.cbx_buscavig.FormattingEnabled = true;
-            this.cbx_buscavig.Items.AddRange(new object[] {
-            "Si",
-            "No"});
-            this.cbx_buscavig.Location = new System.Drawing.Point(130, 217);
-            this.cbx_buscavig.Name = "cbx_buscavig";
-            this.cbx_buscavig.Size = new System.Drawing.Size(123, 21);
-            this.cbx_buscavig.TabIndex = 32;
             // 
             // FrmContrato
             // 
