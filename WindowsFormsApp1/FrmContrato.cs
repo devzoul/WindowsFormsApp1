@@ -76,9 +76,95 @@ namespace WindowsFormsApp1
                 contrato.idTipo = 4;
             }
 
-            tcontraro.ingresarContrato(contrato);
+            
+            if (tcontraro.ingresarContrato(contrato))
+            {
+                MessageBox.Show("Contrato ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiardatosCt();
+            }
+
+        }
+
+        private void LimpiardatosCt()
+        {
+            txt_rutCliente.Text = ("");
+            txt_razonCliente.Text = ("");
+            txt_direccionContrato.Text = ("");
+            cbx_vigente.ResetText();
+            cbx_vigente.SelectedIndex = -1;
+            cbx_tipoContrato.ResetText();
+            cbx_vigente.SelectedIndex = -1;
+            txt_observaciones.Text = ("");
+            txt_monto.Text = ("");
+
+        }
 
 
+
+        private void btn_buscarCC_Click(object sender, EventArgs e)
+        {
+            if (txt_rutCliente.Text == (""))
+            {
+                MessageBox.Show("Campo de Busqueda vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                TCliente tcliente = new TCliente();
+                Cliente cliente = new Cliente();
+                cliente = tcliente.buscarCliente(txt_rutCliente.Text);
+
+                txt_rutCliente.Text = cliente.rutCli;
+                txt_razonCliente.Text = cliente.razon_social;
+                
+
+                if (txt_razonCliente.Text == (""))
+                {
+                    MessageBox.Show("Registro no encontrado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_rutCliente.Text = ("");
+                }
+                else
+                {
+                    MessageBox.Show("Registro encontrado con exito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TContrato tcontrato = new TContrato();
+            Contrato contrato = new Contrato();
+
+            contrato = tcontrato.buscarContrato(long.Parse(txt_buscacon.Text));
+
+
+            txt_buscarut.Text = contrato.rutCli;
+            txt_buscarz.Text = ("***pendiente***");
+            dtp_buscacreacion.Value = DateTime.Parse(contrato.creacion);
+            dtp_buscatermino.Value = DateTime.Parse(contrato.termino);
+            dtp_buscahoraini.Value = DateTime.Parse(contrato.fechaHoraInicio);
+            dtp_buscahorafin.Value = DateTime.Parse(contrato.fechaHoraTermino);
+            txt_buscadir.Text = contrato.direccionCon;
+            cbx_buscavig.Text=contrato.estaVigente;
+            txt_buscaobs.Text = contrato.observaciones;
+
+
+            if (contrato.idTipo ==1)
+            {
+                cbx_buscatipo.Text = "Matrimonio";
+            }
+            else if (contrato.idTipo == 2)
+            {
+                cbx_buscatipo.Text = "Bautizo";
+            }
+            else if (contrato.idTipo == 3)
+            {
+                cbx_buscatipo.Text = "Cumpleaños";
+            }
+            else if (contrato.idTipo == 4)
+            {
+                cbx_buscatipo.Text = "Aniversario";
+            }
 
 
 
