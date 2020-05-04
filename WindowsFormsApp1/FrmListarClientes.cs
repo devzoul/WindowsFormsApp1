@@ -12,12 +12,37 @@ namespace WindowsFormsApp1
 {
     public partial class FrmListarClientes : Form
     {
+        private DataTable dt;
+        private List<Cliente> clientes;
+        private DataView dv;
         public FrmListarClientes()
         {
             InitializeComponent();
-            dtg_Clientes.DataSource = TCliente.ListarCliente();
+            clientes = TCliente.ListarCliente();
+            dt = new DataTable();
+            dt.Columns.Add("Nombre");
+            dt.Columns.Add("Rut");
+            dt.Columns.Add("Actividad");
+            dt.Columns.Add("Tipo");
+            dt.Columns.Add("Razon Social");    
+            dt.Columns.Add("Mail");
+            dt.Columns.Add("Direccion");
+            dt.Columns.Add("Telefono");
+            dv = new DataView(dt);
+            fillDataTable(clientes);
+            dtg_Clientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtg_Clientes.DataSource = dv;
+           
+            
 
 
+        }        
+        private void fillDataTable(List<Cliente> clientes)
+        {
+            foreach (var cliente in clientes)
+            {
+                dt.Rows.Add(cliente.nombreContactoCli, cliente.rutCli,cliente.actividad,cliente.tipoCli,cliente.razon_social,cliente.mailContacto,cliente.direccionCli,cliente.telefono);
+            }
         }
         public string SetValueForText1 { get; set; }
         //public static string SetValueForText1 = "";
@@ -45,7 +70,8 @@ namespace WindowsFormsApp1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            dv.RowFilter = string.Format("Rut Like '%{0}%'", txt_test.Text);
+            dtg_Clientes.DataSource = dv;
         }
     }
 }
