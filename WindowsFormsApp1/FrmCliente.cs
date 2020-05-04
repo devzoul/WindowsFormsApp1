@@ -131,7 +131,9 @@ namespace WindowsFormsApp1
             txt_direccionCB.Text = ("");
             txt_telefonoB.Text = ("");
             cbx_actividadB.ResetText();
+            cbx_actividadB.SelectedIndex = -1;
             cbx_tipoB.ResetText();
+            cbx_tipoB.SelectedIndex = -1;
 
             this.txt_rutBusc.Focus();
 
