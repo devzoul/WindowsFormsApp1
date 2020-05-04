@@ -170,5 +170,29 @@ namespace WindowsFormsApp1
 
 
         }
+
+        private void btn_limpiarCC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_limpiarC_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Esta seguro que desea Limpiar los Datos", "Informacion", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            if (dialogResult == DialogResult.Yes)
+            {
+                txt_buscarut.Text = ("");
+                txt_buscarz.Text = ("");
+                txt_buscadir.Text = ("");
+                cbx_buscavig.ResetText();
+                cbx_buscavig.SelectedIndex = -1;
+                cbx_buscatipo.ResetText();
+                cbx_buscatipo.SelectedIndex = -1;
+                txt_buscaobs.Text = ("");
+                txt_buscacon.Text = ("");
+                
+
+            }
+        }
     }
 }
