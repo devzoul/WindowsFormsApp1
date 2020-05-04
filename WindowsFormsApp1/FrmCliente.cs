@@ -187,6 +187,17 @@ namespace WindowsFormsApp1
         {
             data_clientes.DataSource = TCliente.ListarCliente();
         }
+
+        private void data_clientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (data_clientes.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                txt_rutBusc.Text = data_clientes.Rows[e.RowIndex].Cells["rutCli"].FormattedValue.ToString();
+            }
+
+            
+            
+        }
     }
 }
     
