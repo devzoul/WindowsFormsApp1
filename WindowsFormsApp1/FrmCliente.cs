@@ -206,7 +206,14 @@ namespace WindowsFormsApp1
                 if (FrmListarClientes.ShowDialog() == DialogResult.OK)
                 {
 
-                    txt_test1.Text = FrmListarClientes.SetValueForText1;
+                    txt_rutB.Text = FrmListarClientes.rCliente.rutCli;
+                    txt_nombreB.Text = FrmListarClientes.rCliente.nombreContactoCli;
+                    txt_telefonoB.Text = FrmListarClientes.rCliente.telefono.ToString();
+                    txt_direccionCB.Text = FrmListarClientes.rCliente.direccionCli;
+                    txt_razonSocialB.Text = FrmListarClientes.rCliente.razon_social;
+                    txt_mailB.Text = FrmListarClientes.rCliente.mailContacto;
+                    cbx_actividadB.SelectedItem = FrmListarClientes.rCliente.actividad;
+                    cbx_tipoB.SelectedItem = FrmListarClientes.rCliente.tipoCli;
 
                 }
             }
