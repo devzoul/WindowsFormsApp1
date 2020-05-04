@@ -28,49 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.btn_clientes = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_contratos = new System.Windows.Forms.Button();
             this.btn_ListarClientes = new System.Windows.Forms.Button();
             this.btn_ListarContratos = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.salirToolStripMenuItem,
-            this.salirToolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1196, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // archivoToolStripMenuItem
-            // 
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(161, 20);
-            this.archivoToolStripMenuItem.Text = "Administracion de Clientes";
-            this.archivoToolStripMenuItem.Click += new System.EventHandler(this.archivoToolStripMenuItem_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(171, 20);
-            this.salirToolStripMenuItem.Text = "Administracion de Contratos";
-            // 
-            // salirToolStripMenuItem1
-            // 
-            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem1.Text = "Salir";
             // 
             // btn_clientes
             // 
@@ -84,12 +49,6 @@
             this.btn_clientes.Text = "Administrador de Clientes";
             this.btn_clientes.UseVisualStyleBackColor = false;
             this.btn_clientes.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // btn_contratos
             // 
@@ -130,37 +89,38 @@
             this.btn_ListarContratos.UseVisualStyleBackColor = false;
             this.btn_ListarContratos.Click += new System.EventHandler(this.btn_ListarContratos_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(873, 100);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(151, 171);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1196, 612);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_ListarContratos);
             this.Controls.Add(this.btn_ListarClientes);
             this.Controls.Add(this.btn_contratos);
             this.Controls.Add(this.btn_clientes);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";
-            this.Text = "Form1";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Text = "OnBreak Menu Principal";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
         private System.Windows.Forms.Button btn_clientes;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btn_contratos;
         private System.Windows.Forms.Button btn_ListarClientes;
         private System.Windows.Forms.Button btn_ListarContratos;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
