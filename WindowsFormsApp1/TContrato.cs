@@ -65,6 +65,35 @@ namespace WindowsFormsApp1
             }
             return contrato;
         }
+                
+        public static List<Contrato> ListarContrato()
+        {
+            List<Contrato> lista = new List<Contrato>();
+            MySqlConnection conexion = Conexion.abrirURL();
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT CONTRATO.*,TIPOEVENTO.NOMBRE FROM CONTRATO JOIN TIPOEVENTO ON TIPOEVENTO.ID_TIPO = CONTRATO.ID_TIPO"), conexion);
+            MySqlDataReader lector = orden.ExecuteReader();
+            while (lector.Read())
+            {
+                
+                Contrato contrato = new Contrato();
+                contrato.numeroContrato = lector.GetInt64(0);
+                contrato.creacion = lector.GetString(1);
+                contrato.termino = lector.GetString(2);
+                contrato.fechaHoraInicio = lector.GetString(3);
+                contrato.fechaHoraTermino = lector.GetString(4);
+                contrato.direccionCon = lector.GetString(5);
+                contrato.estaVigente = lector.GetString(6);
+                contrato.idTipo = lector.GetInt32(7);
+                contrato.observaciones = lector.GetString(8);
+                contrato.rutCli = lector.GetString(9);
+                contrato.nombreTipo = lector.GetString(10);
+
+
+                lista.Add(contrato);
+            }
+
+            return lista;
+        }
 
     }
 }

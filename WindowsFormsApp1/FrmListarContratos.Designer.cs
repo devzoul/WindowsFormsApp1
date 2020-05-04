@@ -152,6 +152,7 @@
             this.txt_tipoCbusc.Name = "txt_tipoCbusc";
             this.txt_tipoCbusc.Size = new System.Drawing.Size(81, 20);
             this.txt_tipoCbusc.TabIndex = 24;
+            this.txt_tipoCbusc.TextChanged += new System.EventHandler(this.txt_tipoCbusc_TextChanged);
             // 
             // txt_rutCbusc
             // 
@@ -159,6 +160,7 @@
             this.txt_rutCbusc.Name = "txt_rutCbusc";
             this.txt_rutCbusc.Size = new System.Drawing.Size(70, 20);
             this.txt_rutCbusc.TabIndex = 23;
+            this.txt_rutCbusc.TextChanged += new System.EventHandler(this.txt_rutCbusc_TextChanged);
             // 
             // txt_contratoBusc
             // 
@@ -166,6 +168,7 @@
             this.txt_contratoBusc.Name = "txt_contratoBusc";
             this.txt_contratoBusc.Size = new System.Drawing.Size(79, 20);
             this.txt_contratoBusc.TabIndex = 22;
+            this.txt_contratoBusc.TextChanged += new System.EventHandler(this.txt_contratoBusc_TextChanged);
             // 
             // btn_cancelarLc
             // 

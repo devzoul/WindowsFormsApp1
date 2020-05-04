@@ -21,14 +21,22 @@ namespace WindowsFormsApp1
             InitializeComponent();
             contratos = TContrato.ListarContrato();
             dt = new DataTable();            
-            dt.Columns.Add("Rut");
-            dt.Columns.Add("Nombre");
-            dt.Columns.Add("Actividad");
+            dt.Columns.Add("N°_Contrato");
+            dt.Columns.Add("Rut_Cliente");
             dt.Columns.Add("Tipo");
-            dt.Columns.Add("Razon Social");    
-            dt.Columns.Add("Mail");
+            dt.Columns.Add("Fecha Creacion");
+            dt.Columns.Add("Fecha Termino");    
+            dt.Columns.Add("Hora Inicio");
+            dt.Columns.Add("Hora Termino");
             dt.Columns.Add("Direccion");
-            dt.Columns.Add("Telefono");
+            dt.Columns.Add("Está Vigente");
+            dt.Columns.Add("Observaciones");
+
+           
+
+
+
+
             dv = new DataView(dt);
             fillDataTable(contratos);
             dtg_Contratos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -45,7 +53,7 @@ namespace WindowsFormsApp1
                 dt.Rows.Add(
                     contrato.numeroContrato,
                     contrato.rutCli,
-                    contrato.idTipo,
+                    contrato.nombreTipo,
                     contrato.creacion,
                     contrato.termino,
                     contrato.fechaHoraInicio,
@@ -66,6 +74,25 @@ namespace WindowsFormsApp1
         private void dtg_Contratos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txt_contratoBusc_TextChanged(object sender, EventArgs e)
+        {
+            dv.RowFilter = string.Format("N°_Contrato Like '%{0}%'", txt_contratoBusc.Text);
+            dtg_Contratos.DataSource = dv;
+
+        }
+
+        private void txt_rutCbusc_TextChanged(object sender, EventArgs e)
+        {
+            dv.RowFilter = string.Format("Rut_Cliente Like '%{0}%'", txt_rutCbusc.Text);
+            dtg_Contratos.DataSource = dv;
+        }
+
+        private void txt_tipoCbusc_TextChanged(object sender, EventArgs e)
+        {
+            dv.RowFilter = string.Format("Tipo Like '%{0}%'", txt_tipoCbusc.Text);
+            dtg_Contratos.DataSource = dv;
         }
     }
 }

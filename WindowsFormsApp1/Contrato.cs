@@ -20,6 +20,8 @@ namespace WindowsFormsApp1
 
         public String rutCli { get; set; }
 
+        public  String nombreTipo { get; set; }
+
 
         public Contrato() { }
 
