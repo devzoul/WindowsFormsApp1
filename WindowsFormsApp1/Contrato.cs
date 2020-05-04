@@ -15,13 +15,15 @@ namespace WindowsFormsApp1
         public DateTime fechaHoraTermino { get; set; }
         public String direccionCon { get; set; }
         public String estaVigente { get; set; }
-        public int tipoCon { get; set; }
+        public int idTipo { get; set; }
         public String observaciones { get; set; }
+
+        public String rutCli { get; set; }
 
 
         public Contrato() { }
 
-        public Contrato(int numeroContrato, DateTime creacion, DateTime termino, DateTime fechaHoraInicio, DateTime fechaHoraTermino, string direccionCon, string estaVigente, int tipoCon, string observaciones)
+        public Contrato(int numeroContrato, DateTime creacion, DateTime termino, DateTime fechaHoraInicio, DateTime fechaHoraTermino, string direccionCon, string estaVigente, int tipoCon, string observaciones, string rutCli)
         {
             this.numeroContrato = numeroContrato;
             this.creacion = creacion;
@@ -30,8 +32,9 @@ namespace WindowsFormsApp1
             this.fechaHoraTermino = fechaHoraTermino;
             this.direccionCon = direccionCon;
             this.estaVigente = estaVigente;
-            this.tipoCon = tipoCon;
+            this.idTipo = tipoCon;
             this.observaciones = observaciones;
+            this.rutCli = rutCli;
         }
     }
 }
