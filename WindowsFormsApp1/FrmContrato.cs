@@ -43,8 +43,8 @@ namespace WindowsFormsApp1
             Contrato contrato = new Contrato();
 
             contrato.numeroContrato = (1);
-            contrato.creacion = dtp_creacion.Value;
-            contrato.termino = dtp_termino.Value.Date;
+            contrato.creacion = dtp_creacion.Value.ToString("yyyy-MM-dd HH:mm:ss");
+            contrato.termino = dtp_termino.Value.ToString("yyyy-MM-dd HH:mm:ss");
             contrato.fechaHoraInicio = dtp_horaIni.Value;
             contrato.fechaHoraTermino = dtp_horaTerm.Value;
             contrato.direccionCon = txt_direccionContrato.Text;

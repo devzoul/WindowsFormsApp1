@@ -247,10 +247,8 @@ namespace WindowsFormsApp1
             this.dtp_creacion.Name = "dtp_creacion";
             this.dtp_creacion.Size = new System.Drawing.Size(147, 20);
             this.dtp_creacion.TabIndex = 22;
-            this.dtp_creacion.Value = new System.DateTime(2020, 4, 30, 21, 6, 27, 0);
-            this.dtp_creacion.ValueChanged += new System.EventHandler(this.dtp_creacion_ValueChanged);
-            this.dtp_creacion.Format = DateTimePickerFormat.Custom;
-            this.dtp_creacion.CustomFormat = "yyyy-dd-MM";
+            this.dtp_creacion.Value = new System.DateTime(2020, 4, 30, 21, 6, 27, 0);     
+     
             // 
             // txt_observaciones
             // 

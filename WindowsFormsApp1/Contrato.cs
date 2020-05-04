@@ -9,8 +9,8 @@ namespace WindowsFormsApp1
     public class Contrato
     {
         public int numeroContrato { get; set; }
-        public DateTime creacion { get; set; }
-        public DateTime termino { get; set; }
+        public String creacion { get; set; }
+        public String termino { get; set; }
         public DateTime fechaHoraInicio { get; set; }
         public DateTime fechaHoraTermino { get; set; }
         public String direccionCon { get; set; }
@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
 
         public Contrato() { }
 
-        public Contrato(int numeroContrato, DateTime creacion, DateTime termino, DateTime fechaHoraInicio, DateTime fechaHoraTermino, string direccionCon, string estaVigente, int tipoCon, string observaciones, string rutCli)
+        public Contrato(int numeroContrato, String creacion, String termino, DateTime fechaHoraInicio, DateTime fechaHoraTermino, string direccionCon, string estaVigente, int tipoCon, string observaciones, string rutCli)
         {
             this.numeroContrato = numeroContrato;
             this.creacion = creacion;
