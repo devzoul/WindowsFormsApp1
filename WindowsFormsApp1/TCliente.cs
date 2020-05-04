@@ -101,7 +101,7 @@ namespace WindowsFormsApp1
             while (lector.Read())
             {
                 Cliente cliente = new Cliente();
-                cliente.rutCli = lector.GetString(0);
+                cliente.rutCli = lector.GetString(0);                
                 cliente.razon_social = lector.GetString(1);
                 cliente.nombreContactoCli = lector.GetString(2);
                 cliente.mailContacto = lector.GetString(3);
@@ -109,6 +109,7 @@ namespace WindowsFormsApp1
                 cliente.telefono = lector.GetInt32(5);
                 cliente.actividad = lector.GetString(6);
                 cliente.tipoCli = lector.GetString(7);
+
                 lista.Add(cliente);
             }
 

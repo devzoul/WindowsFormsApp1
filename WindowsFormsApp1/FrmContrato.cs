@@ -36,5 +36,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void dtp_creacion_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

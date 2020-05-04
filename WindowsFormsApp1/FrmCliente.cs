@@ -198,6 +198,24 @@ namespace WindowsFormsApp1
             
             
         }
+
+        private void btn_listado_Click(object sender, EventArgs e)
+        {
+            using (FrmListarClientes FrmListarClientes = new FrmListarClientes())
+            {
+                if (FrmListarClientes.ShowDialog() == DialogResult.OK)
+                {
+
+                    txt_test1.Text = FrmListarClientes.SetValueForText1;
+
+                }
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

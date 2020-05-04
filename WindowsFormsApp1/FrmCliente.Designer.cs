@@ -80,6 +80,8 @@
             this.btn_regCliente = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btn_listado = new System.Windows.Forms.Button();
+            this.txt_test1 = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -173,6 +175,8 @@
             // 
             // txt_raz
             // 
+            this.txt_raz.Controls.Add(this.txt_test1);
+            this.txt_raz.Controls.Add(this.btn_listado);
             this.txt_raz.Controls.Add(this.btn_del);
             this.txt_raz.Controls.Add(this.btn_mod);
             this.txt_raz.Controls.Add(this.label16);
@@ -610,6 +614,24 @@
             this.tabControl1.Size = new System.Drawing.Size(718, 414);
             this.tabControl1.TabIndex = 0;
             // 
+            // btn_listado
+            // 
+            this.btn_listado.Location = new System.Drawing.Point(227, 109);
+            this.btn_listado.Name = "btn_listado";
+            this.btn_listado.Size = new System.Drawing.Size(75, 23);
+            this.btn_listado.TabIndex = 39;
+            this.btn_listado.Text = "button1";
+            this.btn_listado.UseVisualStyleBackColor = true;
+            this.btn_listado.Click += new System.EventHandler(this.btn_listado_Click);
+            // 
+            // txt_test1
+            // 
+            this.txt_test1.Location = new System.Drawing.Point(220, 142);
+            this.txt_test1.Name = "txt_test1";
+            this.txt_test1.Size = new System.Drawing.Size(100, 20);
+            this.txt_test1.TabIndex = 40;
+            this.txt_test1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -685,6 +707,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Button btn_listado;
+        private System.Windows.Forms.TextBox txt_test1;
     }
     
 }
