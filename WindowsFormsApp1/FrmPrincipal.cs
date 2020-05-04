@@ -45,5 +45,11 @@ namespace WindowsFormsApp1
             FrmListarClientes frmListarClientes = new FrmListarClientes();
             frmListarClientes.Show();
         }
+
+        private void btn_ListarContratos_Click(object sender, EventArgs e)
+        {
+            FrmListarContratos frmListarContratos = new FrmListarContratos();
+            frmListarContratos.Show();
+        }
     }
 }

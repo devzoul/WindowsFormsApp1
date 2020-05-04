@@ -128,6 +128,7 @@
             this.btn_ListarContratos.TabIndex = 4;
             this.btn_ListarContratos.Text = "Listar Contratos";
             this.btn_ListarContratos.UseVisualStyleBackColor = false;
+            this.btn_ListarContratos.Click += new System.EventHandler(this.btn_ListarContratos_Click);
             // 
             // FrmPrincipal
             // 
