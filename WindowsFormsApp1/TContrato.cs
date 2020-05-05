@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.SqlServer.Server;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -73,7 +74,7 @@ namespace WindowsFormsApp1
         {
             List<Contrato> lista = new List<Contrato>();
             MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand(string.Format("SELECT CONTRATO.*,TIPOEVENTO.NOMBRE FROM CONTRATO JOIN TIPOEVENTO ON TIPOEVENTO.ID_TIPO = CONTRATO.ID_TIPO"), conexion);
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT contrato.numeroContrato, DATE_FORMAT(contrato.creacion, '%Y-%m-%d'), DATE_FORMAT(contrato.termino, '%Y-%m-%d'), DATE_FORMAT(contrato.fechaHoraInicio, '%H:%i'), DATE_FORMAT(contrato.fechaHoraTermino, '%H:%i'), contrato.direccionCon, contrato.estaVigente, contrato.id_tipo, contrato.observaciones, contrato.asistentes, contrato.participantes, contrato.monto_total, rutCli,TIPOEVENTO.NOMBRE FROM contrato join TIPOEVENTO ON TIPOEVENTO.id_tipo = contrato.id_tipo"), conexion);
             MySqlDataReader lector = orden.ExecuteReader();
             while (lector.Read())
             {
@@ -93,7 +94,6 @@ namespace WindowsFormsApp1
                 contrato.monto_total = lector.GetInt32(11);
                 contrato.rutCli = lector.GetString(12);
                 contrato.nombreTipo = lector.GetString(13);
-
 
                 lista.Add(contrato);
             }

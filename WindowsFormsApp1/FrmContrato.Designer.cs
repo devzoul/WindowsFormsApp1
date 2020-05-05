@@ -195,6 +195,8 @@ namespace WindowsFormsApp1
             this.txt_buscaparti.Name = "txt_buscaparti";
             this.txt_buscaparti.Size = new System.Drawing.Size(100, 20);
             this.txt_buscaparti.TabIndex = 36;
+            this.txt_buscaparti.TextChanged += new System.EventHandler(this.txt_buscaparti_TextChanged);
+            this.txt_buscaparti.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_buscaparti_KeyPress);
             // 
             // txt_buscaasis
             // 
@@ -203,6 +205,7 @@ namespace WindowsFormsApp1
             this.txt_buscaasis.Name = "txt_buscaasis";
             this.txt_buscaasis.Size = new System.Drawing.Size(100, 20);
             this.txt_buscaasis.TabIndex = 35;
+            this.txt_buscaasis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_buscaasis_KeyPress);
             // 
             // label27
             // 
@@ -531,6 +534,7 @@ namespace WindowsFormsApp1
             this.txt_participantes.Size = new System.Drawing.Size(100, 20);
             this.txt_participantes.TabIndex = 35;
             this.txt_participantes.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txt_participantes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_participantes_KeyPress);
             // 
             // txt_numeroContrato
             // 
@@ -644,6 +648,7 @@ namespace WindowsFormsApp1
             this.txt_asistentes.Name = "txt_asistentes";
             this.txt_asistentes.Size = new System.Drawing.Size(100, 20);
             this.txt_asistentes.TabIndex = 21;
+            this.txt_asistentes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_asistentes_KeyPress);
             // 
             // label9
             // 
