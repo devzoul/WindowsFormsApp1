@@ -89,6 +89,8 @@ namespace WindowsFormsApp1
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btn_buscList = new System.Windows.Forms.Button();
+            this.txt_numeroContrato = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -394,6 +396,7 @@ namespace WindowsFormsApp1
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btn_buscList);
             this.tabPage2.Controls.Add(this.label23);
             this.tabPage2.Controls.Add(this.txt_buscacon);
             this.tabPage2.Controls.Add(this.btn_limpiarC);
@@ -435,6 +438,7 @@ namespace WindowsFormsApp1
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txt_numeroContrato);
             this.groupBox2.Controls.Add(this.cbx_buscavig);
             this.groupBox2.Controls.Add(this.txt_buscarz);
             this.groupBox2.Controls.Add(this.label12);
@@ -722,6 +726,24 @@ namespace WindowsFormsApp1
             this.tabPage5.Text = "Listado Contratos";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // btn_buscList
+            // 
+            this.btn_buscList.Location = new System.Drawing.Point(515, 206);
+            this.btn_buscList.Name = "btn_buscList";
+            this.btn_buscList.Size = new System.Drawing.Size(90, 38);
+            this.btn_buscList.TabIndex = 34;
+            this.btn_buscList.Text = "Buscar de Lista";
+            this.btn_buscList.UseVisualStyleBackColor = true;
+            this.btn_buscList.Click += new System.EventHandler(this.btn_buscList_Click);
+            // 
+            // txt_numeroContrato
+            // 
+            this.txt_numeroContrato.Enabled = false;
+            this.txt_numeroContrato.Location = new System.Drawing.Point(294, 29);
+            this.txt_numeroContrato.Name = "txt_numeroContrato";
+            this.txt_numeroContrato.Size = new System.Drawing.Size(100, 20);
+            this.txt_numeroContrato.TabIndex = 33;
+            // 
             // FrmContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -803,5 +825,7 @@ namespace WindowsFormsApp1
         private Label label23;
         private TextBox txt_buscacon;
         private ComboBox cbx_buscavig;
+        private Button btn_buscList;
+        private TextBox txt_numeroContrato;
     }
 }

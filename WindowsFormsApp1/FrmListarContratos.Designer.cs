@@ -31,20 +31,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_sNombre = new System.Windows.Forms.TextBox();
-            this.txt_sTipo = new System.Windows.Forms.TextBox();
-            this.txt_sActividad = new System.Windows.Forms.TextBox();
-            this.txt_sMail = new System.Windows.Forms.TextBox();
-            this.txt_sTelefono = new System.Windows.Forms.TextBox();
-            this.txt_sDireccion = new System.Windows.Forms.TextBox();
-            this.txt_sRazon = new System.Windows.Forms.TextBox();
-            this.txt_sRut = new System.Windows.Forms.TextBox();
+            this.txt_sDireccionC = new System.Windows.Forms.TextBox();
+            this.txt_sHoraFin = new System.Windows.Forms.TextBox();
+            this.txt_sHoraIni = new System.Windows.Forms.TextBox();
+            this.txt_sFechaTermino = new System.Windows.Forms.TextBox();
+            this.txt_sFechaCreacion = new System.Windows.Forms.TextBox();
+            this.txt_sTipoC = new System.Windows.Forms.TextBox();
+            this.txt_sRutC = new System.Windows.Forms.TextBox();
+            this.txt_sContrato = new System.Windows.Forms.TextBox();
             this.txt_tipoCbusc = new System.Windows.Forms.TextBox();
             this.txt_rutCbusc = new System.Windows.Forms.TextBox();
             this.txt_contratoBusc = new System.Windows.Forms.TextBox();
             this.btn_cancelarLc = new System.Windows.Forms.Button();
             this.dtg_Contratos = new System.Windows.Forms.DataGridView();
             this.btn_listc_ok = new System.Windows.Forms.Button();
+            this.txt_sVigente = new System.Windows.Forms.TextBox();
+            this.txt_sObservaciones = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Contratos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,76 +77,76 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "N° Contrato";
             // 
-            // txt_sNombre
+            // txt_sDireccionC
             // 
-            this.txt_sNombre.Enabled = false;
-            this.txt_sNombre.Location = new System.Drawing.Point(661, 430);
-            this.txt_sNombre.Name = "txt_sNombre";
-            this.txt_sNombre.Size = new System.Drawing.Size(100, 20);
-            this.txt_sNombre.TabIndex = 32;
-            this.txt_sNombre.Visible = false;
+            this.txt_sDireccionC.Enabled = false;
+            this.txt_sDireccionC.Location = new System.Drawing.Point(661, 430);
+            this.txt_sDireccionC.Name = "txt_sDireccionC";
+            this.txt_sDireccionC.Size = new System.Drawing.Size(100, 20);
+            this.txt_sDireccionC.TabIndex = 32;
+            this.txt_sDireccionC.Visible = false;
             // 
-            // txt_sTipo
+            // txt_sHoraFin
             // 
-            this.txt_sTipo.Enabled = false;
-            this.txt_sTipo.Location = new System.Drawing.Point(661, 404);
-            this.txt_sTipo.Name = "txt_sTipo";
-            this.txt_sTipo.Size = new System.Drawing.Size(100, 20);
-            this.txt_sTipo.TabIndex = 31;
-            this.txt_sTipo.Visible = false;
+            this.txt_sHoraFin.Enabled = false;
+            this.txt_sHoraFin.Location = new System.Drawing.Point(661, 404);
+            this.txt_sHoraFin.Name = "txt_sHoraFin";
+            this.txt_sHoraFin.Size = new System.Drawing.Size(100, 20);
+            this.txt_sHoraFin.TabIndex = 31;
+            this.txt_sHoraFin.Visible = false;
             // 
-            // txt_sActividad
+            // txt_sHoraIni
             // 
-            this.txt_sActividad.Enabled = false;
-            this.txt_sActividad.Location = new System.Drawing.Point(661, 378);
-            this.txt_sActividad.Name = "txt_sActividad";
-            this.txt_sActividad.Size = new System.Drawing.Size(100, 20);
-            this.txt_sActividad.TabIndex = 30;
-            this.txt_sActividad.Visible = false;
+            this.txt_sHoraIni.Enabled = false;
+            this.txt_sHoraIni.Location = new System.Drawing.Point(661, 378);
+            this.txt_sHoraIni.Name = "txt_sHoraIni";
+            this.txt_sHoraIni.Size = new System.Drawing.Size(100, 20);
+            this.txt_sHoraIni.TabIndex = 30;
+            this.txt_sHoraIni.Visible = false;
             // 
-            // txt_sMail
+            // txt_sFechaTermino
             // 
-            this.txt_sMail.Enabled = false;
-            this.txt_sMail.Location = new System.Drawing.Point(661, 352);
-            this.txt_sMail.Name = "txt_sMail";
-            this.txt_sMail.Size = new System.Drawing.Size(100, 20);
-            this.txt_sMail.TabIndex = 29;
-            this.txt_sMail.Visible = false;
+            this.txt_sFechaTermino.Enabled = false;
+            this.txt_sFechaTermino.Location = new System.Drawing.Point(661, 352);
+            this.txt_sFechaTermino.Name = "txt_sFechaTermino";
+            this.txt_sFechaTermino.Size = new System.Drawing.Size(100, 20);
+            this.txt_sFechaTermino.TabIndex = 29;
+            this.txt_sFechaTermino.Visible = false;
             // 
-            // txt_sTelefono
+            // txt_sFechaCreacion
             // 
-            this.txt_sTelefono.Enabled = false;
-            this.txt_sTelefono.Location = new System.Drawing.Point(552, 430);
-            this.txt_sTelefono.Name = "txt_sTelefono";
-            this.txt_sTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txt_sTelefono.TabIndex = 28;
-            this.txt_sTelefono.Visible = false;
+            this.txt_sFechaCreacion.Enabled = false;
+            this.txt_sFechaCreacion.Location = new System.Drawing.Point(552, 430);
+            this.txt_sFechaCreacion.Name = "txt_sFechaCreacion";
+            this.txt_sFechaCreacion.Size = new System.Drawing.Size(100, 20);
+            this.txt_sFechaCreacion.TabIndex = 28;
+            this.txt_sFechaCreacion.Visible = false;
             // 
-            // txt_sDireccion
+            // txt_sTipoC
             // 
-            this.txt_sDireccion.Enabled = false;
-            this.txt_sDireccion.Location = new System.Drawing.Point(552, 404);
-            this.txt_sDireccion.Name = "txt_sDireccion";
-            this.txt_sDireccion.Size = new System.Drawing.Size(100, 20);
-            this.txt_sDireccion.TabIndex = 27;
-            this.txt_sDireccion.Visible = false;
+            this.txt_sTipoC.Enabled = false;
+            this.txt_sTipoC.Location = new System.Drawing.Point(552, 404);
+            this.txt_sTipoC.Name = "txt_sTipoC";
+            this.txt_sTipoC.Size = new System.Drawing.Size(100, 20);
+            this.txt_sTipoC.TabIndex = 27;
+            this.txt_sTipoC.Visible = false;
             // 
-            // txt_sRazon
+            // txt_sRutC
             // 
-            this.txt_sRazon.Enabled = false;
-            this.txt_sRazon.Location = new System.Drawing.Point(552, 378);
-            this.txt_sRazon.Name = "txt_sRazon";
-            this.txt_sRazon.Size = new System.Drawing.Size(100, 20);
-            this.txt_sRazon.TabIndex = 26;
-            this.txt_sRazon.Visible = false;
+            this.txt_sRutC.Enabled = false;
+            this.txt_sRutC.Location = new System.Drawing.Point(552, 378);
+            this.txt_sRutC.Name = "txt_sRutC";
+            this.txt_sRutC.Size = new System.Drawing.Size(100, 20);
+            this.txt_sRutC.TabIndex = 26;
+            this.txt_sRutC.Visible = false;
             // 
-            // txt_sRut
+            // txt_sContrato
             // 
-            this.txt_sRut.Location = new System.Drawing.Point(552, 352);
-            this.txt_sRut.Name = "txt_sRut";
-            this.txt_sRut.Size = new System.Drawing.Size(100, 20);
-            this.txt_sRut.TabIndex = 25;
-            this.txt_sRut.Visible = false;
+            this.txt_sContrato.Location = new System.Drawing.Point(552, 352);
+            this.txt_sContrato.Name = "txt_sContrato";
+            this.txt_sContrato.Size = new System.Drawing.Size(100, 20);
+            this.txt_sContrato.TabIndex = 25;
+            this.txt_sContrato.Visible = false;
             // 
             // txt_tipoCbusc
             // 
@@ -187,6 +189,7 @@
             this.dtg_Contratos.Name = "dtg_Contratos";
             this.dtg_Contratos.Size = new System.Drawing.Size(742, 280);
             this.dtg_Contratos.TabIndex = 20;
+            this.dtg_Contratos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_Contratos_CellClick);
             this.dtg_Contratos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_Contratos_CellContentClick);
             // 
             // btn_listc_ok
@@ -197,23 +200,44 @@
             this.btn_listc_ok.TabIndex = 19;
             this.btn_listc_ok.Text = "Ok";
             this.btn_listc_ok.UseVisualStyleBackColor = true;
+            this.btn_listc_ok.Click += new System.EventHandler(this.btn_listc_ok_Click);
+            // 
+            // txt_sVigente
+            // 
+            this.txt_sVigente.Enabled = false;
+            this.txt_sVigente.Location = new System.Drawing.Point(446, 352);
+            this.txt_sVigente.Name = "txt_sVigente";
+            this.txt_sVigente.Size = new System.Drawing.Size(100, 20);
+            this.txt_sVigente.TabIndex = 36;
+            this.txt_sVigente.Visible = false;
+            // 
+            // txt_sObservaciones
+            // 
+            this.txt_sObservaciones.Enabled = false;
+            this.txt_sObservaciones.Location = new System.Drawing.Point(446, 378);
+            this.txt_sObservaciones.Name = "txt_sObservaciones";
+            this.txt_sObservaciones.Size = new System.Drawing.Size(100, 20);
+            this.txt_sObservaciones.TabIndex = 37;
+            this.txt_sObservaciones.Visible = false;
             // 
             // FrmListarContratos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txt_sObservaciones);
+            this.Controls.Add(this.txt_sVigente);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_sNombre);
-            this.Controls.Add(this.txt_sTipo);
-            this.Controls.Add(this.txt_sActividad);
-            this.Controls.Add(this.txt_sMail);
-            this.Controls.Add(this.txt_sTelefono);
-            this.Controls.Add(this.txt_sDireccion);
-            this.Controls.Add(this.txt_sRazon);
-            this.Controls.Add(this.txt_sRut);
+            this.Controls.Add(this.txt_sDireccionC);
+            this.Controls.Add(this.txt_sHoraFin);
+            this.Controls.Add(this.txt_sHoraIni);
+            this.Controls.Add(this.txt_sFechaTermino);
+            this.Controls.Add(this.txt_sFechaCreacion);
+            this.Controls.Add(this.txt_sTipoC);
+            this.Controls.Add(this.txt_sRutC);
+            this.Controls.Add(this.txt_sContrato);
             this.Controls.Add(this.txt_tipoCbusc);
             this.Controls.Add(this.txt_rutCbusc);
             this.Controls.Add(this.txt_contratoBusc);
@@ -233,19 +257,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_sNombre;
-        private System.Windows.Forms.TextBox txt_sTipo;
-        private System.Windows.Forms.TextBox txt_sActividad;
-        private System.Windows.Forms.TextBox txt_sMail;
-        private System.Windows.Forms.TextBox txt_sTelefono;
-        private System.Windows.Forms.TextBox txt_sDireccion;
-        private System.Windows.Forms.TextBox txt_sRazon;
-        private System.Windows.Forms.TextBox txt_sRut;
+        private System.Windows.Forms.TextBox txt_sDireccionC;
+        private System.Windows.Forms.TextBox txt_sHoraFin;
+        private System.Windows.Forms.TextBox txt_sHoraIni;
+        private System.Windows.Forms.TextBox txt_sFechaTermino;
+        private System.Windows.Forms.TextBox txt_sFechaCreacion;
+        private System.Windows.Forms.TextBox txt_sTipoC;
+        private System.Windows.Forms.TextBox txt_sRutC;
+        private System.Windows.Forms.TextBox txt_sContrato;
         private System.Windows.Forms.TextBox txt_tipoCbusc;
         private System.Windows.Forms.TextBox txt_rutCbusc;
         private System.Windows.Forms.TextBox txt_contratoBusc;
         private System.Windows.Forms.Button btn_cancelarLc;
         private System.Windows.Forms.DataGridView dtg_Contratos;
         private System.Windows.Forms.Button btn_listc_ok;
+        private System.Windows.Forms.TextBox txt_sVigente;
+        private System.Windows.Forms.TextBox txt_sObservaciones;
     }
 }

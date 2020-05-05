@@ -94,5 +94,48 @@ namespace WindowsFormsApp1
             dv.RowFilter = string.Format("Tipo Like '%{0}%'", txt_tipoCbusc.Text);
             dtg_Contratos.DataSource = dv;
         }
+
+        
+        private void dtg_Contratos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+
+                txt_sContrato.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["N°_Contrato"].Value.ToString();
+                txt_sRutC.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Rut_Cliente"].Value.ToString();
+                txt_sTipoC.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Tipo"].Value.ToString();
+                txt_sFechaCreacion.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Fecha Creacion"].Value.ToString();
+                txt_sFechaTermino.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Fecha Termino"].Value.ToString();
+                txt_sHoraIni.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Hora Inicio"].Value.ToString();
+                txt_sHoraFin.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Hora Termino"].Value.ToString();
+                txt_sDireccionC.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Direccion"].Value.ToString();
+                txt_sVigente.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Está Vigente"].Value.ToString();
+                txt_sObservaciones.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Observaciones"].Value.ToString();
+
+                
+
+            }
+        }
+
+        private void btn_listc_ok_Click(object sender, EventArgs e)
+        {
+            if (txt_sContrato.Text != "")
+            {
+                rContrato = new Contrato();
+                rContrato.numeroContrato = Int64.Parse(txt_sContrato.Text);
+                rContrato.rutCli = txt_sRutC.Text;
+                rContrato.nombreTipo = txt_sTipoC.Text;
+                rContrato.creacion = txt_sFechaCreacion.Text;
+                rContrato.termino = txt_sFechaTermino.Text;
+                rContrato.fechaHoraInicio = txt_sHoraIni.Text;
+                rContrato.fechaHoraTermino = txt_sHoraFin.Text;
+                rContrato.direccionCon = txt_sDireccionC.Text;
+                rContrato.estaVigente = txt_sVigente.Text;
+                rContrato.observaciones = txt_sObservaciones.Text;
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
     }
 }
