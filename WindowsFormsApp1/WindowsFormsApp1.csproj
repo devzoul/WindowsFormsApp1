@@ -131,6 +131,7 @@
     <Compile Include="TCliente.cs" />
     <Compile Include="TContrato.cs" />
     <Compile Include="TipoEvento.cs" />
+    <Compile Include="TTipoEvento.cs" />
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
