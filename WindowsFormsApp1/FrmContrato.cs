@@ -143,7 +143,6 @@ namespace WindowsFormsApp1
             cbx_tipoContrato.ResetText();
             cbx_vigente.SelectedIndex = -1;
             txt_asistentes.Text = ("");
-            txt_monto.Text = ("");
             txt_asistentes.Text = ("");
             txt_participantes.Text = ("");
             txt_observaciones.Text = ("");
@@ -200,6 +199,9 @@ namespace WindowsFormsApp1
             txt_buscadir.Text = contrato.direccionCon;
             cbx_buscavig.Text=contrato.estaVigente;
             txt_buscaobs.Text = contrato.observaciones;
+            txt_buscaasis.Text = contrato.asistentes.ToString();
+            txt_buscaparti.Text = contrato.participantes.ToString();
+            txt_buscamonto.Text = contrato.monto_total.ToString();
 
 
             if (contrato.idTipo ==1)
@@ -250,7 +252,11 @@ namespace WindowsFormsApp1
                 cbx_buscatipo.SelectedIndex = -1;
                 txt_buscaobs.Text = ("");
                 txt_buscacon.Text = ("");
-                
+                txt_buscamonto.Text = ("");
+                txt_buscaparti.Text = ("");
+                txt_buscaasis.Text = ("");
+
+
 
             }
         }
