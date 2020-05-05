@@ -225,5 +225,28 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        private void btn_buscListCon_Click(object sender, EventArgs e)
+        {
+            using (FrmListarContratos frmListarContratos = new FrmListarContratos())
+            {
+                if (frmListarContratos.ShowDialog() == DialogResult.OK)
+                {
+
+                    txt_numeroContrato.Text = frmListarContratos.rContrato.numeroContrato.ToString();
+                    txt_buscarut.Text = frmListarContratos.rContrato.rutCli;
+                    txt_buscarz.Text = ("***pendiente***");
+                    dtp_buscacreacion.Value = DateTime.Parse(frmListarContratos.rContrato.creacion);
+                    dtp_buscatermino.Value = DateTime.Parse(frmListarContratos.rContrato.termino);
+                    dtp_buscahoraini.Value = DateTime.Parse(frmListarContratos.rContrato.fechaHoraInicio);
+                    dtp_buscahorafin.Value = DateTime.Parse(frmListarContratos.rContrato.fechaHoraTermino);
+                    txt_buscadir.Text = frmListarContratos.rContrato.direccionCon;
+                    cbx_buscavig.SelectedItem = frmListarContratos.rContrato.estaVigente;
+                    cbx_tipoContrato.SelectedItem = frmListarContratos.rContrato.nombreTipo;
+                    txt_buscaobs.Text = frmListarContratos.rContrato.observaciones;
+
+                }
+            }
+        }
     }
 }
