@@ -70,7 +70,6 @@ namespace WindowsFormsApp1
             this.label24 = new System.Windows.Forms.Label();
             this.txt_observaciones = new System.Windows.Forms.TextBox();
             this.txt_participantes = new System.Windows.Forms.TextBox();
-            this.txt_numeroContrato = new System.Windows.Forms.TextBox();
             this.cbx_vigente = new System.Windows.Forms.ComboBox();
             this.btn_limpiarCC = new System.Windows.Forms.Button();
             this.txt_razonCliente = new System.Windows.Forms.TextBox();
@@ -96,6 +95,8 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_termino = new System.Windows.Forms.Button();
+            this.txt_numeroContrato = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -106,6 +107,7 @@ namespace WindowsFormsApp1
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btn_termino);
             this.tabPage2.Controls.Add(this.btn_buscListCon);
             this.tabPage2.Controls.Add(this.label23);
             this.tabPage2.Controls.Add(this.txt_buscacon);
@@ -158,6 +160,7 @@ namespace WindowsFormsApp1
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txt_numeroContrato);
             this.groupBox2.Controls.Add(this.txt_buscaparti);
             this.groupBox2.Controls.Add(this.txt_buscaasis);
             this.groupBox2.Controls.Add(this.label27);
@@ -345,7 +348,7 @@ namespace WindowsFormsApp1
             // txt_buscaobs
             // 
             this.txt_buscaobs.Enabled = false;
-            this.txt_buscaobs.Location = new System.Drawing.Point(130, 370);
+            this.txt_buscaobs.Location = new System.Drawing.Point(130, 361);
             this.txt_buscaobs.Name = "txt_buscaobs";
             this.txt_buscaobs.Size = new System.Drawing.Size(303, 20);
             this.txt_buscaobs.TabIndex = 21;
@@ -353,7 +356,7 @@ namespace WindowsFormsApp1
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(13, 377);
+            this.label15.Location = new System.Drawing.Point(18, 361);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 13);
             this.label15.TabIndex = 19;
@@ -479,7 +482,6 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Controls.Add(this.txt_observaciones);
             this.groupBox1.Controls.Add(this.txt_participantes);
-            this.groupBox1.Controls.Add(this.txt_numeroContrato);
             this.groupBox1.Controls.Add(this.cbx_vigente);
             this.groupBox1.Controls.Add(this.btn_limpiarCC);
             this.groupBox1.Controls.Add(this.txt_razonCliente);
@@ -545,14 +547,6 @@ namespace WindowsFormsApp1
             this.txt_participantes.TabIndex = 35;
             this.txt_participantes.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.txt_participantes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_participantes_KeyPress);
-            // 
-            // txt_numeroContrato
-            // 
-            this.txt_numeroContrato.Location = new System.Drawing.Point(249, 29);
-            this.txt_numeroContrato.Name = "txt_numeroContrato";
-            this.txt_numeroContrato.Size = new System.Drawing.Size(100, 20);
-            this.txt_numeroContrato.TabIndex = 34;
-            this.txt_numeroContrato.Visible = false;
             // 
             // cbx_vigente
             // 
@@ -812,6 +806,24 @@ namespace WindowsFormsApp1
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_termino
+            // 
+            this.btn_termino.Location = new System.Drawing.Point(515, 297);
+            this.btn_termino.Name = "btn_termino";
+            this.btn_termino.Size = new System.Drawing.Size(90, 50);
+            this.btn_termino.TabIndex = 35;
+            this.btn_termino.Text = "Termino Contrato";
+            this.btn_termino.UseVisualStyleBackColor = true;
+            this.btn_termino.Visible = false;
+            // 
+            // txt_numeroContrato
+            // 
+            this.txt_numeroContrato.Location = new System.Drawing.Point(304, 29);
+            this.txt_numeroContrato.Name = "txt_numeroContrato";
+            this.txt_numeroContrato.Size = new System.Drawing.Size(100, 20);
+            this.txt_numeroContrato.TabIndex = 37;
+            this.txt_numeroContrato.Visible = false;
+            // 
             // FrmContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -892,7 +904,6 @@ namespace WindowsFormsApp1
         private Label label3;
         private Label label2;
         private TabControl tabControl1;
-        private TextBox txt_numeroContrato;
         private Button btn_buscListCon;
         private TextBox txt_participantes;
         private TextBox txt_observaciones;
@@ -903,5 +914,7 @@ namespace WindowsFormsApp1
         private Label label26;
         private Label label25;
         private PictureBox pictureBox1;
+        private Button btn_termino;
+        private TextBox txt_numeroContrato;
     }
 }
