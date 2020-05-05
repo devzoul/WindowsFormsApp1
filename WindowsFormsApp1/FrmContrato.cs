@@ -41,6 +41,8 @@ namespace WindowsFormsApp1
         {
             TContrato tcontraro = new TContrato();
             Contrato contrato = new Contrato();
+            TipoEvento tipoEvento = new TipoEvento();
+            TTipoEvento ttipoEvento = new TTipoEvento();
             int uf = 28702;
             int recargo_asis = 0;
             double recargo_parti = 0;
@@ -52,14 +54,14 @@ namespace WindowsFormsApp1
             contrato.fechaHoraTermino = dtp_horaTerm.Value.ToString("yyyy-MM-dd HH:mm:ss");
             contrato.direccionCon = txt_direccionContrato.Text;
             contrato.estaVigente = cbx_vigente.SelectedItem.ToString();
-            contrato.observaciones = txt_asistentes.Text;
+            contrato.observaciones = txt_observaciones.Text;
             contrato.asistentes = Int32.Parse(txt_asistentes.Text);
             contrato.participantes = Int32.Parse(txt_participantes.Text);
             contrato.rutCli = txt_rutCliente.Text;
             String numeroid = (dtp_creacion.Value.ToString("yyyyMMdd") + dtp_horaIni.Value.ToString("HHmm"));
             contrato.numeroContrato = Int64.Parse(numeroid);
 
-            
+
 
             if (cbx_tipoContrato.SelectedItem.ToString() == "Matrimonio")
             {
@@ -82,7 +84,7 @@ namespace WindowsFormsApp1
             }
 
 
-            if (contrato.asistentes>=1 && contrato.asistentes<=20)
+            if (contrato.asistentes >= 1 && contrato.asistentes <= 20)
             {
                 recargo_asis = (3 * uf);
             }
@@ -92,35 +94,41 @@ namespace WindowsFormsApp1
             }
             else
             {
-                recargo_asis = (((contrato.asistentes)/20)*2)*uf ;
+                recargo_asis = (((contrato.asistentes) / 20) * 2) * uf;
             }
 
-            if (contrato.participantes==2)
+            if (contrato.participantes == 2)
             {
                 recargo_parti = 2 * uf;
             }
-            else if (contrato.participantes==3)
+            else if (contrato.participantes == 3)
             {
                 recargo_parti = 3 * uf;
             }
-            else if (contrato.participantes==4)
+            else if (contrato.participantes == 4)
             {
                 recargo_parti = 3.5 * uf;
             }
 
             else
             {
-                recargo_parti = (3.5 * uf + (((contrato.participantes - 4) * 0.5) * uf));
+                recargo_parti = Math.Round(3.5 * uf + (((contrato.participantes - 4) * 0.5) * uf));
+
             }
 
+            tipoEvento = ttipoEvento.buscarTipoEvento(contrato.idTipo);
 
-            
+            contrato.monto_total = recargo_asis + Convert.ToInt32(recargo_parti) + tipoEvento.valorBase;
 
-            
-            if (tcontraro.ingresarContrato(contrato))
+            DialogResult confirmacion = MessageBox.Show("El monto total del contrato es $"+ contrato.monto_total + "Desea confirmar la operacion", "Resultado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (confirmacion == DialogResult.Yes)
             {
-                MessageBox.Show("Contrato ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiardatosCt();
+                if (tcontraro.ingresarContrato(contrato))
+                {
+                    MessageBox.Show("Contrato ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiardatosCt();
+                }
+
             }
 
         }
@@ -136,6 +144,9 @@ namespace WindowsFormsApp1
             cbx_vigente.SelectedIndex = -1;
             txt_asistentes.Text = ("");
             txt_monto.Text = ("");
+            txt_asistentes.Text = ("");
+            txt_participantes.Text = ("");
+            txt_observaciones.Text = ("");
 
         }
 
@@ -273,6 +284,21 @@ namespace WindowsFormsApp1
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_monto_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FrmContrato_Load(object sender, EventArgs e)
         {
 
         }
