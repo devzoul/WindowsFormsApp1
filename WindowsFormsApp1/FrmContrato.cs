@@ -240,51 +240,83 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TContrato tcontrato = new TContrato();
-            Contrato contrato = new Contrato();
-
-
-
-            contrato = tcontrato.buscarContrato(long.Parse(txt_buscacon.Text));
-
-
-            txt_buscarut.Text = contrato.rutCli;
             
-            dtp_buscacreacion.Value = DateTime.Parse(contrato.creacion);
-            dtp_buscatermino.Value = DateTime.Parse(contrato.termino);
-            dtp_buscahoraini.Value = DateTime.Parse(contrato.fechaHoraInicio);
-            dtp_buscahorafin.Value = DateTime.Parse(contrato.fechaHoraTermino);
-            txt_buscadir.Text = contrato.direccionCon;
-            cbx_buscavig.Text=contrato.estaVigente;
-            txt_buscaobs.Text = contrato.observaciones;
-            txt_buscaasis.Text = contrato.asistentes.ToString();
-            txt_buscaparti.Text = contrato.participantes.ToString();
-            txt_buscamonto.Text = contrato.monto_total.ToString();
 
-
-            if (contrato.idTipo ==1)
+            if (txt_buscacon.Text == (""))
             {
-                cbx_buscatipo.Text = "Matrimonio";
+                MessageBox.Show("Campo de Busqueda vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-            else if (contrato.idTipo == 2)
+            else
             {
-                cbx_buscatipo.Text = "Bautizo";
-            }
-            else if (contrato.idTipo == 3)
-            {
-                cbx_buscatipo.Text = "Cumpleaños";
-            }
-            else if (contrato.idTipo == 4)
-            {
-                cbx_buscatipo.Text = "Aniversario";
+                TContrato tcontrato = new TContrato();
+                Contrato contrato = new Contrato();
+                              
+                contrato = tcontrato.buscarContrato(long.Parse(txt_buscacon.Text));
+                long result = long.Parse(contrato.numeroContrato.ToString());
+                
+                if (result == 0)
+                {
+                    MessageBox.Show("Registro no encontrado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_buscacon.Text = ("");
+                }
+                else
+                {
+                    MessageBox.Show("Registro encontrado con exito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txt_buscarut.Text = contrato.rutCli;
+
+                    dtp_buscacreacion.Value = DateTime.Parse(contrato.creacion);
+                    dtp_buscatermino.Value = DateTime.Parse(contrato.termino);
+                    dtp_buscahoraini.Value = DateTime.Parse(contrato.fechaHoraInicio);
+                    dtp_buscahorafin.Value = DateTime.Parse(contrato.fechaHoraTermino);
+                    txt_buscadir.Text = contrato.direccionCon;
+                    cbx_buscavig.Text = contrato.estaVigente;
+                    txt_buscaobs.Text = contrato.observaciones;
+                    txt_buscaasis.Text = contrato.asistentes.ToString();
+                    txt_buscaparti.Text = contrato.participantes.ToString();
+                    txt_buscamonto.Text = contrato.monto_total.ToString();
+
+
+                    if (contrato.idTipo == 1)
+                    {
+                        cbx_buscatipo.Text = "Matrimonio";
+                    }
+                    else if (contrato.idTipo == 2)
+                    {
+                        cbx_buscatipo.Text = "Bautizo";
+                    }
+                    else if (contrato.idTipo == 3)
+                    {
+                        cbx_buscatipo.Text = "Cumpleaños";
+                    }
+                    else if (contrato.idTipo == 4)
+                    {
+                        cbx_buscatipo.Text = "Aniversario";
+                    }
+
+                    TCliente tcliente = new TCliente();
+                    Cliente cliente = new Cliente();
+
+                    cliente = tcliente.buscarCliente(contrato.rutCli);
+
+                    txt_buscarz.Text = cliente.nombreContactoCli;
+
+                    
+
+                    if (cbx_buscavig.SelectedItem.ToString() == "Si")
+                    {
+                        btn_termino.Visible = true;
+                    }
+
+
+
+                }
             }
 
-            TCliente tcliente = new TCliente();
-            Cliente cliente = new Cliente();
 
-            cliente = tcliente.buscarCliente(contrato.rutCli);
 
-            txt_buscarz.Text = cliente.nombreContactoCli;
+
+            
 
 
 
@@ -323,6 +355,7 @@ namespace WindowsFormsApp1
                 txt_buscamonto.Text = ("");
                 txt_buscaparti.Text = ("");
                 txt_buscaasis.Text = ("");
+                btn_termino.Visible = false;
 
 
 
@@ -357,6 +390,13 @@ namespace WindowsFormsApp1
 
                     cliente = tcliente.buscarCliente(txt_buscarut.Text);
                     txt_buscarz.Text = cliente.nombreContactoCli;
+
+                    if (cbx_buscavig.SelectedItem.ToString() == "Si")
+                    {
+                        btn_termino.Visible = true;
+                    }
+
+                    
 
                 }
             }
