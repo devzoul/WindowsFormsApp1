@@ -462,6 +462,7 @@ namespace WindowsFormsApp1
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Crear Contrato";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // groupBox1
             // 
@@ -589,10 +590,12 @@ namespace WindowsFormsApp1
             // 
             // txt_monto
             // 
+            this.txt_monto.Enabled = false;
             this.txt_monto.Location = new System.Drawing.Point(384, 296);
             this.txt_monto.Name = "txt_monto";
             this.txt_monto.Size = new System.Drawing.Size(100, 20);
             this.txt_monto.TabIndex = 29;
+            this.txt_monto.TextChanged += new System.EventHandler(this.txt_monto_TextChanged);
             // 
             // label10
             // 
@@ -799,6 +802,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmContrato";
             this.Text = "FrmContrato";
+            this.Load += new System.EventHandler(this.FrmContrato_Load);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);

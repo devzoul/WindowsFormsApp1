@@ -29,13 +29,13 @@ namespace WindowsFormsApp1
             catch (SqlException ex)
             {
 
-                MessageBox.Show("Problema con el Ingreso de Nuevo Contrato (SqlException) "+ ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Problema con el Ingreso de Nuevo Contrato (SqlException) "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Problema con el Ingreso de Nuevo Contrato (Exception)"+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Problema con el Ingreso de Nuevo Contrato (Exception)" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -93,7 +93,6 @@ namespace WindowsFormsApp1
                 contrato.monto_total = lector.GetInt32(11);
                 contrato.rutCli = lector.GetString(12);
                 contrato.nombreTipo = lector.GetString(13);
-                
 
 
                 lista.Add(contrato);

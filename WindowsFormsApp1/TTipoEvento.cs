@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
 
             TipoEvento tipoEvento = new TipoEvento();
             MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM TIPOEVENTO WHERE idTipo =@idTipo"), conexion);
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM TIPOEVENTO WHERE id_tipo =@idTipo"), conexion);
             orden.Parameters.AddWithValue("@idTipo", idTipo);
             MySqlDataReader lector = orden.ExecuteReader();
             if (lector.Read())

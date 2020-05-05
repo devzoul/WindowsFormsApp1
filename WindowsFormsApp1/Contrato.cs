@@ -48,6 +48,6 @@ namespace WindowsFormsApp1
             this.participantes = participantes;
             this.monto_total = monto_total;
         }
-    
     }
+    
 }
