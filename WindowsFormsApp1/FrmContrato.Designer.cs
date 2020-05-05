@@ -36,6 +36,10 @@ namespace WindowsFormsApp1
             this.txt_buscacon = new System.Windows.Forms.TextBox();
             this.btn_limpiarC = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_buscaparti = new System.Windows.Forms.TextBox();
+            this.txt_buscaasis = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.cbx_buscavig = new System.Windows.Forms.ComboBox();
             this.txt_buscarz = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -61,6 +65,10 @@ namespace WindowsFormsApp1
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txt_observaciones = new System.Windows.Forms.TextBox();
+            this.txt_participantes = new System.Windows.Forms.TextBox();
             this.txt_numeroContrato = new System.Windows.Forms.TextBox();
             this.cbx_vigente = new System.Windows.Forms.ComboBox();
             this.btn_limpiarCC = new System.Windows.Forms.Button();
@@ -86,14 +94,6 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.txt_participantes = new System.Windows.Forms.TextBox();
-            this.txt_observaciones = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txt_buscaasis = new System.Windows.Forms.TextBox();
-            this.txt_buscaparti = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -187,6 +187,40 @@ namespace WindowsFormsApp1
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Contrato";
+            // 
+            // txt_buscaparti
+            // 
+            this.txt_buscaparti.Enabled = false;
+            this.txt_buscaparti.Location = new System.Drawing.Point(130, 303);
+            this.txt_buscaparti.Name = "txt_buscaparti";
+            this.txt_buscaparti.Size = new System.Drawing.Size(100, 20);
+            this.txt_buscaparti.TabIndex = 36;
+            // 
+            // txt_buscaasis
+            // 
+            this.txt_buscaasis.Enabled = false;
+            this.txt_buscaasis.Location = new System.Drawing.Point(130, 277);
+            this.txt_buscaasis.Name = "txt_buscaasis";
+            this.txt_buscaasis.Size = new System.Drawing.Size(100, 20);
+            this.txt_buscaasis.TabIndex = 35;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(18, 310);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(68, 13);
+            this.label27.TabIndex = 34;
+            this.label27.Text = "Participantes";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(18, 284);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(55, 13);
+            this.label26.TabIndex = 33;
+            this.label26.Text = "Asistentes";
             // 
             // cbx_buscavig
             // 
@@ -465,12 +499,46 @@ namespace WindowsFormsApp1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Contrato";
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(23, 310);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(68, 13);
+            this.label25.TabIndex = 38;
+            this.label25.Text = "Participantes";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(21, 280);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(55, 13);
+            this.label24.TabIndex = 37;
+            this.label24.Text = "Asistentes";
+            // 
+            // txt_observaciones
+            // 
+            this.txt_observaciones.Location = new System.Drawing.Point(132, 337);
+            this.txt_observaciones.Name = "txt_observaciones";
+            this.txt_observaciones.Size = new System.Drawing.Size(358, 20);
+            this.txt_observaciones.TabIndex = 36;
+            // 
+            // txt_participantes
+            // 
+            this.txt_participantes.Location = new System.Drawing.Point(132, 303);
+            this.txt_participantes.Name = "txt_participantes";
+            this.txt_participantes.Size = new System.Drawing.Size(100, 20);
+            this.txt_participantes.TabIndex = 35;
+            this.txt_participantes.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // txt_numeroContrato
             // 
             this.txt_numeroContrato.Location = new System.Drawing.Point(249, 29);
             this.txt_numeroContrato.Name = "txt_numeroContrato";
             this.txt_numeroContrato.Size = new System.Drawing.Size(100, 20);
             this.txt_numeroContrato.TabIndex = 34;
+            this.txt_numeroContrato.Visible = false;
             // 
             // cbx_vigente
             // 
@@ -703,73 +771,6 @@ namespace WindowsFormsApp1
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(681, 451);
             this.tabControl1.TabIndex = 1;
-            // 
-            // txt_participantes
-            // 
-            this.txt_participantes.Location = new System.Drawing.Point(132, 303);
-            this.txt_participantes.Name = "txt_participantes";
-            this.txt_participantes.Size = new System.Drawing.Size(100, 20);
-            this.txt_participantes.TabIndex = 35;
-            this.txt_participantes.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // txt_observaciones
-            // 
-            this.txt_observaciones.Location = new System.Drawing.Point(132, 337);
-            this.txt_observaciones.Name = "txt_observaciones";
-            this.txt_observaciones.Size = new System.Drawing.Size(358, 20);
-            this.txt_observaciones.TabIndex = 36;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(21, 280);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(55, 13);
-            this.label24.TabIndex = 37;
-            this.label24.Text = "Asistentes";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(23, 310);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(68, 13);
-            this.label25.TabIndex = 38;
-            this.label25.Text = "Participantes";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(18, 284);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(55, 13);
-            this.label26.TabIndex = 33;
-            this.label26.Text = "Asistentes";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(18, 310);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(68, 13);
-            this.label27.TabIndex = 34;
-            this.label27.Text = "Participantes";
-            // 
-            // txt_buscaasis
-            // 
-            this.txt_buscaasis.Enabled = false;
-            this.txt_buscaasis.Location = new System.Drawing.Point(130, 277);
-            this.txt_buscaasis.Name = "txt_buscaasis";
-            this.txt_buscaasis.Size = new System.Drawing.Size(100, 20);
-            this.txt_buscaasis.TabIndex = 35;
-            // 
-            // txt_buscaparti
-            // 
-            this.txt_buscaparti.Enabled = false;
-            this.txt_buscaparti.Location = new System.Drawing.Point(130, 303);
-            this.txt_buscaparti.Name = "txt_buscaparti";
-            this.txt_buscaparti.Size = new System.Drawing.Size(100, 20);
-            this.txt_buscaparti.TabIndex = 36;
             // 
             // FrmContrato
             // 
