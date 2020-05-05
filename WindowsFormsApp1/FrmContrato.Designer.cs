@@ -59,10 +59,12 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_buscList = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.txt_buscacon = new System.Windows.Forms.TextBox();
             this.btn_limpiarC = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_numeroContrato = new System.Windows.Forms.TextBox();
             this.cbx_buscavig = new System.Windows.Forms.ComboBox();
             this.txt_buscarz = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -86,11 +88,6 @@ namespace WindowsFormsApp1
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.btn_buscList = new System.Windows.Forms.Button();
-            this.txt_numeroContrato = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -102,9 +99,6 @@ namespace WindowsFormsApp1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(48, 48);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -410,6 +404,16 @@ namespace WindowsFormsApp1
             this.tabPage2.Text = "Buscar Contrato";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btn_buscList
+            // 
+            this.btn_buscList.Location = new System.Drawing.Point(515, 206);
+            this.btn_buscList.Name = "btn_buscList";
+            this.btn_buscList.Size = new System.Drawing.Size(90, 38);
+            this.btn_buscList.TabIndex = 34;
+            this.btn_buscList.Text = "Buscar de Lista";
+            this.btn_buscList.UseVisualStyleBackColor = true;
+            this.btn_buscList.Click += new System.EventHandler(this.btn_buscList_Click);
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -467,6 +471,14 @@ namespace WindowsFormsApp1
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Contrato";
+            // 
+            // txt_numeroContrato
+            // 
+            this.txt_numeroContrato.Enabled = false;
+            this.txt_numeroContrato.Location = new System.Drawing.Point(294, 29);
+            this.txt_numeroContrato.Name = "txt_numeroContrato";
+            this.txt_numeroContrato.Size = new System.Drawing.Size(100, 20);
+            this.txt_numeroContrato.TabIndex = 33;
             // 
             // cbx_buscavig
             // 
@@ -696,54 +708,6 @@ namespace WindowsFormsApp1
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(673, 364);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Actualizar Contrato";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabPage4.Size = new System.Drawing.Size(673, 364);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Terminar Contrato";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(673, 364);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Listado Contratos";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // btn_buscList
-            // 
-            this.btn_buscList.Location = new System.Drawing.Point(515, 206);
-            this.btn_buscList.Name = "btn_buscList";
-            this.btn_buscList.Size = new System.Drawing.Size(90, 38);
-            this.btn_buscList.TabIndex = 34;
-            this.btn_buscList.Text = "Buscar de Lista";
-            this.btn_buscList.UseVisualStyleBackColor = true;
-            this.btn_buscList.Click += new System.EventHandler(this.btn_buscList_Click);
-            // 
-            // txt_numeroContrato
-            // 
-            this.txt_numeroContrato.Enabled = false;
-            this.txt_numeroContrato.Location = new System.Drawing.Point(294, 29);
-            this.txt_numeroContrato.Name = "txt_numeroContrato";
-            this.txt_numeroContrato.Size = new System.Drawing.Size(100, 20);
-            this.txt_numeroContrato.TabIndex = 33;
-            // 
             // FrmContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -769,9 +733,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_buscarCC;
         private System.Windows.Forms.Button btn_regContrato;
