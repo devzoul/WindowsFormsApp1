@@ -204,35 +204,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void btn_buscList_Click(object sender, EventArgs e)
-        {
-            using (FrmListarContratos frmListarContratos = new FrmListarContratos())
-            {
-                if (frmListarContratos.ShowDialog() == DialogResult.OK)
-                {
-
-
-                    txt_numeroContrato.Text = frmListarContratos.rContrato.numeroContrato.ToString();
-                    txt_buscarut.Text = frmListarContratos.rContrato.rutCli;
-                    dtp_buscacreacion.Value = DateTime.Parse(frmListarContratos.rContrato.creacion);
-                    dtp_buscatermino.Value = DateTime.Parse(frmListarContratos.rContrato.termino);
-                    dtp_buscahoraini.Value = DateTime.Parse(frmListarContratos.rContrato.fechaHoraInicio);
-                    dtp_buscahorafin.Value = DateTime.Parse(frmListarContratos.rContrato.fechaHoraTermino);
-                    txt_buscadir.Text = frmListarContratos.rContrato.direccionCon;
-                    cbx_buscavig.Text = frmListarContratos.rContrato.estaVigente;
-                    txt_buscaobs.Text = frmListarContratos.rContrato.observaciones;
-
-                    TCliente tcliente = new TCliente();
-                    Cliente cliente = new Cliente();
-
-                    cliente = tcliente.buscarCliente(frmListarContratos.rContrato.numeroContrato.ToString());
-
-                    txt_buscarz.Text = cliente.nombreContactoCli;
-
-                }
-            }
-        }
-
         private void btn_buscListCon_Click(object sender, EventArgs e)
         {
             using (FrmListarContratos frmListarContratos = new FrmListarContratos())
@@ -242,7 +213,6 @@ namespace WindowsFormsApp1
 
                     txt_numeroContrato.Text = frmListarContratos.rContrato.numeroContrato.ToString();
                     txt_buscarut.Text = frmListarContratos.rContrato.rutCli;
-                    txt_buscarz.Text = ("***pendiente***");
                     dtp_buscacreacion.Value = DateTime.Parse(frmListarContratos.rContrato.creacion);
                     dtp_buscatermino.Value = DateTime.Parse(frmListarContratos.rContrato.termino);
                     dtp_buscahoraini.Value = DateTime.Parse(frmListarContratos.rContrato.fechaHoraInicio);
@@ -251,6 +221,12 @@ namespace WindowsFormsApp1
                     cbx_buscavig.SelectedItem = frmListarContratos.rContrato.estaVigente;
                     cbx_buscatipo.SelectedItem = frmListarContratos.rContrato.nombreTipo;
                     txt_buscaobs.Text = frmListarContratos.rContrato.observaciones;
+
+                    TCliente tcliente = new TCliente();
+                    Cliente cliente = new Cliente();
+
+                    cliente = tcliente.buscarCliente(txt_buscarut.Text);
+                    txt_buscarz.Text = cliente.nombreContactoCli;
 
                 }
             }
