@@ -135,11 +135,13 @@ namespace WindowsFormsApp1
             TContrato tcontrato = new TContrato();
             Contrato contrato = new Contrato();
 
+
+
             contrato = tcontrato.buscarContrato(long.Parse(txt_buscacon.Text));
 
 
             txt_buscarut.Text = contrato.rutCli;
-            txt_buscarz.Text = ("***pendiente***");
+            
             dtp_buscacreacion.Value = DateTime.Parse(contrato.creacion);
             dtp_buscatermino.Value = DateTime.Parse(contrato.termino);
             dtp_buscahoraini.Value = DateTime.Parse(contrato.fechaHoraInicio);
@@ -165,6 +167,13 @@ namespace WindowsFormsApp1
             {
                 cbx_buscatipo.Text = "Aniversario";
             }
+
+            TCliente tcliente = new TCliente();
+            Cliente cliente = new Cliente();
+
+            cliente = tcliente.buscarCliente(contrato.rutCli);
+
+            txt_buscarz.Text = cliente.nombreContactoCli;
 
 
 

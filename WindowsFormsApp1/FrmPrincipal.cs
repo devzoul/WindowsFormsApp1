@@ -51,5 +51,10 @@ namespace WindowsFormsApp1
             FrmListarContratos frmListarContratos = new FrmListarContratos();
             frmListarContratos.Show();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
