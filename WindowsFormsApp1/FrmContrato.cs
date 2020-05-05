@@ -52,84 +52,122 @@ namespace WindowsFormsApp1
             contrato.termino = dtp_termino.Value.ToString("yyyy-MM-dd HH:mm:ss");
             contrato.fechaHoraInicio = dtp_horaIni.Value.ToString("yyyy-MM-dd HH:mm:ss");
             contrato.fechaHoraTermino = dtp_horaTerm.Value.ToString("yyyy-MM-dd HH:mm:ss");
-            contrato.direccionCon = txt_direccionContrato.Text;
-            contrato.estaVigente = cbx_vigente.SelectedItem.ToString();
-            contrato.observaciones = txt_observaciones.Text;
-            contrato.asistentes = Int32.Parse(txt_asistentes.Text);
-            contrato.participantes = Int32.Parse(txt_participantes.Text);
-            contrato.rutCli = txt_rutCliente.Text;
-            String numeroid = (dtp_creacion.Value.ToString("yyyyMMdd") + dtp_horaIni.Value.ToString("HHmm"));
-            contrato.numeroContrato = Int64.Parse(numeroid);
 
-
-
-            if (cbx_tipoContrato.SelectedItem.ToString() == "Matrimonio")
+            if (dtp_creacion.Value < dtp_termino.Value)
             {
-                contrato.idTipo = 1;
-
-            }
-            else if (cbx_tipoContrato.SelectedItem.ToString() == "Bautizo")
-            {
-                contrato.idTipo = 2;
-            }
-
-            else if (cbx_tipoContrato.SelectedItem.ToString() == "Cumpleaños")
-            {
-                contrato.idTipo = 3;
-            }
-
-            else if (cbx_tipoContrato.SelectedItem.ToString() == "Aniversario")
-            {
-                contrato.idTipo = 4;
-            }
-
-
-            if (contrato.asistentes >= 1 && contrato.asistentes <= 20)
-            {
-                recargo_asis = (3 * uf);
-            }
-            else if (contrato.asistentes >= 21 && contrato.asistentes <= 50)
-            {
-                recargo_asis = (5 * uf);
-            }
-            else
-            {
-                recargo_asis = (((contrato.asistentes) / 20) * 2) * uf;
-            }
-
-            if (contrato.participantes == 2)
-            {
-                recargo_parti = 2 * uf;
-            }
-            else if (contrato.participantes == 3)
-            {
-                recargo_parti = 3 * uf;
-            }
-            else if (contrato.participantes == 4)
-            {
-                recargo_parti = 3.5 * uf;
-            }
-
-            else
-            {
-                recargo_parti = Math.Round(3.5 * uf + (((contrato.participantes - 4) * 0.5) * uf));
-
-            }
-
-            tipoEvento = ttipoEvento.buscarTipoEvento(contrato.idTipo);
-
-            contrato.monto_total = recargo_asis + Convert.ToInt32(recargo_parti) + tipoEvento.valorBase;
-
-            DialogResult confirmacion = MessageBox.Show("El monto total del contrato es $"+ contrato.monto_total + "Desea confirmar la operacion", "Resultado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (confirmacion == DialogResult.Yes)
-            {
-                if (tcontraro.ingresarContrato(contrato))
+                if (txt_direccionContrato.Text != "")
                 {
-                    MessageBox.Show("Contrato ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiardatosCt();
-                }
+                    if (cbx_vigente.SelectedIndex >= 0)
+                    {
+                        if (txt_observaciones.Text != "")
+                        {
+                            if (txt_asistentes.Text != "" && txt_asistentes.Text != "0")
+                            {
+                                if (txt_participantes.Text != "" && txt_participantes.Text != "0")
+                                {
+                                    if (cbx_tipoContrato.SelectedIndex >= 0)
+                                    {
+                                        if (txt_rutCliente.Text != "")
+                                        {
+                                            contrato.direccionCon = txt_direccionContrato.Text;
+                                            contrato.estaVigente = cbx_vigente.SelectedItem.ToString();
+                                            contrato.observaciones = txt_observaciones.Text;
+                                            contrato.asistentes = Int32.Parse(txt_asistentes.Text);
+                                            contrato.participantes = Int32.Parse(txt_participantes.Text);
+                                            contrato.rutCli = txt_rutCliente.Text;
+                                            String numeroid = (dtp_creacion.Value.ToString("yyyyMMdd") + dtp_horaIni.Value.ToString("HHmm"));
+                                            contrato.numeroContrato = Int64.Parse(numeroid);
 
+
+
+                                            if (cbx_tipoContrato.SelectedItem.ToString() == "Matrimonio")
+                                            {
+                                                contrato.idTipo = 1;
+
+                                            }
+                                            else if (cbx_tipoContrato.SelectedItem.ToString() == "Bautizo")
+                                            {
+                                                contrato.idTipo = 2;
+                                            }
+
+                                            else if (cbx_tipoContrato.SelectedItem.ToString() == "Cumpleaños")
+                                            {
+                                                contrato.idTipo = 3;
+                                            }
+
+                                            else if (cbx_tipoContrato.SelectedItem.ToString() == "Aniversario")
+                                            {
+                                                contrato.idTipo = 4;
+                                            }
+
+
+                                            if (contrato.asistentes >= 1 && contrato.asistentes <= 20)
+                                            {
+                                                recargo_asis = (3 * uf);
+                                            }
+                                            else if (contrato.asistentes >= 21 && contrato.asistentes <= 50)
+                                            {
+                                                recargo_asis = (5 * uf);
+                                            }
+                                            else
+                                            {
+                                                recargo_asis = (((contrato.asistentes) / 20) * 2) * uf;
+                                            }
+
+                                            if (contrato.participantes == 2)
+                                            {
+                                                recargo_parti = 2 * uf;
+                                            }
+                                            else if (contrato.participantes == 3)
+                                            {
+                                                recargo_parti = 3 * uf;
+                                            }
+                                            else if (contrato.participantes == 4)
+                                            {
+                                                recargo_parti = 3.5 * uf;
+                                            }
+
+                                            else
+                                            {
+                                                recargo_parti = Math.Round(3.5 * uf + (((contrato.participantes - 4) * 0.5) * uf));
+
+                                            }
+
+                                            tipoEvento = ttipoEvento.buscarTipoEvento(contrato.idTipo);
+
+                                            contrato.monto_total = recargo_asis + Convert.ToInt32(recargo_parti) + tipoEvento.valorBase;
+
+                                            DialogResult confirmacion = MessageBox.Show("El monto total del contrato es $" + contrato.monto_total + "Desea confirmar la operacion", "Resultado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                            if (confirmacion == DialogResult.Yes)
+                                            {
+                                                if (tcontraro.ingresarContrato(contrato))
+                                                {
+                                                    MessageBox.Show("Contrato ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    LimpiardatosCt();
+                                                }
+
+                                            }
+                                        }
+                                        else { MessageBox.Show("Ingrese un rut correcto", "Rut Vacío", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                                    }
+                                    else { MessageBox.Show("Ingrese Tipo de Evento", "Tipo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+                                }
+                                else { MessageBox.Show("Ingrese N° de  participantes", "Participantes", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                            }
+                            else { MessageBox.Show("Ingrese N° de asistentes", "Asistentes", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                        }
+                        else { MessageBox.Show("Ingrese Observaciones al Contrato", "Observaciones", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    }
+                    else { MessageBox.Show("Ingrese vigencia del contrato", "Vigencia", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                }
+                else { MessageBox.Show("Ingrese direccion del contrato", "Direccion", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             }
+            else { MessageBox.Show("Fecha de Termino debe ser posterior a Creacion", "Fecha Contrato", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+            
+
+            
 
         }
 
@@ -146,6 +184,25 @@ namespace WindowsFormsApp1
             txt_asistentes.Text = ("");
             txt_participantes.Text = ("");
             txt_observaciones.Text = ("");
+
+        }
+
+        private void ActDes(Boolean estado)
+        {
+            dtp_creacion.Enabled = estado;
+            dtp_termino.Enabled = estado;
+            dtp_horaIni.Enabled = estado;
+            dtp_horaTerm.Enabled = estado;
+            txt_direccionContrato.Enabled = estado;
+            cbx_vigente.Enabled = estado;
+            txt_observaciones.Enabled = estado;
+            txt_asistentes.Enabled = estado;
+            txt_participantes.Enabled = estado;
+            btn_regContrato.Enabled = estado;
+            cbx_tipoContrato.Enabled = estado;
+            txt_rutCliente.Enabled = !estado;
+            btn_buscarCC.Enabled = !estado;
+
 
         }
 
@@ -176,6 +233,7 @@ namespace WindowsFormsApp1
                 else
                 {
                     MessageBox.Show("Registro encontrado con exito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ActDes(true);
                 }
             }
         }
@@ -235,7 +293,17 @@ namespace WindowsFormsApp1
 
         private void btn_limpiarCC_Click(object sender, EventArgs e)
         {
-
+            txt_rutCliente.Text = ("");
+            txt_razonCliente.Text = ("");
+            txt_direccionContrato.Text = ("");
+            cbx_vigente.ResetText();
+            cbx_vigente.SelectedIndex = -1;
+            cbx_tipoContrato.ResetText();
+            cbx_tipoContrato.SelectedIndex = -1;
+            txt_observaciones.Text = ("");                    
+            txt_participantes.Text = ("");
+            txt_asistentes.Text = ("");
+            ActDes(false);
         }
 
         private void btn_limpiarC_Click(object sender, EventArgs e)

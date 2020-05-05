@@ -307,6 +307,7 @@ namespace WindowsFormsApp1
             this.dtp_buscahorafin.Name = "dtp_buscahorafin";
             this.dtp_buscahorafin.Size = new System.Drawing.Size(149, 20);
             this.dtp_buscahorafin.TabIndex = 25;
+            this.dtp_buscahorafin.Value = new System.DateTime(2020, 5, 5, 0, 0, 0, 0);
             // 
             // dtp_buscahoraini
             // 
@@ -316,25 +317,29 @@ namespace WindowsFormsApp1
             this.dtp_buscahoraini.Location = new System.Drawing.Point(130, 139);
             this.dtp_buscahoraini.Name = "dtp_buscahoraini";
             this.dtp_buscahoraini.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtp_buscahoraini.Size = new System.Drawing.Size(147, 20);
+            this.dtp_buscahoraini.Size = new System.Drawing.Size(149, 20);
             this.dtp_buscahoraini.TabIndex = 24;
+            this.dtp_buscahoraini.Value = new System.DateTime(2020, 5, 5, 0, 0, 0, 0);
             // 
             // dtp_buscatermino
             // 
             this.dtp_buscatermino.Enabled = false;
+            this.dtp_buscatermino.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_buscatermino.Location = new System.Drawing.Point(130, 113);
             this.dtp_buscatermino.Name = "dtp_buscatermino";
-            this.dtp_buscatermino.Size = new System.Drawing.Size(213, 20);
+            this.dtp_buscatermino.Size = new System.Drawing.Size(147, 20);
             this.dtp_buscatermino.TabIndex = 23;
+            this.dtp_buscatermino.Value = new System.DateTime(2020, 1, 2, 0, 0, 0, 0);
             // 
             // dtp_buscacreacion
             // 
             this.dtp_buscacreacion.Enabled = false;
+            this.dtp_buscacreacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_buscacreacion.Location = new System.Drawing.Point(130, 87);
             this.dtp_buscacreacion.Name = "dtp_buscacreacion";
-            this.dtp_buscacreacion.Size = new System.Drawing.Size(213, 20);
+            this.dtp_buscacreacion.Size = new System.Drawing.Size(149, 20);
             this.dtp_buscacreacion.TabIndex = 22;
-            this.dtp_buscacreacion.Value = new System.DateTime(2020, 4, 30, 21, 6, 27, 0);
+            this.dtp_buscacreacion.Value = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dtp_buscacreacion.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
             // 
             // txt_buscaobs
@@ -508,7 +513,7 @@ namespace WindowsFormsApp1
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(23, 310);
+            this.label25.Location = new System.Drawing.Point(18, 309);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(68, 13);
             this.label25.TabIndex = 38;
@@ -517,7 +522,7 @@ namespace WindowsFormsApp1
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(21, 280);
+            this.label24.Location = new System.Drawing.Point(18, 284);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(55, 13);
             this.label24.TabIndex = 37;
@@ -525,6 +530,7 @@ namespace WindowsFormsApp1
             // 
             // txt_observaciones
             // 
+            this.txt_observaciones.Enabled = false;
             this.txt_observaciones.Location = new System.Drawing.Point(132, 337);
             this.txt_observaciones.Name = "txt_observaciones";
             this.txt_observaciones.Size = new System.Drawing.Size(358, 20);
@@ -532,7 +538,8 @@ namespace WindowsFormsApp1
             // 
             // txt_participantes
             // 
-            this.txt_participantes.Location = new System.Drawing.Point(132, 303);
+            this.txt_participantes.Enabled = false;
+            this.txt_participantes.Location = new System.Drawing.Point(132, 306);
             this.txt_participantes.Name = "txt_participantes";
             this.txt_participantes.Size = new System.Drawing.Size(100, 20);
             this.txt_participantes.TabIndex = 35;
@@ -556,6 +563,7 @@ namespace WindowsFormsApp1
             "4",
             "5",
             "6"});
+            this.cbx_vigente.Enabled = false;
             this.cbx_vigente.FormattingEnabled = true;
             this.cbx_vigente.Items.AddRange(new object[] {
             "Si",
@@ -577,6 +585,7 @@ namespace WindowsFormsApp1
             // 
             // txt_razonCliente
             // 
+            this.txt_razonCliente.Enabled = false;
             this.txt_razonCliente.Location = new System.Drawing.Point(132, 58);
             this.txt_razonCliente.Name = "txt_razonCliente";
             this.txt_razonCliente.Size = new System.Drawing.Size(100, 20);
@@ -611,16 +620,19 @@ namespace WindowsFormsApp1
             // dtp_horaTerm
             // 
             this.dtp_horaTerm.CustomFormat = "HH:mm";
+            this.dtp_horaTerm.Enabled = false;
             this.dtp_horaTerm.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_horaTerm.Location = new System.Drawing.Point(130, 165);
             this.dtp_horaTerm.Name = "dtp_horaTerm";
             this.dtp_horaTerm.ShowUpDown = true;
             this.dtp_horaTerm.Size = new System.Drawing.Size(149, 20);
             this.dtp_horaTerm.TabIndex = 25;
+            this.dtp_horaTerm.Value = new System.DateTime(2020, 5, 5, 0, 0, 0, 0);
             // 
             // dtp_horaIni
             // 
             this.dtp_horaIni.CustomFormat = "HH:mm";
+            this.dtp_horaIni.Enabled = false;
             this.dtp_horaIni.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_horaIni.Location = new System.Drawing.Point(132, 139);
             this.dtp_horaIni.Name = "dtp_horaIni";
@@ -628,26 +640,33 @@ namespace WindowsFormsApp1
             this.dtp_horaIni.ShowUpDown = true;
             this.dtp_horaIni.Size = new System.Drawing.Size(147, 20);
             this.dtp_horaIni.TabIndex = 24;
+            this.dtp_horaIni.Value = new System.DateTime(2020, 5, 5, 0, 0, 0, 0);
             this.dtp_horaIni.ValueChanged += new System.EventHandler(this.dtp_horaIni_ValueChanged);
             // 
             // dtp_termino
             // 
+            this.dtp_termino.Enabled = false;
+            this.dtp_termino.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_termino.Location = new System.Drawing.Point(132, 113);
             this.dtp_termino.Name = "dtp_termino";
-            this.dtp_termino.Size = new System.Drawing.Size(194, 20);
+            this.dtp_termino.Size = new System.Drawing.Size(147, 20);
             this.dtp_termino.TabIndex = 23;
+            this.dtp_termino.Value = new System.DateTime(2020, 1, 2, 0, 0, 0, 0);
             // 
             // dtp_creacion
             // 
+            this.dtp_creacion.Enabled = false;
+            this.dtp_creacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_creacion.Location = new System.Drawing.Point(132, 87);
             this.dtp_creacion.Name = "dtp_creacion";
-            this.dtp_creacion.Size = new System.Drawing.Size(194, 20);
+            this.dtp_creacion.Size = new System.Drawing.Size(147, 20);
             this.dtp_creacion.TabIndex = 22;
-            this.dtp_creacion.Value = new System.DateTime(2020, 4, 30, 21, 6, 27, 0);
+            this.dtp_creacion.Value = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             // 
             // txt_asistentes
             // 
-            this.txt_asistentes.Location = new System.Drawing.Point(132, 277);
+            this.txt_asistentes.Enabled = false;
+            this.txt_asistentes.Location = new System.Drawing.Point(132, 281);
             this.txt_asistentes.Name = "txt_asistentes";
             this.txt_asistentes.Size = new System.Drawing.Size(100, 20);
             this.txt_asistentes.TabIndex = 21;
@@ -675,6 +694,7 @@ namespace WindowsFormsApp1
             // 
             // btn_regContrato
             // 
+            this.btn_regContrato.Enabled = false;
             this.btn_regContrato.Location = new System.Drawing.Point(364, 132);
             this.btn_regContrato.Name = "btn_regContrato";
             this.btn_regContrato.Size = new System.Drawing.Size(93, 53);
@@ -690,19 +710,21 @@ namespace WindowsFormsApp1
             "2",
             "3",
             "4"});
+            this.cbx_tipoContrato.Enabled = false;
             this.cbx_tipoContrato.FormattingEnabled = true;
             this.cbx_tipoContrato.Items.AddRange(new object[] {
             "Matrimonio",
             "Bautizo",
             "Cumpleaños",
             "Aniversario"});
-            this.cbx_tipoContrato.Location = new System.Drawing.Point(132, 250);
+            this.cbx_tipoContrato.Location = new System.Drawing.Point(132, 247);
             this.cbx_tipoContrato.Name = "cbx_tipoContrato";
             this.cbx_tipoContrato.Size = new System.Drawing.Size(121, 21);
             this.cbx_tipoContrato.TabIndex = 15;
             // 
             // txt_direccionContrato
             // 
+            this.txt_direccionContrato.Enabled = false;
             this.txt_direccionContrato.Location = new System.Drawing.Point(132, 191);
             this.txt_direccionContrato.Name = "txt_direccionContrato";
             this.txt_direccionContrato.Size = new System.Drawing.Size(100, 20);
