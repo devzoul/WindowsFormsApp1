@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListarClientes));
             this.button1 = new System.Windows.Forms.Button();
             this.dtg_Clientes = new System.Windows.Forms.DataGridView();
             this.btn_cancelar = new System.Windows.Forms.Button();
@@ -230,6 +231,7 @@
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.dtg_Clientes);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListarClientes";
             this.Text = "OnBreak Listar Cliente";
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Clientes)).EndInit();

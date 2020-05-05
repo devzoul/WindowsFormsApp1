@@ -32,6 +32,7 @@
         
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txt_raz = new System.Windows.Forms.GroupBox();
             this.btn_del = new System.Windows.Forms.Button();
@@ -631,6 +632,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 490);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCliente";
             this.Text = "OnBreak Administrar Cliente";
             this.tabPage2.ResumeLayout(false);

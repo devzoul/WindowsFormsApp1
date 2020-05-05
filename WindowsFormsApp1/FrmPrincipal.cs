@@ -56,5 +56,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
