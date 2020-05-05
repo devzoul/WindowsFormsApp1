@@ -348,7 +348,7 @@ namespace WindowsFormsApp1
                     txt_buscaobs.Text = frmListarContratos.rContrato.observaciones;
                     txt_buscaasis.Text = frmListarContratos.rContrato.asistentes.ToString();
                     txt_buscaparti.Text = frmListarContratos.rContrato.participantes.ToString();
-                    txt_buscamonto.Text = frmListarContratos.rContrato.observaciones.ToString();
+                    txt_buscamonto.Text = frmListarContratos.rContrato.monto_total.ToString();
 
 
 

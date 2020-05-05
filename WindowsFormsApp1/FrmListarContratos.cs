@@ -141,6 +141,9 @@ namespace WindowsFormsApp1
                 rContrato.direccionCon = txt_sDireccionC.Text;
                 rContrato.estaVigente = txt_sVigente.Text;
                 rContrato.observaciones = txt_sObservaciones.Text;
+                rContrato.participantes = Int32.Parse(txt_sParticipantes.Text) ;
+                rContrato.asistentes = Int32.Parse(txt_sAsistentes.Text);
+                rContrato.monto_total = Int32.Parse(txt_sMontoTotal.Text);
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
