@@ -34,7 +34,6 @@
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txt_raz = new System.Windows.Forms.GroupBox();
-            this.btn_listado = new System.Windows.Forms.Button();
             this.btn_del = new System.Windows.Forms.Button();
             this.btn_mod = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -58,6 +57,7 @@
             this.data_clientes = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_rutBusc = new System.Windows.Forms.TextBox();
+            this.btn_listado = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.btn_busc = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -130,16 +130,6 @@
             this.txt_raz.TabIndex = 1;
             this.txt_raz.TabStop = false;
             this.txt_raz.Text = "Información";
-            // 
-            // btn_listado
-            // 
-            this.btn_listado.Location = new System.Drawing.Point(186, 58);
-            this.btn_listado.Name = "btn_listado";
-            this.btn_listado.Size = new System.Drawing.Size(85, 39);
-            this.btn_listado.TabIndex = 39;
-            this.btn_listado.Text = "Buscar de Lista";
-            this.btn_listado.UseVisualStyleBackColor = true;
-            this.btn_listado.Click += new System.EventHandler(this.btn_listado_Click);
             // 
             // btn_del
             // 
@@ -249,6 +239,7 @@
             this.txt_telefonoB.Name = "txt_telefonoB";
             this.txt_telefonoB.Size = new System.Drawing.Size(100, 20);
             this.txt_telefonoB.TabIndex = 32;
+            this.txt_telefonoB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefonoB_KeyPress);
             // 
             // label12
             // 
@@ -372,6 +363,16 @@
             this.txt_rutBusc.Name = "txt_rutBusc";
             this.txt_rutBusc.Size = new System.Drawing.Size(100, 20);
             this.txt_rutBusc.TabIndex = 36;
+            // 
+            // btn_listado
+            // 
+            this.btn_listado.Location = new System.Drawing.Point(186, 58);
+            this.btn_listado.Name = "btn_listado";
+            this.btn_listado.Size = new System.Drawing.Size(85, 39);
+            this.btn_listado.TabIndex = 39;
+            this.btn_listado.Text = "Buscar de Lista";
+            this.btn_listado.UseVisualStyleBackColor = true;
+            this.btn_listado.Click += new System.EventHandler(this.btn_listado_Click);
             // 
             // label17
             // 
@@ -502,6 +503,8 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(100, 20);
             this.txt_telefono.TabIndex = 13;
+            this.txt_telefono.TextChanged += new System.EventHandler(this.txt_telefono_TextChanged);
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // txt_direccionCliente
             // 
@@ -629,7 +632,7 @@
             this.ClientSize = new System.Drawing.Size(810, 490);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmCliente";
-            this.Text = "FrmCliente";
+            this.Text = "OnBreak Administrar Cliente";
             this.tabPage2.ResumeLayout(false);
             this.txt_raz.ResumeLayout(false);
             this.txt_raz.PerformLayout();

@@ -278,7 +278,7 @@
             this.Controls.Add(this.dtg_Contratos);
             this.Controls.Add(this.btn_listc_ok);
             this.Name = "FrmListarContratos";
-            this.Text = "FrmListarContratos";
+            this.Text = "OnBreak Listar Contrato";
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Contratos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

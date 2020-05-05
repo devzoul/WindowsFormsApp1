@@ -418,5 +418,10 @@ namespace WindowsFormsApp1
                 e.Handled = true;
             }
         }
+
+        private void txt_asistentes_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

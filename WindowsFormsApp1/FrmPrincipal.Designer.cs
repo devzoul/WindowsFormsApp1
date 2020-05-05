@@ -108,6 +108,7 @@
             this.Controls.Add(this.btn_ListarClientes);
             this.Controls.Add(this.btn_contratos);
             this.Controls.Add(this.btn_clientes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
             this.Text = "OnBreak Menu Principal";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

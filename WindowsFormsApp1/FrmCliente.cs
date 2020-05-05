@@ -11,10 +11,14 @@ using System.Windows.Forms;
 namespace WindowsFormsApp1
 {
     public partial class FrmCliente : Form
+
+
     {
+        
         public FrmCliente()
         {
             InitializeComponent();
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,21 +43,31 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-            TCliente tcliente = new TCliente();
+
+            if (txt_rut.Text.Length ==0 || txt_nombre.Text.Length == 0 || txt_razonSocial.Text.Length ==0 ||txt_mail.Text.Length ==0||txt_direccionCliente.Text.Length==0|| txt_telefono.Text.Length==0||cbx_actividad.SelectedIndex==-1||cbx_tipoCliente.SelectedIndex==-1)
+            {
+                MessageBox.Show("No deben existir campos vacios","Error",  MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                
+                Cliente cliente = new Cliente();
+                TCliente tcliente = new TCliente();
 
 
-            cliente.rutCli = txt_rut.Text;
-            cliente.razon_social = txt_razonSocial.Text;
-            cliente.nombreContactoCli = txt_nombre.Text;
-            cliente.mailContacto = txt_mail.Text;
-            cliente.direccionCli = txt_direccionCliente.Text;
-            cliente.telefono = Int32.Parse(txt_telefono.Text);
-            cliente.actividad = cbx_actividad.SelectedItem.ToString();
-            cliente.tipoCli = cbx_tipoCliente.SelectedItem.ToString();
-            tcliente.ingresarCliente(cliente);
-            MessageBox.Show("Cliente ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            LimpiarDatosAgree();
+                cliente.rutCli = txt_rut.Text;
+                cliente.razon_social = txt_razonSocial.Text;
+                cliente.nombreContactoCli = txt_nombre.Text;
+                cliente.mailContacto = txt_mail.Text;
+                cliente.direccionCli = txt_direccionCliente.Text;
+                cliente.telefono = Int32.Parse(txt_telefono.Text);
+                cliente.actividad = cbx_actividad.SelectedItem.ToString();
+                cliente.tipoCli = cbx_tipoCliente.SelectedItem.ToString();
+                tcliente.ingresarCliente(cliente);
+                MessageBox.Show("Cliente ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarDatosAgree();
+            }
+            
         }
 
         private void btn_test_Click(object sender, EventArgs e)
@@ -162,22 +176,31 @@ namespace WindowsFormsApp1
 
         private void btn_mod_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-            TCliente tcliente = new TCliente();
 
-            cliente.rutCli = txt_rutB.Text;
-            cliente.razon_social = txt_razonSocialB.Text;
-            cliente.nombreContactoCli = txt_nombreB.Text;
-            cliente.mailContacto = txt_mailB.Text;
-            cliente.direccionCli = txt_direccionCB.Text;
-            cliente.telefono = Int32.Parse(txt_telefonoB.Text);
-            cliente.actividad = cbx_actividadB.Text;
-            cliente.tipoCli = cbx_tipoB.Text;
-            if (tcliente.modificarCliente(cliente))
+            if (txt_rutB.Text.Length == 0 || txt_nombreB.Text.Length == 0 || txt_razonSocialB.Text.Length == 0 || txt_mailB.Text.Length == 0 || txt_direccionCB.Text.Length == 0 || txt_telefonoB.Text.Length == 0 || cbx_actividadB.SelectedIndex == -1 || cbx_tipoB.SelectedIndex == -1)
             {
-                LimpiarDatosBS();
-
+                MessageBox.Show("No deben existir campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else
+            {
+                Cliente cliente = new Cliente();
+                TCliente tcliente = new TCliente();
+
+                cliente.rutCli = txt_rutB.Text;
+                cliente.razon_social = txt_razonSocialB.Text;
+                cliente.nombreContactoCli = txt_nombreB.Text;
+                cliente.mailContacto = txt_mailB.Text;
+                cliente.direccionCli = txt_direccionCB.Text;
+                cliente.telefono = Int32.Parse(txt_telefonoB.Text);
+                cliente.actividad = cbx_actividadB.Text;
+                cliente.tipoCli = cbx_tipoB.Text;
+                if (tcliente.modificarCliente(cliente))
+                {
+                    LimpiarDatosBS();
+
+                }
+            }
+            
 
             
 
@@ -222,6 +245,27 @@ namespace WindowsFormsApp1
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_telefono_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_telefonoB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
