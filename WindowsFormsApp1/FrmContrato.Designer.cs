@@ -66,8 +66,6 @@ namespace WindowsFormsApp1
             this.btn_limpiarCC = new System.Windows.Forms.Button();
             this.txt_razonCliente = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_monto = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.txt_rutCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtp_horaTerm = new System.Windows.Forms.DateTimePicker();
@@ -441,8 +439,6 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.btn_limpiarCC);
             this.groupBox1.Controls.Add(this.txt_razonCliente);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txt_monto);
-            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txt_rutCliente);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtp_horaTerm);
@@ -519,24 +515,6 @@ namespace WindowsFormsApp1
             this.label11.Size = new System.Drawing.Size(73, 13);
             this.label11.TabIndex = 30;
             this.label11.Text = "Razon Cliente";
-            // 
-            // txt_monto
-            // 
-            this.txt_monto.Enabled = false;
-            this.txt_monto.Location = new System.Drawing.Point(384, 296);
-            this.txt_monto.Name = "txt_monto";
-            this.txt_monto.Size = new System.Drawing.Size(100, 20);
-            this.txt_monto.TabIndex = 29;
-            this.txt_monto.TextChanged += new System.EventHandler(this.txt_monto_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(271, 303);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(107, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Monto Total Contrato";
             // 
             // txt_rutCliente
             // 
@@ -850,8 +828,6 @@ namespace WindowsFormsApp1
         private Button btn_limpiarCC;
         private TextBox txt_razonCliente;
         private Label label11;
-        private TextBox txt_monto;
-        private Label label10;
         private TextBox txt_rutCliente;
         private Label label1;
         private DateTimePicker dtp_horaTerm;
