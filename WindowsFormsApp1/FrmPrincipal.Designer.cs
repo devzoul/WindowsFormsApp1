@@ -34,14 +34,16 @@
             this.btn_ListarClientes = new System.Windows.Forms.Button();
             this.btn_ListarContratos = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_exit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_clientes
             // 
             this.btn_clientes.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btn_clientes.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.dark_logo_transparent_background;
             this.btn_clientes.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clientes.Image = ((System.Drawing.Image)(resources.GetObject("btn_clientes.Image")));
+            this.btn_clientes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_clientes.Location = new System.Drawing.Point(106, 100);
             this.btn_clientes.Name = "btn_clientes";
             this.btn_clientes.Size = new System.Drawing.Size(291, 190);
@@ -55,6 +57,8 @@
             this.btn_contratos.BackColor = System.Drawing.SystemColors.Highlight;
             this.btn_contratos.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.dark_logo_transparent_background;
             this.btn_contratos.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_contratos.Image = ((System.Drawing.Image)(resources.GetObject("btn_contratos.Image")));
+            this.btn_contratos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_contratos.Location = new System.Drawing.Point(480, 100);
             this.btn_contratos.Name = "btn_contratos";
             this.btn_contratos.Size = new System.Drawing.Size(291, 190);
@@ -68,6 +72,8 @@
             this.btn_ListarClientes.BackColor = System.Drawing.SystemColors.Highlight;
             this.btn_ListarClientes.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.dark_logo_transparent_background;
             this.btn_ListarClientes.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ListarClientes.Image = ((System.Drawing.Image)(resources.GetObject("btn_ListarClientes.Image")));
+            this.btn_ListarClientes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_ListarClientes.Location = new System.Drawing.Point(106, 339);
             this.btn_ListarClientes.Name = "btn_ListarClientes";
             this.btn_ListarClientes.Size = new System.Drawing.Size(291, 190);
@@ -81,6 +87,8 @@
             this.btn_ListarContratos.BackColor = System.Drawing.SystemColors.Highlight;
             this.btn_ListarContratos.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.dark_logo_transparent_background;
             this.btn_ListarContratos.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ListarContratos.Image = ((System.Drawing.Image)(resources.GetObject("btn_ListarContratos.Image")));
+            this.btn_ListarContratos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_ListarContratos.Location = new System.Drawing.Point(480, 339);
             this.btn_ListarContratos.Name = "btn_ListarContratos";
             this.btn_ListarContratos.Size = new System.Drawing.Size(291, 190);
@@ -100,12 +108,24 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_exit.Image = ((System.Drawing.Image)(resources.GetObject("btn_exit.Image")));
+            this.btn_exit.Location = new System.Drawing.Point(850, 358);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(183, 137);
+            this.btn_exit.TabIndex = 6;
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1111, 547);
+            this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_ListarContratos);
             this.Controls.Add(this.btn_ListarClientes);
@@ -127,6 +147,7 @@
         private System.Windows.Forms.Button btn_ListarClientes;
         private System.Windows.Forms.Button btn_ListarContratos;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_exit;
     }
 }
 

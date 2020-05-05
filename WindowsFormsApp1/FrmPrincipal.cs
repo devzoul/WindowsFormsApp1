@@ -61,5 +61,16 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            DialogResult salir =  MessageBox.Show("Esta seguro que desea salir de la aplicacion?","Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (salir == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+
+        }
     }
 }
