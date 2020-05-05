@@ -22,10 +22,16 @@ namespace WindowsFormsApp1
 
         public  String nombreTipo { get; set; }
 
+        public int asistentes { get; set; }
+
+        public int participantes { get; set; }
+
+        public int monto_total { get; set; }
+
 
         public Contrato() { }
 
-        public Contrato(int numeroContrato, String creacion, String termino, String fechaHoraInicio, String fechaHoraTermino, string direccionCon, string estaVigente, int tipoCon, string observaciones, string rutCli)
+        public Contrato(long numeroContrato, string creacion, string termino, string fechaHoraInicio, string fechaHoraTermino, string direccionCon, string estaVigente, int idTipo, string observaciones, string rutCli, string nombreTipo, int asistentes, int participantes, int monto_total)
         {
             this.numeroContrato = numeroContrato;
             this.creacion = creacion;
@@ -34,9 +40,14 @@ namespace WindowsFormsApp1
             this.fechaHoraTermino = fechaHoraTermino;
             this.direccionCon = direccionCon;
             this.estaVigente = estaVigente;
-            this.idTipo = tipoCon;
+            this.idTipo = idTipo;
             this.observaciones = observaciones;
             this.rutCli = rutCli;
+            this.nombreTipo = nombreTipo;
+            this.asistentes = asistentes;
+            this.participantes = participantes;
+            this.monto_total = monto_total;
         }
+    }
     }
 }

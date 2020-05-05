@@ -41,15 +41,20 @@ namespace WindowsFormsApp1
         {
             TContrato tcontraro = new TContrato();
             Contrato contrato = new Contrato();
+            int uf = 28702;
+            int recargo_asis = 0;
+            double recargo_parti = 0;
 
-            
+
             contrato.creacion = dtp_creacion.Value.ToString("yyyy-MM-dd HH:mm:ss");
             contrato.termino = dtp_termino.Value.ToString("yyyy-MM-dd HH:mm:ss");
             contrato.fechaHoraInicio = dtp_horaIni.Value.ToString("yyyy-MM-dd HH:mm:ss");
             contrato.fechaHoraTermino = dtp_horaTerm.Value.ToString("yyyy-MM-dd HH:mm:ss");
             contrato.direccionCon = txt_direccionContrato.Text;
             contrato.estaVigente = cbx_vigente.SelectedItem.ToString();
-            contrato.observaciones = txt_observaciones.Text;
+            contrato.observaciones = txt_asistentes.Text;
+            contrato.asistentes = Int32.Parse(txt_asistentes.Text);
+            contrato.participantes = Int32.Parse(txt_participantes.Text);
             contrato.rutCli = txt_rutCliente.Text;
             String numeroid = (dtp_creacion.Value.ToString("yyyyMMdd") + dtp_horaIni.Value.ToString("HHmm"));
             contrato.numeroContrato = Int64.Parse(numeroid);
@@ -76,6 +81,41 @@ namespace WindowsFormsApp1
                 contrato.idTipo = 4;
             }
 
+
+            if (contrato.asistentes>=1 && contrato.asistentes<=20)
+            {
+                recargo_asis = (3 * uf);
+            }
+            else if (contrato.asistentes >= 21 && contrato.asistentes <= 50)
+            {
+                recargo_asis = (5 * uf);
+            }
+            else
+            {
+                recargo_asis = (((contrato.asistentes)/20)*2)*uf ;
+            }
+
+            if (contrato.participantes==2)
+            {
+                recargo_parti = 2 * uf;
+            }
+            else if (contrato.participantes==3)
+            {
+                recargo_parti = 3 * uf;
+            }
+            else if (contrato.participantes==4)
+            {
+                recargo_parti = 3.5 * uf;
+            }
+
+            else
+            {
+                recargo_parti = (3.5 * uf + (((contrato.participantes - 4) * 0.5) * uf));
+            }
+
+
+            
+
             
             if (tcontraro.ingresarContrato(contrato))
             {
@@ -94,7 +134,7 @@ namespace WindowsFormsApp1
             cbx_vigente.SelectedIndex = -1;
             cbx_tipoContrato.ResetText();
             cbx_vigente.SelectedIndex = -1;
-            txt_observaciones.Text = ("");
+            txt_asistentes.Text = ("");
             txt_monto.Text = ("");
 
         }
@@ -230,6 +270,11 @@ namespace WindowsFormsApp1
 
                 }
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

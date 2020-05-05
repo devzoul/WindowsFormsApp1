@@ -19,8 +19,8 @@ namespace WindowsFormsApp1
             {
 
                 MySqlConnection conexion = Conexion.abrirURL();
-                MySqlCommand orden = new MySqlCommand(string.Format("INSERT INTO CONTRATO (numeroContrato, creacion, termino, fechaHoraInicio, fechaHoraTermino, direccionCon, estaVigente, id_tipo, observaciones, rutCli  ) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}', '{7}', '{8}','{9}')",
-                    contrato.numeroContrato, contrato.creacion, contrato.termino, contrato.fechaHoraInicio, contrato.fechaHoraTermino, contrato.direccionCon, contrato.estaVigente, contrato.idTipo, contrato.observaciones, contrato.rutCli), conexion);
+                MySqlCommand orden = new MySqlCommand(string.Format("INSERT INTO CONTRATO (numeroContrato, creacion, termino, fechaHoraInicio, fechaHoraTermino, direccionCon, estaVigente, id_tipo, observaciones, asistente, participante, monto_total, rutCli  ) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}', '{7}', '{8}', '{9}', '{10}', '{11}','{12}')",
+                    contrato.numeroContrato, contrato.creacion, contrato.termino, contrato.fechaHoraInicio, contrato.fechaHoraTermino, contrato.direccionCon, contrato.estaVigente, contrato.idTipo, contrato.observaciones, contrato.asistentes, contrato.participantes, contrato.monto_total, contrato.rutCli), conexion);
                 MySqlDataReader lector = orden.ExecuteReader();
                 lector.Close();
                 conexion.Close();
@@ -59,7 +59,10 @@ namespace WindowsFormsApp1
                 contrato.estaVigente = lector.GetString(6);
                 contrato.idTipo= lector.GetInt32(7);
                 contrato.observaciones = lector.GetString(8);
-                contrato.rutCli = lector.GetString(9);
+                contrato.asistentes = lector.GetInt32(9);
+                contrato.participantes = lector.GetInt32(10);
+                contrato.monto_total = lector.GetInt32(11);
+                contrato.rutCli = lector.GetString(12);
 
 
             }
@@ -85,8 +88,11 @@ namespace WindowsFormsApp1
                 contrato.estaVigente = lector.GetString(6);
                 contrato.idTipo = lector.GetInt32(7);
                 contrato.observaciones = lector.GetString(8);
-                contrato.rutCli = lector.GetString(9);
-                contrato.nombreTipo = lector.GetString(10);
+                contrato.asistentes = lector.GetInt32(9);
+                contrato.participantes = lector.GetInt32(10);
+                contrato.monto_total = lector.GetInt32(11);
+                contrato.rutCli = lector.GetString(12);
+                contrato.nombreTipo = lector.GetString(13);
 
 
                 lista.Add(contrato);
