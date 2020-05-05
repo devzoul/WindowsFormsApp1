@@ -239,6 +239,7 @@
             this.txt_telefonoB.Name = "txt_telefonoB";
             this.txt_telefonoB.Size = new System.Drawing.Size(100, 20);
             this.txt_telefonoB.TabIndex = 32;
+            this.txt_telefonoB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefonoB_KeyPress);
             // 
             // label12
             // 
@@ -503,6 +504,7 @@
             this.txt_telefono.Size = new System.Drawing.Size(100, 20);
             this.txt_telefono.TabIndex = 13;
             this.txt_telefono.TextChanged += new System.EventHandler(this.txt_telefono_TextChanged);
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // txt_direccionCliente
             // 
@@ -630,7 +632,7 @@
             this.ClientSize = new System.Drawing.Size(810, 490);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmCliente";
-            this.Text = "FrmCliente";
+            this.Text = "OnBreak Administrar Cliente";
             this.tabPage2.ResumeLayout(false);
             this.txt_raz.ResumeLayout(false);
             this.txt_raz.PerformLayout();

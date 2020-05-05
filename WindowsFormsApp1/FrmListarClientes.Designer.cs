@@ -231,7 +231,7 @@
             this.Controls.Add(this.dtg_Clientes);
             this.Controls.Add(this.button1);
             this.Name = "FrmListarClientes";
-            this.Text = "FrmListarClientes";
+            this.Text = "OnBreak Listar Cliente";
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Clientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -648,6 +648,7 @@ namespace WindowsFormsApp1
             this.txt_asistentes.Name = "txt_asistentes";
             this.txt_asistentes.Size = new System.Drawing.Size(100, 20);
             this.txt_asistentes.TabIndex = 21;
+            this.txt_asistentes.TextChanged += new System.EventHandler(this.txt_asistentes_TextChanged);
             this.txt_asistentes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_asistentes_KeyPress);
             // 
             // label9
@@ -784,7 +785,7 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(921, 500);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmContrato";
-            this.Text = "FrmContrato";
+            this.Text = "OnBreak Administrar Contrato";
             this.Load += new System.EventHandler(this.FrmContrato_Load);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
