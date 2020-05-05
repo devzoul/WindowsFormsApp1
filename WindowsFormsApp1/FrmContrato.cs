@@ -261,6 +261,11 @@ namespace WindowsFormsApp1
                     cbx_buscavig.SelectedItem = frmListarContratos.rContrato.estaVigente;
                     cbx_buscatipo.SelectedItem = frmListarContratos.rContrato.nombreTipo;
                     txt_buscaobs.Text = frmListarContratos.rContrato.observaciones;
+                    txt_buscaasis.Text = frmListarContratos.rContrato.asistentes.ToString();
+                    txt_buscaparti.Text = frmListarContratos.rContrato.participantes.ToString();
+                    txt_buscamonto.Text = frmListarContratos.rContrato.observaciones.ToString();
+
+
 
                     TCliente tcliente = new TCliente();
                     Cliente cliente = new Cliente();

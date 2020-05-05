@@ -47,6 +47,9 @@
             this.btn_listc_ok = new System.Windows.Forms.Button();
             this.txt_sVigente = new System.Windows.Forms.TextBox();
             this.txt_sObservaciones = new System.Windows.Forms.TextBox();
+            this.txt_sMontoTotal = new System.Windows.Forms.TextBox();
+            this.txt_sParticipantes = new System.Windows.Forms.TextBox();
+            this.txt_sAsistentes = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Contratos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,71 +83,71 @@
             // txt_sDireccionC
             // 
             this.txt_sDireccionC.Enabled = false;
-            this.txt_sDireccionC.Location = new System.Drawing.Point(661, 430);
+            this.txt_sDireccionC.Location = new System.Drawing.Point(661, 482);
             this.txt_sDireccionC.Name = "txt_sDireccionC";
-            this.txt_sDireccionC.Size = new System.Drawing.Size(100, 20);
+            this.txt_sDireccionC.Size = new System.Drawing.Size(223, 20);
             this.txt_sDireccionC.TabIndex = 32;
             this.txt_sDireccionC.Visible = false;
             // 
             // txt_sHoraFin
             // 
             this.txt_sHoraFin.Enabled = false;
-            this.txt_sHoraFin.Location = new System.Drawing.Point(661, 404);
+            this.txt_sHoraFin.Location = new System.Drawing.Point(661, 456);
             this.txt_sHoraFin.Name = "txt_sHoraFin";
-            this.txt_sHoraFin.Size = new System.Drawing.Size(100, 20);
+            this.txt_sHoraFin.Size = new System.Drawing.Size(223, 20);
             this.txt_sHoraFin.TabIndex = 31;
             this.txt_sHoraFin.Visible = false;
             // 
             // txt_sHoraIni
             // 
             this.txt_sHoraIni.Enabled = false;
-            this.txt_sHoraIni.Location = new System.Drawing.Point(661, 378);
+            this.txt_sHoraIni.Location = new System.Drawing.Point(661, 430);
             this.txt_sHoraIni.Name = "txt_sHoraIni";
-            this.txt_sHoraIni.Size = new System.Drawing.Size(100, 20);
+            this.txt_sHoraIni.Size = new System.Drawing.Size(223, 20);
             this.txt_sHoraIni.TabIndex = 30;
             this.txt_sHoraIni.Visible = false;
             // 
             // txt_sFechaTermino
             // 
             this.txt_sFechaTermino.Enabled = false;
-            this.txt_sFechaTermino.Location = new System.Drawing.Point(661, 352);
+            this.txt_sFechaTermino.Location = new System.Drawing.Point(661, 404);
             this.txt_sFechaTermino.Name = "txt_sFechaTermino";
-            this.txt_sFechaTermino.Size = new System.Drawing.Size(100, 20);
+            this.txt_sFechaTermino.Size = new System.Drawing.Size(223, 20);
             this.txt_sFechaTermino.TabIndex = 29;
             this.txt_sFechaTermino.Visible = false;
             // 
             // txt_sFechaCreacion
             // 
             this.txt_sFechaCreacion.Enabled = false;
-            this.txt_sFechaCreacion.Location = new System.Drawing.Point(552, 430);
+            this.txt_sFechaCreacion.Location = new System.Drawing.Point(552, 482);
             this.txt_sFechaCreacion.Name = "txt_sFechaCreacion";
-            this.txt_sFechaCreacion.Size = new System.Drawing.Size(100, 20);
+            this.txt_sFechaCreacion.Size = new System.Drawing.Size(223, 20);
             this.txt_sFechaCreacion.TabIndex = 28;
             this.txt_sFechaCreacion.Visible = false;
             // 
             // txt_sTipoC
             // 
             this.txt_sTipoC.Enabled = false;
-            this.txt_sTipoC.Location = new System.Drawing.Point(552, 404);
+            this.txt_sTipoC.Location = new System.Drawing.Point(552, 456);
             this.txt_sTipoC.Name = "txt_sTipoC";
-            this.txt_sTipoC.Size = new System.Drawing.Size(100, 20);
+            this.txt_sTipoC.Size = new System.Drawing.Size(223, 20);
             this.txt_sTipoC.TabIndex = 27;
             this.txt_sTipoC.Visible = false;
             // 
             // txt_sRutC
             // 
             this.txt_sRutC.Enabled = false;
-            this.txt_sRutC.Location = new System.Drawing.Point(552, 378);
+            this.txt_sRutC.Location = new System.Drawing.Point(552, 430);
             this.txt_sRutC.Name = "txt_sRutC";
-            this.txt_sRutC.Size = new System.Drawing.Size(100, 20);
+            this.txt_sRutC.Size = new System.Drawing.Size(223, 20);
             this.txt_sRutC.TabIndex = 26;
             this.txt_sRutC.Visible = false;
             // 
             // txt_sContrato
             // 
-            this.txt_sContrato.Location = new System.Drawing.Point(552, 352);
+            this.txt_sContrato.Location = new System.Drawing.Point(552, 404);
             this.txt_sContrato.Name = "txt_sContrato";
-            this.txt_sContrato.Size = new System.Drawing.Size(100, 20);
+            this.txt_sContrato.Size = new System.Drawing.Size(223, 20);
             this.txt_sContrato.TabIndex = 25;
             this.txt_sContrato.Visible = false;
             // 
@@ -174,9 +177,9 @@
             // 
             // btn_cancelarLc
             // 
-            this.btn_cancelarLc.Location = new System.Drawing.Point(212, 360);
+            this.btn_cancelarLc.Location = new System.Drawing.Point(362, 360);
             this.btn_cancelarLc.Name = "btn_cancelarLc";
-            this.btn_cancelarLc.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelarLc.Size = new System.Drawing.Size(151, 23);
             this.btn_cancelarLc.TabIndex = 21;
             this.btn_cancelarLc.Text = "Cancelar";
             this.btn_cancelarLc.UseVisualStyleBackColor = true;
@@ -187,16 +190,16 @@
             this.dtg_Contratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Contratos.Location = new System.Drawing.Point(19, 62);
             this.dtg_Contratos.Name = "dtg_Contratos";
-            this.dtg_Contratos.Size = new System.Drawing.Size(742, 280);
+            this.dtg_Contratos.Size = new System.Drawing.Size(865, 280);
             this.dtg_Contratos.TabIndex = 20;
             this.dtg_Contratos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_Contratos_CellClick);
             this.dtg_Contratos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_Contratos_CellContentClick);
             // 
             // btn_listc_ok
             // 
-            this.btn_listc_ok.Location = new System.Drawing.Point(102, 360);
+            this.btn_listc_ok.Location = new System.Drawing.Point(191, 360);
             this.btn_listc_ok.Name = "btn_listc_ok";
-            this.btn_listc_ok.Size = new System.Drawing.Size(75, 23);
+            this.btn_listc_ok.Size = new System.Drawing.Size(151, 23);
             this.btn_listc_ok.TabIndex = 19;
             this.btn_listc_ok.Text = "Ok";
             this.btn_listc_ok.UseVisualStyleBackColor = true;
@@ -205,26 +208,56 @@
             // txt_sVigente
             // 
             this.txt_sVigente.Enabled = false;
-            this.txt_sVigente.Location = new System.Drawing.Point(446, 352);
+            this.txt_sVigente.Location = new System.Drawing.Point(446, 404);
             this.txt_sVigente.Name = "txt_sVigente";
-            this.txt_sVigente.Size = new System.Drawing.Size(100, 20);
+            this.txt_sVigente.Size = new System.Drawing.Size(223, 20);
             this.txt_sVigente.TabIndex = 36;
             this.txt_sVigente.Visible = false;
             // 
             // txt_sObservaciones
             // 
             this.txt_sObservaciones.Enabled = false;
-            this.txt_sObservaciones.Location = new System.Drawing.Point(446, 378);
+            this.txt_sObservaciones.Location = new System.Drawing.Point(446, 430);
             this.txt_sObservaciones.Name = "txt_sObservaciones";
-            this.txt_sObservaciones.Size = new System.Drawing.Size(100, 20);
+            this.txt_sObservaciones.Size = new System.Drawing.Size(223, 20);
             this.txt_sObservaciones.TabIndex = 37;
             this.txt_sObservaciones.Visible = false;
+            // 
+            // txt_sMontoTotal
+            // 
+            this.txt_sMontoTotal.Enabled = false;
+            this.txt_sMontoTotal.Location = new System.Drawing.Point(340, 456);
+            this.txt_sMontoTotal.Name = "txt_sMontoTotal";
+            this.txt_sMontoTotal.Size = new System.Drawing.Size(223, 20);
+            this.txt_sMontoTotal.TabIndex = 38;
+            this.txt_sMontoTotal.Visible = false;
+            // 
+            // txt_sParticipantes
+            // 
+            this.txt_sParticipantes.Enabled = false;
+            this.txt_sParticipantes.Location = new System.Drawing.Point(340, 404);
+            this.txt_sParticipantes.Name = "txt_sParticipantes";
+            this.txt_sParticipantes.Size = new System.Drawing.Size(223, 20);
+            this.txt_sParticipantes.TabIndex = 39;
+            this.txt_sParticipantes.Visible = false;
+            // 
+            // txt_sAsistentes
+            // 
+            this.txt_sAsistentes.Enabled = false;
+            this.txt_sAsistentes.Location = new System.Drawing.Point(340, 430);
+            this.txt_sAsistentes.Name = "txt_sAsistentes";
+            this.txt_sAsistentes.Size = new System.Drawing.Size(223, 20);
+            this.txt_sAsistentes.TabIndex = 40;
+            this.txt_sAsistentes.Visible = false;
             // 
             // FrmListarContratos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(953, 527);
+            this.Controls.Add(this.txt_sAsistentes);
+            this.Controls.Add(this.txt_sParticipantes);
+            this.Controls.Add(this.txt_sMontoTotal);
             this.Controls.Add(this.txt_sObservaciones);
             this.Controls.Add(this.txt_sVigente);
             this.Controls.Add(this.label3);
@@ -273,5 +306,8 @@
         private System.Windows.Forms.Button btn_listc_ok;
         private System.Windows.Forms.TextBox txt_sVigente;
         private System.Windows.Forms.TextBox txt_sObservaciones;
+        private System.Windows.Forms.TextBox txt_sMontoTotal;
+        private System.Windows.Forms.TextBox txt_sParticipantes;
+        private System.Windows.Forms.TextBox txt_sAsistentes;
     }
 }

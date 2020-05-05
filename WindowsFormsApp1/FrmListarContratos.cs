@@ -31,8 +31,11 @@ namespace WindowsFormsApp1
             dt.Columns.Add("Direccion");
             dt.Columns.Add("Está Vigente");
             dt.Columns.Add("Observaciones");
+            dt.Columns.Add("Participantes");
+            dt.Columns.Add("Asistentes");
+            dt.Columns.Add("Monto Total");
 
-           
+
 
 
 
@@ -60,7 +63,10 @@ namespace WindowsFormsApp1
                     contrato.fechaHoraTermino,
                     contrato.direccionCon,
                     contrato.estaVigente,                   
-                    contrato.observaciones
+                    contrato.observaciones,
+                    contrato.participantes,
+                    contrato.asistentes,
+                    contrato.monto_total
                     );
             }
         
@@ -111,8 +117,11 @@ namespace WindowsFormsApp1
                 txt_sDireccionC.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Direccion"].Value.ToString();
                 txt_sVigente.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Está Vigente"].Value.ToString();
                 txt_sObservaciones.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Observaciones"].Value.ToString();
+                txt_sParticipantes.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Participantes"].Value.ToString();
+                txt_sAsistentes.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Asistentes"].Value.ToString();
+                txt_sMontoTotal.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Monto Total"].Value.ToString();
 
-                
+
 
             }
         }
@@ -137,5 +146,7 @@ namespace WindowsFormsApp1
                 this.Close();
             }
         }
+
+        
     }
 }
