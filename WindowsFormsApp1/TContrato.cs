@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
             catch (SqlException ex)
             {
 
-                MessageBox.Show("Problema con el Ingreso de Nuevo Contrato (SqlException) "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Problema con el Ingreso de Nuevo Contrato (SqlException) " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
 
             }
@@ -51,14 +51,14 @@ namespace WindowsFormsApp1
             MySqlDataReader lector = orden.ExecuteReader();
             if (lector.Read())
             {
-                contrato.numeroContrato= lector.GetInt64(0);
-                contrato.creacion= lector.GetString(1);
+                contrato.numeroContrato = lector.GetInt64(0);
+                contrato.creacion = lector.GetString(1);
                 contrato.termino = lector.GetString(2);
                 contrato.fechaHoraInicio = lector.GetString(3);
-                contrato.fechaHoraTermino= lector.GetString(4);
-                contrato.direccionCon= lector.GetString(5);
+                contrato.fechaHoraTermino = lector.GetString(4);
+                contrato.direccionCon = lector.GetString(5);
                 contrato.estaVigente = lector.GetString(6);
-                contrato.idTipo= lector.GetInt32(7);
+                contrato.idTipo = lector.GetInt32(7);
                 contrato.observaciones = lector.GetString(8);
                 contrato.asistentes = lector.GetInt32(9);
                 contrato.participantes = lector.GetInt32(10);
@@ -67,9 +67,12 @@ namespace WindowsFormsApp1
 
 
             }
+            lector.Close();
+            conexion.Close();
+
             return contrato;
         }
-                
+
         public static List<Contrato> ListarContrato()
         {
             List<Contrato> lista = new List<Contrato>();
@@ -78,7 +81,7 @@ namespace WindowsFormsApp1
             MySqlDataReader lector = orden.ExecuteReader();
             while (lector.Read())
             {
-                
+
                 Contrato contrato = new Contrato();
                 contrato.numeroContrato = lector.GetInt64(0);
                 contrato.creacion = lector.GetString(1);
@@ -97,8 +100,22 @@ namespace WindowsFormsApp1
 
                 lista.Add(contrato);
             }
+            lector.Close();
+            conexion.Close();
 
             return lista;
+        }
+
+        public Boolean TerminoContrato(long numeroContrato)
+        {   
+            MySqlConnection conexion = Conexion.abrirURL();
+            MySqlCommand orden = new MySqlCommand(string.Format("UPDATE CONTRATO SET termino = CURDATE() ,estaVigente = ('No') WHERE numeroContrato =@numeroContrato"), conexion);
+            orden.Parameters.AddWithValue("@numeroContrato", numeroContrato);
+            MySqlDataReader lector = orden.ExecuteReader();
+            lector.Close();
+            conexion.Close();
+
+            return true;
         }
 
     }

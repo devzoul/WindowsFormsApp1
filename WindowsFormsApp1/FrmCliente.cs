@@ -122,17 +122,23 @@ namespace WindowsFormsApp1
             Cliente cliente = new Cliente();
             TCliente tcliente = new TCliente();
             cliente.rutCli = txt_rutB.Text;
-           
-            if (tcliente.eliminarCliente(cliente))
+            DialogResult eliminar = MessageBox.Show("Esta seguro que desea Eliminar el Cliente " + cliente.rutCli, "Eliminar", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+
+            if (eliminar == DialogResult.Yes)
             {
-                MessageBox.Show("Eliminación realizada con exito", "Eliminacion de Dato", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarDatosBS();
-                
-            }
-            else
-            {
-                MessageBox.Show("Error al Eliminar Datos", "Eliminacion de Dato", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-            }
+                if (tcliente.eliminarCliente(cliente))
+                {
+                    MessageBox.Show("Eliminación realizada con exito", "Eliminacion de Dato", MessageBoxButtons.OK );
+                    LimpiarDatosBS();
+
+                }
+                else
+                {
+                    MessageBox.Show("Error al Eliminar Datos", "Eliminacion de Dato", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                }
+            }      
+
+            
         }
 
         private void LimpiarDatosBS()
@@ -266,6 +272,12 @@ namespace WindowsFormsApp1
             {
                 e.Handled = true;
             }
+        }
+
+        private void btn_clean_Click(object sender, EventArgs e)
+        {
+
+            LimpiarDatosBS();
         }
     }
 }

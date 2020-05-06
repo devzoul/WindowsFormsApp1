@@ -463,5 +463,23 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void btn_termino_Click(object sender, EventArgs e)
+        {
+            TContrato tcontrato = new TContrato();
+            Contrato contrato = new Contrato();
+
+            DialogResult termino = MessageBox.Show("Desea dar termino al Contrato seleccionado?", "Informacion", MessageBoxButtons.OKCancel);
+            
+            if (termino == DialogResult.OK)
+
+            {
+                contrato.numeroContrato = long.Parse(txt_numeroContrato.Text);
+                tcontrato.TerminoContrato(contrato.numeroContrato);
+                MessageBox.Show("Contrato terminado con fecha  " + DateTime.Today.Date.ToShortDateString(), "Informacion", MessageBoxButtons.OK);
+
+
+            }
+        }
     }
 }

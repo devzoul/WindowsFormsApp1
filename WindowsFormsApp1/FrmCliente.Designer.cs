@@ -82,6 +82,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btn_clean = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.txt_raz.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -107,6 +108,7 @@
             // 
             // txt_raz
             // 
+            this.txt_raz.Controls.Add(this.btn_clean);
             this.txt_raz.Controls.Add(this.btn_del);
             this.txt_raz.Controls.Add(this.btn_mod);
             this.txt_raz.Controls.Add(this.label16);
@@ -626,6 +628,16 @@
             this.tabControl1.Size = new System.Drawing.Size(718, 414);
             this.tabControl1.TabIndex = 0;
             // 
+            // btn_clean
+            // 
+            this.btn_clean.Location = new System.Drawing.Point(227, 106);
+            this.btn_clean.Name = "btn_clean";
+            this.btn_clean.Size = new System.Drawing.Size(78, 27);
+            this.btn_clean.TabIndex = 39;
+            this.btn_clean.Text = "Limpiar";
+            this.btn_clean.UseVisualStyleBackColor = true;
+            this.btn_clean.Click += new System.EventHandler(this.btn_clean_Click);
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -703,6 +715,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button btn_listado;
+        private System.Windows.Forms.Button btn_clean;
     }
     
 }

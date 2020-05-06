@@ -32,11 +32,13 @@ namespace WindowsFormsApp1
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmContrato));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_termino = new System.Windows.Forms.Button();
             this.btn_buscListCon = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.txt_buscacon = new System.Windows.Forms.TextBox();
             this.btn_limpiarC = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_numeroContrato = new System.Windows.Forms.TextBox();
             this.txt_buscaparti = new System.Windows.Forms.TextBox();
             this.txt_buscaasis = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -65,6 +67,7 @@ namespace WindowsFormsApp1
             this.label22 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -94,15 +97,12 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_termino = new System.Windows.Forms.Button();
-            this.txt_numeroContrato = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -121,6 +121,17 @@ namespace WindowsFormsApp1
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buscar Contrato";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btn_termino
+            // 
+            this.btn_termino.Location = new System.Drawing.Point(515, 297);
+            this.btn_termino.Name = "btn_termino";
+            this.btn_termino.Size = new System.Drawing.Size(90, 50);
+            this.btn_termino.TabIndex = 35;
+            this.btn_termino.Text = "Termino Contrato";
+            this.btn_termino.UseVisualStyleBackColor = true;
+            this.btn_termino.Visible = false;
+            this.btn_termino.Click += new System.EventHandler(this.btn_termino_Click);
             // 
             // btn_buscListCon
             // 
@@ -193,6 +204,14 @@ namespace WindowsFormsApp1
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Contrato";
+            // 
+            // txt_numeroContrato
+            // 
+            this.txt_numeroContrato.Location = new System.Drawing.Point(304, 29);
+            this.txt_numeroContrato.Name = "txt_numeroContrato";
+            this.txt_numeroContrato.Size = new System.Drawing.Size(100, 20);
+            this.txt_numeroContrato.TabIndex = 37;
+            this.txt_numeroContrato.Visible = false;
             // 
             // txt_buscaparti
             // 
@@ -476,6 +495,15 @@ namespace WindowsFormsApp1
             this.tabPage1.Text = "Crear Contrato";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(519, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(151, 171);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -798,33 +826,6 @@ namespace WindowsFormsApp1
             this.tabControl1.Size = new System.Drawing.Size(681, 451);
             this.tabControl1.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(519, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(151, 171);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btn_termino
-            // 
-            this.btn_termino.Location = new System.Drawing.Point(515, 297);
-            this.btn_termino.Name = "btn_termino";
-            this.btn_termino.Size = new System.Drawing.Size(90, 50);
-            this.btn_termino.TabIndex = 35;
-            this.btn_termino.Text = "Termino Contrato";
-            this.btn_termino.UseVisualStyleBackColor = true;
-            this.btn_termino.Visible = false;
-            // 
-            // txt_numeroContrato
-            // 
-            this.txt_numeroContrato.Location = new System.Drawing.Point(304, 29);
-            this.txt_numeroContrato.Name = "txt_numeroContrato";
-            this.txt_numeroContrato.Size = new System.Drawing.Size(100, 20);
-            this.txt_numeroContrato.TabIndex = 37;
-            this.txt_numeroContrato.Visible = false;
-            // 
             // FrmContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -840,10 +841,10 @@ namespace WindowsFormsApp1
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
