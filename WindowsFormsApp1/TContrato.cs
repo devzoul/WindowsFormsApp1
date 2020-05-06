@@ -27,16 +27,9 @@ namespace WindowsFormsApp1
                 conexion.Close();
                 return true;
             }
-            catch (SqlException ex)
-            {
-
-                MessageBox.Show("Problema con el Ingreso de Nuevo Contrato (SqlException) " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-
-            }
             catch (Exception ex)
             {
-                MessageBox.Show("Problema con el Ingreso de Nuevo Contrato (Exception)" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Problema con el Ingreso de Nuevo Contrato" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -108,14 +101,27 @@ namespace WindowsFormsApp1
 
         public Boolean TerminoContrato(long numeroContrato)
         {   
-            MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand(string.Format("UPDATE CONTRATO SET termino = CURDATE() ,estaVigente = ('No') WHERE numeroContrato =@numeroContrato"), conexion);
-            orden.Parameters.AddWithValue("@numeroContrato", numeroContrato);
-            MySqlDataReader lector = orden.ExecuteReader();
-            lector.Close();
-            conexion.Close();
+            
 
-            return true;
+            try
+            {
+
+                MySqlConnection conexion = Conexion.abrirURL();
+                MySqlCommand orden = new MySqlCommand(string.Format("UPDATE CONTRATO SET termino = CURDATE() ,estaVigente = ('No') WHERE numeroContrato =@numeroContrato"), conexion);
+                orden.Parameters.AddWithValue("@numeroContrato", numeroContrato);
+                MySqlDataReader lector = orden.ExecuteReader();
+                lector.Close();
+                conexion.Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problema al dar termino al contrato" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+
         }
 
     }

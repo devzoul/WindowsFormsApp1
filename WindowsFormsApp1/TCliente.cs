@@ -26,16 +26,10 @@ namespace WindowsFormsApp1
                 return true;
 
             }
-            catch (SqlException e)
-            {
-
-                MessageBox.Show("Problema con el Ingreso de Nuevo Cliente (SqlException) ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-
-            }
+            
             catch (Exception e)
             {
-                MessageBox.Show("Problema con el Ingreso de Nuevo Cliente (Exception)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Problema con el Ingreso de Nuevo Cliente " +e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -75,15 +69,9 @@ namespace WindowsFormsApp1
                 return true;
 
             }
-            catch (SqlException e)
-            {
-
-                MessageBox.Show("Problema al Eliminar Cliente (SqlException) ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
             catch (Exception e)
             {
-                MessageBox.Show("Problema al Eliminar Cliente (Exception)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Problema al Eliminar Cliente "+e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -132,15 +120,10 @@ namespace WindowsFormsApp1
 
 
             }
-            catch (SqlException e)
+            
+            catch (Exception e)
             {
-
-                MessageBox.Show("Problema al Modificar Cliente (SqlException) ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Problema al Modificar Cliente (Exception)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Problema al Modificar Cliente "+e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
