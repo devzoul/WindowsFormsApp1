@@ -35,6 +35,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txt_raz = new System.Windows.Forms.GroupBox();
+            this.btn_clean = new System.Windows.Forms.Button();
             this.btn_del = new System.Windows.Forms.Button();
             this.btn_mod = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -63,7 +64,7 @@
             this.btn_busc = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_buscar = new System.Windows.Forms.Button();
+            this.btn_validar = new System.Windows.Forms.Button();
             this.btn_regCliente = new System.Windows.Forms.Button();
             this.cbx_actividad = new System.Windows.Forms.ComboBox();
             this.cbx_tipoCliente = new System.Windows.Forms.ComboBox();
@@ -82,7 +83,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.btn_clean = new System.Windows.Forms.Button();
+            this.btn_limpiarDatos = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.txt_raz.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -133,6 +134,16 @@
             this.txt_raz.TabIndex = 1;
             this.txt_raz.TabStop = false;
             this.txt_raz.Text = "Información";
+            // 
+            // btn_clean
+            // 
+            this.btn_clean.Location = new System.Drawing.Point(227, 106);
+            this.btn_clean.Name = "btn_clean";
+            this.btn_clean.Size = new System.Drawing.Size(78, 27);
+            this.btn_clean.TabIndex = 39;
+            this.btn_clean.Text = "Limpiar";
+            this.btn_clean.UseVisualStyleBackColor = true;
+            this.btn_clean.Click += new System.EventHandler(this.btn_clean_Click);
             // 
             // btn_del
             // 
@@ -409,7 +420,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btn_buscar);
+            this.groupBox1.Controls.Add(this.btn_limpiarDatos);
+            this.groupBox1.Controls.Add(this.btn_validar);
             this.groupBox1.Controls.Add(this.btn_regCliente);
             this.groupBox1.Controls.Add(this.cbx_actividad);
             this.groupBox1.Controls.Add(this.cbx_tipoCliente);
@@ -434,18 +446,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Cliente";
             // 
-            // btn_buscar
+            // btn_validar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(236, 13);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(78, 27);
-            this.btn_buscar.TabIndex = 18;
-            this.btn_buscar.Text = "Buscar";
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_test_Click);
+            this.btn_validar.Location = new System.Drawing.Point(236, 13);
+            this.btn_validar.Name = "btn_validar";
+            this.btn_validar.Size = new System.Drawing.Size(78, 39);
+            this.btn_validar.TabIndex = 18;
+            this.btn_validar.Text = "Validar Cliente";
+            this.btn_validar.UseVisualStyleBackColor = true;
+            this.btn_validar.Click += new System.EventHandler(this.btn_test_Click);
             // 
             // btn_regCliente
             // 
+            this.btn_regCliente.Enabled = false;
             this.btn_regCliente.Location = new System.Drawing.Point(290, 176);
             this.btn_regCliente.Name = "btn_regCliente";
             this.btn_regCliente.Size = new System.Drawing.Size(93, 53);
@@ -463,6 +476,7 @@
             "4",
             "5",
             "6"});
+            this.cbx_actividad.Enabled = false;
             this.cbx_actividad.FormattingEnabled = true;
             this.cbx_actividad.Items.AddRange(new object[] {
             "Agropecuaria",
@@ -488,6 +502,7 @@
             "4",
             "5",
             "6"});
+            this.cbx_tipoCliente.Enabled = false;
             this.cbx_tipoCliente.FormattingEnabled = true;
             this.cbx_tipoCliente.Items.AddRange(new object[] {
             "SPA",
@@ -502,6 +517,7 @@
             // 
             // txt_telefono
             // 
+            this.txt_telefono.Enabled = false;
             this.txt_telefono.Location = new System.Drawing.Point(105, 150);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(100, 20);
@@ -511,6 +527,7 @@
             // 
             // txt_direccionCliente
             // 
+            this.txt_direccionCliente.Enabled = false;
             this.txt_direccionCliente.Location = new System.Drawing.Point(105, 121);
             this.txt_direccionCliente.Name = "txt_direccionCliente";
             this.txt_direccionCliente.Size = new System.Drawing.Size(100, 20);
@@ -519,6 +536,7 @@
             // 
             // txt_mail
             // 
+            this.txt_mail.Enabled = false;
             this.txt_mail.Location = new System.Drawing.Point(105, 95);
             this.txt_mail.Name = "txt_mail";
             this.txt_mail.Size = new System.Drawing.Size(100, 20);
@@ -526,6 +544,7 @@
             // 
             // txt_nombre
             // 
+            this.txt_nombre.Enabled = false;
             this.txt_nombre.Location = new System.Drawing.Point(105, 69);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(100, 20);
@@ -533,6 +552,7 @@
             // 
             // txt_razonSocial
             // 
+            this.txt_razonSocial.Enabled = false;
             this.txt_razonSocial.Location = new System.Drawing.Point(105, 43);
             this.txt_razonSocial.Name = "txt_razonSocial";
             this.txt_razonSocial.Size = new System.Drawing.Size(100, 20);
@@ -628,15 +648,16 @@
             this.tabControl1.Size = new System.Drawing.Size(718, 414);
             this.tabControl1.TabIndex = 0;
             // 
-            // btn_clean
+            // btn_limpiarDatos
             // 
-            this.btn_clean.Location = new System.Drawing.Point(227, 106);
-            this.btn_clean.Name = "btn_clean";
-            this.btn_clean.Size = new System.Drawing.Size(78, 27);
-            this.btn_clean.TabIndex = 39;
-            this.btn_clean.Text = "Limpiar";
-            this.btn_clean.UseVisualStyleBackColor = true;
-            this.btn_clean.Click += new System.EventHandler(this.btn_clean_Click);
+            this.btn_limpiarDatos.Enabled = false;
+            this.btn_limpiarDatos.Location = new System.Drawing.Point(236, 58);
+            this.btn_limpiarDatos.Name = "btn_limpiarDatos";
+            this.btn_limpiarDatos.Size = new System.Drawing.Size(78, 44);
+            this.btn_limpiarDatos.TabIndex = 19;
+            this.btn_limpiarDatos.Text = "Limpiar datos";
+            this.btn_limpiarDatos.UseVisualStyleBackColor = true;
+            this.btn_limpiarDatos.Click += new System.EventHandler(this.btn_limpiarDatos_Click);
             // 
             // FrmCliente
             // 
@@ -695,7 +716,7 @@
         private System.Windows.Forms.Button btn_busc;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_buscar;
+        private System.Windows.Forms.Button btn_validar;
         private System.Windows.Forms.Button btn_regCliente;
         private System.Windows.Forms.ComboBox cbx_actividad;
         private System.Windows.Forms.ComboBox cbx_tipoCliente;
@@ -716,6 +737,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button btn_listado;
         private System.Windows.Forms.Button btn_clean;
+        private System.Windows.Forms.Button btn_limpiarDatos;
     }
     
 }

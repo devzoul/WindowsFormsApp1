@@ -202,6 +202,7 @@ namespace WindowsFormsApp1
             cbx_tipoContrato.Enabled = estado;
             txt_rutCliente.Enabled = !estado;
             btn_buscarCC.Enabled = !estado;
+            btn_buscarListCliente.Enabled = !estado;
 
 
         }
@@ -479,6 +480,22 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Contrato terminado con fecha  " + DateTime.Today.Date.ToShortDateString(), "Informacion", MessageBoxButtons.OK);
 
 
+            }
+        }
+
+        private void btn_buscarListCliente_Click(object sender, EventArgs e)
+        {
+            using (FrmListarClientes FrmListarClientes = new FrmListarClientes())
+            {
+                if (FrmListarClientes.ShowDialog() == DialogResult.OK)
+                {
+
+                    txt_rutCliente.Text = FrmListarClientes.rCliente.rutCli;
+                    txt_razonCliente.Text = FrmListarClientes.rCliente.razon_social;
+                    ActDes(true);
+
+
+                }
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.SqlServer.Server;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -64,6 +65,33 @@ namespace WindowsFormsApp1
             conexion.Close();
 
             return contrato;
+        }
+
+        public  Boolean TieneContrato(String Rutcontrato)
+        {
+            Boolean contratoval;
+            long cantContratos;
+            cantContratos = 0;
+            contratoval = false;
+            Contrato contrato = new Contrato();
+            MySqlConnection conexion = Conexion.abrirURL();
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT count(*) FROM CONTRATO WHERE rutCli =@Rutcontrato"), conexion);
+            orden.Parameters.AddWithValue("@Rutcontrato", Rutcontrato);
+            MySqlDataReader lector = orden.ExecuteReader();
+
+            if (lector.Read())
+            {
+                cantContratos = lector.GetInt64(0);
+               
+            }
+
+
+            if (cantContratos > 0)
+            {
+                contratoval = true;
+            }
+
+            return contratoval;
         }
 
         public static List<Contrato> ListarContrato()

@@ -97,23 +97,21 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_buscarListCliente = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.btn_termino);
-            this.tabPage2.Controls.Add(this.btn_buscListCon);
-            this.tabPage2.Controls.Add(this.label23);
-            this.tabPage2.Controls.Add(this.txt_buscacon);
-            this.tabPage2.Controls.Add(this.btn_limpiarC);
+            this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -124,7 +122,7 @@ namespace WindowsFormsApp1
             // 
             // btn_termino
             // 
-            this.btn_termino.Location = new System.Drawing.Point(515, 297);
+            this.btn_termino.Location = new System.Drawing.Point(69, 316);
             this.btn_termino.Name = "btn_termino";
             this.btn_termino.Size = new System.Drawing.Size(90, 50);
             this.btn_termino.TabIndex = 35;
@@ -135,7 +133,7 @@ namespace WindowsFormsApp1
             // 
             // btn_buscListCon
             // 
-            this.btn_buscListCon.Location = new System.Drawing.Point(515, 126);
+            this.btn_buscListCon.Location = new System.Drawing.Point(69, 145);
             this.btn_buscListCon.Name = "btn_buscListCon";
             this.btn_buscListCon.Size = new System.Drawing.Size(90, 50);
             this.btn_buscListCon.TabIndex = 34;
@@ -146,7 +144,7 @@ namespace WindowsFormsApp1
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(502, 93);
+            this.label23.Location = new System.Drawing.Point(56, 112);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(115, 13);
             this.label23.TabIndex = 33;
@@ -154,14 +152,14 @@ namespace WindowsFormsApp1
             // 
             // txt_buscacon
             // 
-            this.txt_buscacon.Location = new System.Drawing.Point(505, 64);
+            this.txt_buscacon.Location = new System.Drawing.Point(69, 83);
             this.txt_buscacon.Name = "txt_buscacon";
             this.txt_buscacon.Size = new System.Drawing.Size(100, 20);
             this.txt_buscacon.TabIndex = 32;
             // 
             // btn_limpiarC
             // 
-            this.btn_limpiarC.Location = new System.Drawing.Point(515, 212);
+            this.btn_limpiarC.Location = new System.Drawing.Point(69, 231);
             this.btn_limpiarC.Name = "btn_limpiarC";
             this.btn_limpiarC.Size = new System.Drawing.Size(90, 27);
             this.btn_limpiarC.TabIndex = 32;
@@ -475,7 +473,7 @@ namespace WindowsFormsApp1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(515, 21);
+            this.button2.Location = new System.Drawing.Point(69, 32);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 27);
             this.button2.TabIndex = 18;
@@ -507,6 +505,7 @@ namespace WindowsFormsApp1
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_buscarListCliente);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Controls.Add(this.txt_observaciones);
@@ -598,9 +597,9 @@ namespace WindowsFormsApp1
             // 
             // btn_limpiarCC
             // 
-            this.btn_limpiarCC.Location = new System.Drawing.Point(364, 80);
+            this.btn_limpiarCC.Location = new System.Drawing.Point(364, 128);
             this.btn_limpiarCC.Name = "btn_limpiarCC";
-            this.btn_limpiarCC.Size = new System.Drawing.Size(78, 27);
+            this.btn_limpiarCC.Size = new System.Drawing.Size(93, 31);
             this.btn_limpiarCC.TabIndex = 32;
             this.btn_limpiarCC.Text = "Limpiar";
             this.btn_limpiarCC.UseVisualStyleBackColor = true;
@@ -709,7 +708,7 @@ namespace WindowsFormsApp1
             // 
             this.btn_buscarCC.Location = new System.Drawing.Point(364, 22);
             this.btn_buscarCC.Name = "btn_buscarCC";
-            this.btn_buscarCC.Size = new System.Drawing.Size(78, 27);
+            this.btn_buscarCC.Size = new System.Drawing.Size(93, 30);
             this.btn_buscarCC.TabIndex = 18;
             this.btn_buscarCC.Text = "Buscar";
             this.btn_buscarCC.UseVisualStyleBackColor = true;
@@ -718,7 +717,7 @@ namespace WindowsFormsApp1
             // btn_regContrato
             // 
             this.btn_regContrato.Enabled = false;
-            this.btn_regContrato.Location = new System.Drawing.Point(364, 132);
+            this.btn_regContrato.Location = new System.Drawing.Point(364, 174);
             this.btn_regContrato.Name = "btn_regContrato";
             this.btn_regContrato.Size = new System.Drawing.Size(93, 53);
             this.btn_regContrato.TabIndex = 17;
@@ -826,6 +825,31 @@ namespace WindowsFormsApp1
             this.tabControl1.Size = new System.Drawing.Size(681, 451);
             this.tabControl1.TabIndex = 1;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.btn_termino);
+            this.groupBox3.Controls.Add(this.btn_buscListCon);
+            this.groupBox3.Controls.Add(this.txt_buscacon);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Controls.Add(this.btn_limpiarC);
+            this.groupBox3.Location = new System.Drawing.Point(465, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(202, 412);
+            this.groupBox3.TabIndex = 36;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Acciones";
+            // 
+            // btn_buscarListCliente
+            // 
+            this.btn_buscarListCliente.Location = new System.Drawing.Point(364, 58);
+            this.btn_buscarListCliente.Name = "btn_buscarListCliente";
+            this.btn_buscarListCliente.Size = new System.Drawing.Size(93, 42);
+            this.btn_buscarListCliente.TabIndex = 39;
+            this.btn_buscarListCliente.Text = "Buscar de Lista";
+            this.btn_buscarListCliente.UseVisualStyleBackColor = true;
+            this.btn_buscarListCliente.Click += new System.EventHandler(this.btn_buscarListCliente_Click);
+            // 
             // FrmContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -837,7 +861,6 @@ namespace WindowsFormsApp1
             this.Text = "OnBreak Administrar Contrato";
             this.Load += new System.EventHandler(this.FrmContrato_Load);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -845,6 +868,8 @@ namespace WindowsFormsApp1
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -917,5 +942,7 @@ namespace WindowsFormsApp1
         private PictureBox pictureBox1;
         private Button btn_termino;
         private TextBox txt_numeroContrato;
+        private GroupBox groupBox3;
+        private Button btn_buscarListCliente;
     }
 }

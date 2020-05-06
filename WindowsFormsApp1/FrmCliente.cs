@@ -21,6 +21,23 @@ namespace WindowsFormsApp1
            
         }
 
+        private void ActDes(Boolean estado)
+        {
+            txt_rut.Enabled = !estado;
+            txt_razonSocial.Enabled = estado;
+            txt_nombre.Enabled = estado;
+            txt_mail.Enabled = estado;
+            txt_direccionCliente.Enabled = estado;
+            txt_telefono.Enabled = estado;
+            cbx_actividad.Enabled = estado;
+            cbx_tipoCliente.Enabled = estado;
+            btn_regCliente.Enabled = estado;
+            btn_limpiarDatos.Enabled = estado;
+            btn_validar.Enabled = !estado;
+
+
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -63,17 +80,40 @@ namespace WindowsFormsApp1
                 cliente.telefono = Int32.Parse(txt_telefono.Text);
                 cliente.actividad = cbx_actividad.SelectedItem.ToString();
                 cliente.tipoCli = cbx_tipoCliente.SelectedItem.ToString();
-                tcliente.ingresarCliente(cliente);
-                MessageBox.Show("Cliente ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarDatosAgree();
+                if (tcliente.ingresarCliente(cliente))
+                {
+                    MessageBox.Show("Cliente ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarDatosAgree();
+                }
+                
             }
             
         }
 
         private void btn_test_Click(object sender, EventArgs e)
         {
+            TCliente tcliente = new TCliente();
+            Cliente cliente = new Cliente();
+            cliente = tcliente.buscarCliente(txt_rut.Text);
+
+            if (txt_rut.Text !="")
+            {
+                if (txt_rut.Text != cliente.rutCli)
+                {
+                    MessageBox.Show("Cliente nuevo!, rellena los datos para el ingreso", "Cliente Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ActDes(true);
+                }
+                else { MessageBox.Show("Cliente ya existe en nuestros registro, intenta con otro Rut", "Cliente Ya Existe", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            }
+            else { MessageBox.Show("Campo cliente vacío, Ingresa un cliente para Validar", "Campo cliente Vacío", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
             
+            
+            
+
+            
+
+
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -121,22 +161,37 @@ namespace WindowsFormsApp1
         {
             Cliente cliente = new Cliente();
             TCliente tcliente = new TCliente();
+            TContrato tcontrato = new TContrato();
+
+            
+
             cliente.rutCli = txt_rutB.Text;
-            DialogResult eliminar = MessageBox.Show("Esta seguro que desea Eliminar el Cliente " + cliente.rutCli, "Eliminar", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
-            if (eliminar == DialogResult.Yes)
+            if (txt_rutB.Text != "")
             {
-                if (tcliente.eliminarCliente(cliente))
+                if (!tcontrato.TieneContrato(cliente.rutCli))
                 {
-                    MessageBox.Show("Eliminación realizada con exito", "Eliminacion de Dato", MessageBoxButtons.OK );
-                    LimpiarDatosBS();
+                    DialogResult eliminar = MessageBox.Show("Esta seguro que desea Eliminar el Cliente " + cliente.rutCli, "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                    if (eliminar == DialogResult.Yes)
+                    {
+                        if (tcliente.eliminarCliente(cliente))
+                        {
+                            MessageBox.Show("Eliminación realizada con exito", "Eliminacion de Dato", MessageBoxButtons.OK);
+                            LimpiarDatosBS();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al Eliminar Datos", "Eliminacion de Dato", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                        }
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Error al Eliminar Datos", "Eliminacion de Dato", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-                }
-            }      
+                else { MessageBox.Show("Imposible Borrar este cliente debido a que tiene Contratos asociados", "Cliente con Contrato", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            }
+            else { MessageBox.Show("Rut vacío, busca o selecciona un rut Válido", "Rut Vacío", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+           
 
             
         }
@@ -159,6 +214,25 @@ namespace WindowsFormsApp1
 
 
         }
+
+        private void LimpiarDatosCliente()
+        {
+            txt_rut.Text = ("");
+            txt_razonSocial.Text = ("");
+            txt_nombre.Text = ("");
+            txt_mail.Text = ("");
+            txt_direccionCliente.Text = ("");
+            txt_telefono.Text = ("");
+            cbx_actividad.ResetText();
+            cbx_actividad.SelectedIndex = -1;
+            cbx_tipoCliente.ResetText();
+            cbx_tipoCliente.SelectedIndex = -1;
+            this.txt_rut.Focus();
+            ActDes(false);
+
+
+        }
+
         private void LimpiarDatosAgree()
         {
             txt_rut.Text = ("");
@@ -278,6 +352,16 @@ namespace WindowsFormsApp1
         {
 
             LimpiarDatosBS();
+        }
+
+        private void btn_limpiarDatos_Click(object sender, EventArgs e)
+        {
+            LimpiarDatosCliente();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
