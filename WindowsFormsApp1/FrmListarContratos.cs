@@ -74,7 +74,9 @@ namespace WindowsFormsApp1
 
         private void btn_cancelarLc_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            frmPrincipal.Visible = true;
+            Visible = false;
         }
 
         private void dtg_Contratos_CellContentClick(object sender, DataGridViewCellEventArgs e)

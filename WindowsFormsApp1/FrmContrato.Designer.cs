@@ -32,10 +32,14 @@ namespace WindowsFormsApp1
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmContrato));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btn_Salir4 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.btn_termino = new System.Windows.Forms.Button();
             this.btn_buscListCon = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
             this.txt_buscacon = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.btn_limpiarC = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_numeroContrato = new System.Windows.Forms.TextBox();
@@ -65,10 +69,13 @@ namespace WindowsFormsApp1
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_Salir3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_buscarListCliente = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txt_observaciones = new System.Windows.Forms.TextBox();
@@ -97,28 +104,78 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_buscarListCliente = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.pictureBox3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(673, 425);
+            this.tabPage2.Size = new System.Drawing.Size(858, 425);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buscar Contrato";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btn_Salir4);
+            this.groupBox5.Location = new System.Drawing.Point(687, 180);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(165, 245);
+            this.groupBox5.TabIndex = 41;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Volver Menu ";
+            // 
+            // btn_Salir4
+            // 
+            this.btn_Salir4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Salir4.Image = global::WindowsFormsApp1.Properties.Resources.regresofinal;
+            this.btn_Salir4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Salir4.Location = new System.Drawing.Point(6, 43);
+            this.btn_Salir4.Name = "btn_Salir4";
+            this.btn_Salir4.Size = new System.Drawing.Size(153, 140);
+            this.btn_Salir4.TabIndex = 20;
+            this.btn_Salir4.UseVisualStyleBackColor = true;
+            this.btn_Salir4.Click += new System.EventHandler(this.btn_Salir4_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.btn_termino);
+            this.groupBox3.Controls.Add(this.btn_buscListCon);
+            this.groupBox3.Controls.Add(this.txt_buscacon);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Controls.Add(this.btn_limpiarC);
+            this.groupBox3.Location = new System.Drawing.Point(465, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(202, 412);
+            this.groupBox3.TabIndex = 36;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Acciones";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(69, 32);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 27);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_termino
             // 
@@ -141,6 +198,13 @@ namespace WindowsFormsApp1
             this.btn_buscListCon.UseVisualStyleBackColor = true;
             this.btn_buscListCon.Click += new System.EventHandler(this.btn_buscListCon_Click);
             // 
+            // txt_buscacon
+            // 
+            this.txt_buscacon.Location = new System.Drawing.Point(69, 83);
+            this.txt_buscacon.Name = "txt_buscacon";
+            this.txt_buscacon.Size = new System.Drawing.Size(100, 20);
+            this.txt_buscacon.TabIndex = 32;
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -149,13 +213,6 @@ namespace WindowsFormsApp1
             this.label23.Size = new System.Drawing.Size(115, 13);
             this.label23.TabIndex = 33;
             this.label23.Text = "Ingrese N° de Contrato";
-            // 
-            // txt_buscacon
-            // 
-            this.txt_buscacon.Location = new System.Drawing.Point(69, 83);
-            this.txt_buscacon.Name = "txt_buscacon";
-            this.txt_buscacon.Size = new System.Drawing.Size(100, 20);
-            this.txt_buscacon.TabIndex = 32;
             // 
             // btn_limpiarC
             // 
@@ -471,33 +528,55 @@ namespace WindowsFormsApp1
             this.label22.TabIndex = 1;
             this.label22.Text = "Creacion";
             // 
-            // button2
+            // pictureBox3
             // 
-            this.button2.Location = new System.Drawing.Point(69, 32);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 27);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(687, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(151, 171);
+            this.pictureBox3.TabIndex = 38;
+            this.pictureBox3.TabStop = false;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(673, 425);
+            this.tabPage1.Size = new System.Drawing.Size(858, 425);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Crear Contrato";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btn_Salir3);
+            this.groupBox4.Location = new System.Drawing.Point(687, 180);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(165, 245);
+            this.groupBox4.TabIndex = 40;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Volver Menu ";
+            // 
+            // btn_Salir3
+            // 
+            this.btn_Salir3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Salir3.Image = global::WindowsFormsApp1.Properties.Resources.regresofinal;
+            this.btn_Salir3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Salir3.Location = new System.Drawing.Point(6, 43);
+            this.btn_Salir3.Name = "btn_Salir3";
+            this.btn_Salir3.Size = new System.Drawing.Size(153, 140);
+            this.btn_Salir3.TabIndex = 20;
+            this.btn_Salir3.UseVisualStyleBackColor = true;
+            this.btn_Salir3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(519, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(687, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 171);
             this.pictureBox1.TabIndex = 6;
@@ -539,6 +618,16 @@ namespace WindowsFormsApp1
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Contrato";
+            // 
+            // btn_buscarListCliente
+            // 
+            this.btn_buscarListCliente.Location = new System.Drawing.Point(364, 58);
+            this.btn_buscarListCliente.Name = "btn_buscarListCliente";
+            this.btn_buscarListCliente.Size = new System.Drawing.Size(93, 42);
+            this.btn_buscarListCliente.TabIndex = 39;
+            this.btn_buscarListCliente.Text = "Buscar de Lista";
+            this.btn_buscarListCliente.UseVisualStyleBackColor = true;
+            this.btn_buscarListCliente.Click += new System.EventHandler(this.btn_buscarListCliente_Click);
             // 
             // label25
             // 
@@ -822,54 +911,33 @@ namespace WindowsFormsApp1
             this.tabControl1.Location = new System.Drawing.Point(48, 48);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(681, 451);
+            this.tabControl1.Size = new System.Drawing.Size(866, 451);
             this.tabControl1.TabIndex = 1;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.btn_termino);
-            this.groupBox3.Controls.Add(this.btn_buscListCon);
-            this.groupBox3.Controls.Add(this.txt_buscacon);
-            this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.btn_limpiarC);
-            this.groupBox3.Location = new System.Drawing.Point(465, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(202, 412);
-            this.groupBox3.TabIndex = 36;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Acciones";
-            // 
-            // btn_buscarListCliente
-            // 
-            this.btn_buscarListCliente.Location = new System.Drawing.Point(364, 58);
-            this.btn_buscarListCliente.Name = "btn_buscarListCliente";
-            this.btn_buscarListCliente.Size = new System.Drawing.Size(93, 42);
-            this.btn_buscarListCliente.TabIndex = 39;
-            this.btn_buscarListCliente.Text = "Buscar de Lista";
-            this.btn_buscarListCliente.UseVisualStyleBackColor = true;
-            this.btn_buscarListCliente.Click += new System.EventHandler(this.btn_buscarListCliente_Click);
             // 
             // FrmContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 500);
+            this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmContrato";
             this.Text = "OnBreak Administrar Contrato";
             this.Load += new System.EventHandler(this.FrmContrato_Load);
             this.tabPage2.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -944,5 +1012,10 @@ namespace WindowsFormsApp1
         private TextBox txt_numeroContrato;
         private GroupBox groupBox3;
         private Button btn_buscarListCliente;
+        private PictureBox pictureBox3;
+        private GroupBox groupBox4;
+        private Button btn_Salir3;
+        private GroupBox groupBox5;
+        private Button btn_Salir4;
     }
 }

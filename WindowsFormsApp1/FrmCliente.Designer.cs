@@ -55,6 +55,8 @@
             this.txt_razonSocialB = new System.Windows.Forms.TextBox();
             this.txt_rutB = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btn_Salir2 = new System.Windows.Forms.Button();
             this.btn_listarb = new System.Windows.Forms.Button();
             this.data_clientes = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -63,7 +65,10 @@
             this.label17 = new System.Windows.Forms.Label();
             this.btn_busc = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_Salir1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_limpiarDatos = new System.Windows.Forms.Button();
             this.btn_validar = new System.Windows.Forms.Button();
             this.btn_regCliente = new System.Windows.Forms.Button();
             this.cbx_actividad = new System.Windows.Forms.ComboBox();
@@ -83,13 +88,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.btn_limpiarDatos = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.txt_raz.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_clientes)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -330,6 +336,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.groupBox5);
             this.groupBox3.Controls.Add(this.btn_listarb);
             this.groupBox3.Controls.Add(this.data_clientes);
             this.groupBox3.Location = new System.Drawing.Point(352, 19);
@@ -338,6 +345,27 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado de Clientes";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btn_Salir2);
+            this.groupBox5.Location = new System.Drawing.Point(101, 209);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(154, 154);
+            this.groupBox5.TabIndex = 41;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Volver Menu ";
+            // 
+            // btn_Salir2
+            // 
+            this.btn_Salir2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Salir2.Image = global::WindowsFormsApp1.Properties.Resources.regresofinal;
+            this.btn_Salir2.Location = new System.Drawing.Point(0, 15);
+            this.btn_Salir2.Name = "btn_Salir2";
+            this.btn_Salir2.Size = new System.Drawing.Size(151, 139);
+            this.btn_Salir2.TabIndex = 20;
+            this.btn_Salir2.UseVisualStyleBackColor = true;
+            this.btn_Salir2.Click += new System.EventHandler(this.btn_Salir2_Click);
             // 
             // btn_listarb
             // 
@@ -354,7 +382,7 @@
             this.data_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_clientes.Location = new System.Drawing.Point(7, 70);
             this.data_clientes.Name = "data_clientes";
-            this.data_clientes.Size = new System.Drawing.Size(326, 293);
+            this.data_clientes.Size = new System.Drawing.Size(326, 133);
             this.data_clientes.TabIndex = 0;
             this.data_clientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_clientes_CellContentClick);
             // 
@@ -409,6 +437,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -417,6 +446,27 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Registrar Cliente";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btn_Salir1);
+            this.groupBox4.Location = new System.Drawing.Point(496, 37);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(163, 245);
+            this.groupBox4.TabIndex = 41;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Volver Menu ";
+            // 
+            // btn_Salir1
+            // 
+            this.btn_Salir1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Salir1.Image = global::WindowsFormsApp1.Properties.Resources.regresofinal;
+            this.btn_Salir1.Location = new System.Drawing.Point(6, 43);
+            this.btn_Salir1.Name = "btn_Salir1";
+            this.btn_Salir1.Size = new System.Drawing.Size(151, 140);
+            this.btn_Salir1.TabIndex = 20;
+            this.btn_Salir1.UseVisualStyleBackColor = true;
+            this.btn_Salir1.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox1
             // 
@@ -445,6 +495,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Cliente";
+            // 
+            // btn_limpiarDatos
+            // 
+            this.btn_limpiarDatos.Enabled = false;
+            this.btn_limpiarDatos.Location = new System.Drawing.Point(236, 58);
+            this.btn_limpiarDatos.Name = "btn_limpiarDatos";
+            this.btn_limpiarDatos.Size = new System.Drawing.Size(78, 44);
+            this.btn_limpiarDatos.TabIndex = 19;
+            this.btn_limpiarDatos.Text = "Limpiar datos";
+            this.btn_limpiarDatos.UseVisualStyleBackColor = true;
+            this.btn_limpiarDatos.Click += new System.EventHandler(this.btn_limpiarDatos_Click);
             // 
             // btn_validar
             // 
@@ -648,22 +709,12 @@
             this.tabControl1.Size = new System.Drawing.Size(718, 414);
             this.tabControl1.TabIndex = 0;
             // 
-            // btn_limpiarDatos
-            // 
-            this.btn_limpiarDatos.Enabled = false;
-            this.btn_limpiarDatos.Location = new System.Drawing.Point(236, 58);
-            this.btn_limpiarDatos.Name = "btn_limpiarDatos";
-            this.btn_limpiarDatos.Size = new System.Drawing.Size(78, 44);
-            this.btn_limpiarDatos.TabIndex = 19;
-            this.btn_limpiarDatos.Text = "Limpiar datos";
-            this.btn_limpiarDatos.UseVisualStyleBackColor = true;
-            this.btn_limpiarDatos.Click += new System.EventHandler(this.btn_limpiarDatos_Click);
-            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 490);
+            this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCliente";
@@ -672,10 +723,12 @@
             this.txt_raz.ResumeLayout(false);
             this.txt_raz.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_clientes)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -738,6 +791,10 @@
         private System.Windows.Forms.Button btn_listado;
         private System.Windows.Forms.Button btn_clean;
         private System.Windows.Forms.Button btn_limpiarDatos;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button btn_Salir2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btn_Salir1;
     }
     
 }

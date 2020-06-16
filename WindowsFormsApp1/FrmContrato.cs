@@ -498,5 +498,19 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            frmPrincipal.Visible = true;
+            Visible = false;
+        }
+
+        private void btn_Salir4_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            frmPrincipal.Visible = true;
+            Visible = false;
+        }
     }
 }

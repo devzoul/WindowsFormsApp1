@@ -31,25 +31,29 @@ namespace WindowsFormsApp1
         private void button1_Click_1(object sender, EventArgs e)
         {
             FrmCliente frmcliente = new FrmCliente();
-            frmcliente.Show();
+            frmcliente.Visible=true;
+            Visible = false;
         }
 
         private void btn_contratos_Click(object sender, EventArgs e)
         {
             FrmContrato frmcontrato = new FrmContrato();
-            frmcontrato.Show();
+            frmcontrato.Visible = true;
+            Visible = false;
         }
 
         private void btn_ListarClientes_Click(object sender, EventArgs e)
         {
             FrmListarClientes frmListarClientes = new FrmListarClientes();
-            frmListarClientes.Show();
+            frmListarClientes.Visible = true;
+            Visible = false;
         }
 
         private void btn_ListarContratos_Click(object sender, EventArgs e)
         {
             FrmListarContratos frmListarContratos = new FrmListarContratos();
-            frmListarContratos.Show();
+            frmListarContratos.Visible = true;
+            Visible = false;
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

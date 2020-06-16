@@ -70,7 +70,9 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            frmPrincipal.Visible = true;
+            Visible = false;
         }
 
         private void dtg_Clientes_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -210,5 +210,35 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\junta-directiva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registro %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gestion-de-eventos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regreso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regreso1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regreso11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regreso12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regresofinal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
