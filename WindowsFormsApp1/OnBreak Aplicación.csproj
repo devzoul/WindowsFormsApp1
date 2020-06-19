@@ -153,6 +153,8 @@
     <Compile Include="TContrato.cs" />
     <Compile Include="TipoEvento.cs" />
     <Compile Include="TTipoEvento.cs" />
+    <Compile Include="TUsuario.cs" />
+    <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
