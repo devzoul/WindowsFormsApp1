@@ -17,7 +17,54 @@ namespace WindowsFormsApp1
         public FrmContrato()
         {
             InitializeComponent();
+            cargar_datos_cbx1();
         }
+
+        public void cargar_datos_cbx1()
+        {
+            System.Data.DataSet ds1 = new System.Data.DataSet();
+            MySqlConnection conexion = Conexion.abrirURL();
+            MySqlCommand orden = new MySqlCommand("Select IdTipoEvento,Descripcion from tipoEvento", conexion);
+            DataTable dt1 = new DataTable();
+            MySqlDataAdapter da1 = new MySqlDataAdapter(orden);
+            da1.Fill(dt1);
+
+            DataRow fila = dt1.NewRow();
+            fila["Descripcion"] = "Selecciona un Evento";
+            dt1.Rows.InsertAt(fila, 0);
+
+            cbx_tipoEvento.DataSource = dt1;
+            cbx_tipoEvento.DisplayMember = "Descripcion";
+            cbx_tipoEvento.ValueMember = "IdTipoEvento";
+
+
+
+            }
+
+        public void cargar_modalidad(String IdTipoEvento)
+        {
+            System.Data.DataSet ds1 = new System.Data.DataSet();
+            MySqlConnection conexion = Conexion.abrirURL();
+            MySqlCommand orden = new MySqlCommand("Select IdModalidad, Nombre from modalidadservicio WHERE IdtipoEvento = @IdtipoEvento", conexion);
+            orden.Parameters.AddWithValue("IdtipoEvento", IdTipoEvento);
+            DataTable dt1 = new DataTable();
+            MySqlDataAdapter da1 = new MySqlDataAdapter(orden);
+            da1.Fill(dt1);
+            
+            DataRow fila = dt1.NewRow();
+            fila["Nombre"] = "Selecciona una modalidad";
+            dt1.Rows.InsertAt(fila, 0);
+
+
+            cbx_modalidadEvento.DataSource = dt1;
+            cbx_modalidadEvento.ValueMember = "IdModalidad";
+            cbx_modalidadEvento.DisplayMember = "Nombre";
+            
+                
+            conexion.Close();
+
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -422,15 +469,7 @@ namespace WindowsFormsApp1
 
         private void FrmContrato_Load(object sender, EventArgs e)
         {
-            MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand("Select Descripcion from tipoEvento", conexion);
-            MySqlDataReader lector = orden.ExecuteReader();
-            while (lector.Read())
-            {
-                cbx_tipoEvento.Items.Add(lector["Descripcion"].ToString());
-            }
-            lector.Close();
-            conexion.Close();
+            
 
 
         }
@@ -527,37 +566,16 @@ namespace WindowsFormsApp1
 
         private void cbx_modalidadEvento_SelectedIndexChanged(object sender, EventArgs e)
         {
-           /*String nombre_modalidad = cbx_modalidadEvento.SelectedIndex.ToString();
-            String idTipoEvento;
-            MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand("Select idTipoEvento from TipoEvento WHERE descripcion=@nombre_modalidad", conexion);
-            orden.Parameters.AddWithValue("@nombre_modalidad", nombre_modalidad);
-
-            MySqlDataReader lector = orden.ExecuteReader();
-
-            idTipoEvento = lector["idTipoEvento"].ToString();
-
-            lector.Close();
-            conexion.Close();
+           
 
 
-            MySqlConnection conexion2 = Conexion.abrirURL();
-            MySqlCommand orden2 = new MySqlCommand("Select Nombre from modalidadservicio where idTipoEvento =@idTipoEvento", conexion);
-            orden.Parameters.AddWithValue("@idTipoEvento", idTipoEvento);
-            MySqlDataReader lector2 = orden.ExecuteReader();
-            while (lector2.Read())
-            {
-                cbx_modalidadEvento.Items.Add(lector2["Nombre"].ToString());
-            }
-            lector2.Close();
-            conexion2.Close();*/
+        }
 
+        private void cbx_tipoEvento_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-
-
-
-
-
+            String IdTipoEvento = cbx_tipoEvento.SelectedValue.ToString();
+            cargar_modalidad(IdTipoEvento);
 
 
 

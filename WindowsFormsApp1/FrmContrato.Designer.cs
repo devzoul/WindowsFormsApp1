@@ -75,6 +75,8 @@ namespace WindowsFormsApp1
             this.btn_Salir3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbx_modalidadEvento = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btn_buscarListCliente = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -104,8 +106,6 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbx_modalidadEvento = new System.Windows.Forms.ComboBox();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -623,6 +623,24 @@ namespace WindowsFormsApp1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Contrato";
             // 
+            // cbx_modalidadEvento
+            // 
+            this.cbx_modalidadEvento.FormattingEnabled = true;
+            this.cbx_modalidadEvento.Location = new System.Drawing.Point(132, 281);
+            this.cbx_modalidadEvento.Name = "cbx_modalidadEvento";
+            this.cbx_modalidadEvento.Size = new System.Drawing.Size(174, 21);
+            this.cbx_modalidadEvento.TabIndex = 41;
+            this.cbx_modalidadEvento.SelectedIndexChanged += new System.EventHandler(this.cbx_modalidadEvento_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 281);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 13);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Modalidad Evento";
+            // 
             // btn_buscarListCliente
             // 
             this.btn_buscarListCliente.Location = new System.Drawing.Point(364, 58);
@@ -685,7 +703,7 @@ namespace WindowsFormsApp1
             "No"});
             this.cbx_vigente.Location = new System.Drawing.Point(132, 217);
             this.cbx_vigente.Name = "cbx_vigente";
-            this.cbx_vigente.Size = new System.Drawing.Size(121, 21);
+            this.cbx_vigente.Size = new System.Drawing.Size(174, 21);
             this.cbx_vigente.TabIndex = 33;
             // 
             // btn_limpiarCC
@@ -829,8 +847,9 @@ namespace WindowsFormsApp1
             this.cbx_tipoEvento.FormattingEnabled = true;
             this.cbx_tipoEvento.Location = new System.Drawing.Point(132, 247);
             this.cbx_tipoEvento.Name = "cbx_tipoEvento";
-            this.cbx_tipoEvento.Size = new System.Drawing.Size(121, 21);
+            this.cbx_tipoEvento.Size = new System.Drawing.Size(174, 21);
             this.cbx_tipoEvento.TabIndex = 15;
+            this.cbx_tipoEvento.SelectedIndexChanged += new System.EventHandler(this.cbx_tipoEvento_SelectedIndexChanged);
             // 
             // txt_direccionContrato
             // 
@@ -912,24 +931,6 @@ namespace WindowsFormsApp1
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(866, 451);
             this.tabControl1.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(18, 281);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 13);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Modalidad Evento";
-            // 
-            // cbx_modalidadEvento
-            // 
-            this.cbx_modalidadEvento.FormattingEnabled = true;
-            this.cbx_modalidadEvento.Location = new System.Drawing.Point(132, 281);
-            this.cbx_modalidadEvento.Name = "cbx_modalidadEvento";
-            this.cbx_modalidadEvento.Size = new System.Drawing.Size(121, 21);
-            this.cbx_modalidadEvento.TabIndex = 41;
-            this.cbx_modalidadEvento.SelectedIndexChanged += new System.EventHandler(this.cbx_modalidadEvento_SelectedIndexChanged);
             // 
             // FrmContrato
             // 
