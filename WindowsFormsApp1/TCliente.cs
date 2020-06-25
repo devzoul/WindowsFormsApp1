@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
             try
             {
                 MySqlConnection conexion = Conexion.abrirURL();
-                MySqlCommand orden = new MySqlCommand(string.Format("INSERT INTO CLIENTE (rutCli, razon_social, nombreContactoCli, mailContacto, direccionCli, telefono, actividad, tipoCli  ) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}', '{7}')",
+                MySqlCommand orden = new MySqlCommand(string.Format("INSERT INTO CLIENTE (rutcliente, razonsocial, nombrecontacto, mailContacto, direccion, telefono, IdActividadEmpresa , IdTipoEmpresa) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",
                     cliente.rutCli, cliente.razon_social, cliente.nombreContactoCli, cliente.mailContacto, cliente.direccionCli, cliente.telefono, cliente.actividad, cliente.tipoCli), conexion);
                 MySqlDataReader lector = orden.ExecuteReader();
                 lector.Close();
@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
 
             Cliente cliente = new Cliente();
             MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM CLIENTE WHERE rutCli =@rutCli"), conexion);
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM CLIENTE WHERE RutCliente =@rutCli"), conexion);
             orden.Parameters.AddWithValue("@rutCli", rutCli);
             MySqlDataReader lector = orden.ExecuteReader();
             if (lector.Read())
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
             try
             {
                 MySqlConnection conexion = Conexion.abrirURL();
-                MySqlCommand orden = new MySqlCommand(string.Format("DELETE FROM CLIENTE WHERE rutCli ='{0}'", cliente.rutCli), conexion);
+                MySqlCommand orden = new MySqlCommand(string.Format("DELETE FROM CLIENTE WHERE RutCliente ='{0}'", cliente.rutCli), conexion);
                 MySqlDataReader lector = orden.ExecuteReader();
                 lector.Close();
                 conexion.Close();
@@ -109,7 +109,7 @@ namespace WindowsFormsApp1
             try
             {
                 MySqlConnection conexion = Conexion.abrirURL();
-                MySqlCommand orden = new MySqlCommand(string.Format("UPDATE CLIENTE SET razon_social='{0}', nombreContactoCli= '{1}', mailContacto='{2}', direccionCli='{3}',  telefono='{4}', actividad='{5}' , tipoCli='{6}'WHERE rutCli ='{7}'",
+                MySqlCommand orden = new MySqlCommand(string.Format("UPDATE CLIENTE SET RazonSocial='{0}', NombreContacto= '{1}', mailContacto='{2}', Direccion='{3}',  telefono='{4}', IdActividadEmpresa ='{5}' , IdTipoEmpresa ='{6}'WHERE RutCliente  ='{7}'",
                 cliente.razon_social, cliente.nombreContactoCli, cliente.mailContacto, cliente.direccionCli, cliente.telefono, cliente.actividad, cliente.tipoCli, cliente.rutCli), conexion);
                 MySqlDataReader lector = orden.ExecuteReader();
                 lector.Close();

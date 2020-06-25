@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Google.Protobuf.WellKnownTypes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,13 +15,69 @@ namespace WindowsFormsApp1
 
 
     {
-        
+        public class ComboboxItem
+        {
+            public string Text { get; set; }
+            public object Value { get; set; }
+
+            public override string ToString()
+            {
+                return Text;
+            }
+        }
+
+        public class ComboboxItem2
+        {
+            public string Text { get; set; }
+            public object Value { get; set; }
+
+            public override string ToString()
+            {
+                return Text;
+            }
+        }
         public FrmCliente()
         {
             InitializeComponent();
-           
+            cargarCombo();
         }
 
+
+        private void cargarCombo()
+        {
+            List<TipoEmpresa> tipoEmpresa;
+            tipoEmpresa = TTipoEmpresa.ListarTipoEmpresa();
+            
+            foreach (var tipoEmpresas in tipoEmpresa)
+             {
+               // cbx_tipoCliente.DisplayMember = tipoEmpresas.Descripcion;
+               // cbx_tipoCliente.ValueMember = tipoEmpresas.idTipoEmpresa.ToString();
+
+                //cbx_tipoCliente.Items.Add(new { Text = tipoEmpresas.Descripcion, Value = tipoEmpresas.idTipoEmpresa });
+
+                ComboboxItem itemEmpresa = new ComboboxItem();
+                itemEmpresa.Text = tipoEmpresas.Descripcion;
+                itemEmpresa.Value = tipoEmpresas.idTipoEmpresa;
+                cbx_tipoCliente.Items.Add(itemEmpresa);
+             }
+            cbx_tipoCliente.SelectedIndex = -1;
+
+            List<ActividadEmpresa> actividadEmpresa;
+            actividadEmpresa = TActividadEmpresa.ListarTipoActividadEmpresa();
+
+            foreach (var actividadEmpresas in actividadEmpresa)
+            {
+                ComboboxItem2 itemActividad = new ComboboxItem2();
+                itemActividad.Text = actividadEmpresas.Descripcion;
+                itemActividad.Value = actividadEmpresas.IdActividadEmpresa;
+                cbx_actividad.Items.Add(itemActividad);
+            }
+            cbx_actividad.SelectedIndex = -1;
+
+
+
+
+        }
         private void ActDes(Boolean estado)
         {
             txt_rut.Enabled = !estado;
@@ -70,7 +127,7 @@ namespace WindowsFormsApp1
                 
                 Cliente cliente = new Cliente();
                 TCliente tcliente = new TCliente();
-
+                
 
                 cliente.rutCli = txt_rut.Text;
                 cliente.razon_social = txt_razonSocial.Text;
@@ -78,8 +135,9 @@ namespace WindowsFormsApp1
                 cliente.mailContacto = txt_mail.Text;
                 cliente.direccionCli = txt_direccionCliente.Text;
                 cliente.telefono = Int32.Parse(txt_telefono.Text);
-                cliente.actividad = cbx_actividad.SelectedItem.ToString();
-                cliente.tipoCli = cbx_tipoCliente.SelectedItem.ToString();
+                cliente.tipoCli = (cbx_tipoCliente.SelectedItem as ComboboxItem).Value.ToString();
+                cliente.actividad = (cbx_actividad.SelectedItem as ComboboxItem2).Value.ToString();               
+                
                 if (tcliente.ingresarCliente(cliente))
                 {
                     MessageBox.Show("Cliente ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
