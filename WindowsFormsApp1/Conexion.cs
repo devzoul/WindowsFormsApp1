@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
     {
         public static MySqlConnection abrirURL()
         {
-            MySqlConnection conector = new MySqlConnection("server = localhost; database = onbreakdb; Uid = root; pwd= ");
+            MySqlConnection conector = new MySqlConnection("server = localhost; database = onbreak; Uid = root; pwd= ");
             conector.Open();
             return conector;
 

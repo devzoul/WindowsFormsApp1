@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -65,7 +67,7 @@ namespace WindowsFormsApp1
                             {
                                 if (txt_participantes.Text != "" && txt_participantes.Text != "0")
                                 {
-                                    if (cbx_tipoContrato.SelectedIndex >= 0)
+                                    if (cbx_tipoEvento.SelectedIndex >= 0)
                                     {
                                         if (txt_rutCliente.Text != "")
                                         {
@@ -80,22 +82,22 @@ namespace WindowsFormsApp1
 
 
 
-                                            if (cbx_tipoContrato.SelectedItem.ToString() == "Matrimonio")
+                                            if (cbx_tipoEvento.SelectedItem.ToString() == "Matrimonio")
                                             {
                                                 contrato.idTipo = 1;
 
                                             }
-                                            else if (cbx_tipoContrato.SelectedItem.ToString() == "Bautizo")
+                                            else if (cbx_tipoEvento.SelectedItem.ToString() == "Bautizo")
                                             {
                                                 contrato.idTipo = 2;
                                             }
 
-                                            else if (cbx_tipoContrato.SelectedItem.ToString() == "Cumpleaños")
+                                            else if (cbx_tipoEvento.SelectedItem.ToString() == "Cumpleaños")
                                             {
                                                 contrato.idTipo = 3;
                                             }
 
-                                            else if (cbx_tipoContrato.SelectedItem.ToString() == "Aniversario")
+                                            else if (cbx_tipoEvento.SelectedItem.ToString() == "Aniversario")
                                             {
                                                 contrato.idTipo = 4;
                                             }
@@ -178,7 +180,7 @@ namespace WindowsFormsApp1
             txt_direccionContrato.Text = ("");
             cbx_vigente.ResetText();
             cbx_vigente.SelectedIndex = -1;
-            cbx_tipoContrato.ResetText();
+            cbx_tipoEvento.ResetText();
             cbx_vigente.SelectedIndex = -1;
             txt_asistentes.Text = ("");
             txt_asistentes.Text = ("");
@@ -199,7 +201,7 @@ namespace WindowsFormsApp1
             txt_asistentes.Enabled = estado;
             txt_participantes.Enabled = estado;
             btn_regContrato.Enabled = estado;
-            cbx_tipoContrato.Enabled = estado;
+            cbx_tipoEvento.Enabled = estado;
             txt_rutCliente.Enabled = !estado;
             btn_buscarCC.Enabled = !estado;
             btn_buscarListCliente.Enabled = !estado;
@@ -331,8 +333,8 @@ namespace WindowsFormsApp1
             txt_direccionContrato.Text = ("");
             cbx_vigente.ResetText();
             cbx_vigente.SelectedIndex = -1;
-            cbx_tipoContrato.ResetText();
-            cbx_tipoContrato.SelectedIndex = -1;
+            cbx_tipoEvento.ResetText();
+            cbx_tipoEvento.SelectedIndex = -1;
             txt_observaciones.Text = ("");                    
             txt_participantes.Text = ("");
             txt_asistentes.Text = ("");
@@ -420,6 +422,16 @@ namespace WindowsFormsApp1
 
         private void FrmContrato_Load(object sender, EventArgs e)
         {
+            MySqlConnection conexion = Conexion.abrirURL();
+            MySqlCommand orden = new MySqlCommand("Select Descripcion from tipoEvento", conexion);
+            MySqlDataReader lector = orden.ExecuteReader();
+            while (lector.Read())
+            {
+                cbx_tipoEvento.Items.Add(lector["Descripcion"].ToString());
+            }
+            lector.Close();
+            conexion.Close();
+
 
         }
 
@@ -511,6 +523,44 @@ namespace WindowsFormsApp1
             FrmPrincipal frmPrincipal = new FrmPrincipal();
             frmPrincipal.Visible = true;
             Visible = false;
+        }
+
+        private void cbx_modalidadEvento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           /*String nombre_modalidad = cbx_modalidadEvento.SelectedIndex.ToString();
+            String idTipoEvento;
+            MySqlConnection conexion = Conexion.abrirURL();
+            MySqlCommand orden = new MySqlCommand("Select idTipoEvento from TipoEvento WHERE descripcion=@nombre_modalidad", conexion);
+            orden.Parameters.AddWithValue("@nombre_modalidad", nombre_modalidad);
+
+            MySqlDataReader lector = orden.ExecuteReader();
+
+            idTipoEvento = lector["idTipoEvento"].ToString();
+
+            lector.Close();
+            conexion.Close();
+
+
+            MySqlConnection conexion2 = Conexion.abrirURL();
+            MySqlCommand orden2 = new MySqlCommand("Select Nombre from modalidadservicio where idTipoEvento =@idTipoEvento", conexion);
+            orden.Parameters.AddWithValue("@idTipoEvento", idTipoEvento);
+            MySqlDataReader lector2 = orden.ExecuteReader();
+            while (lector2.Read())
+            {
+                cbx_modalidadEvento.Items.Add(lector2["Nombre"].ToString());
+            }
+            lector2.Close();
+            conexion2.Close();*/
+
+
+
+
+
+
+
+
+
+
         }
     }
 }

@@ -40,8 +40,8 @@ namespace WindowsFormsApp1
 
             Cliente cliente = new Cliente();
             MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM CLIENTE WHERE rutCli =@rutCli"), conexion);
-            orden.Parameters.AddWithValue("@rutCli", rutCli);
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM CLIENTE WHERE RutCliente =@RutCliente"), conexion);
+            orden.Parameters.AddWithValue("@RutCliente", rutCli);
             MySqlDataReader lector = orden.ExecuteReader();
             if (lector.Read())
             {

@@ -94,7 +94,7 @@ namespace WindowsFormsApp1
             this.label9 = new System.Windows.Forms.Label();
             this.btn_buscarCC = new System.Windows.Forms.Button();
             this.btn_regContrato = new System.Windows.Forms.Button();
-            this.cbx_tipoContrato = new System.Windows.Forms.ComboBox();
+            this.cbx_tipoEvento = new System.Windows.Forms.ComboBox();
             this.txt_direccionContrato = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -104,6 +104,8 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbx_modalidadEvento = new System.Windows.Forms.ComboBox();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -584,6 +586,8 @@ namespace WindowsFormsApp1
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbx_modalidadEvento);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.btn_buscarListCliente);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label24);
@@ -603,7 +607,7 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btn_buscarCC);
             this.groupBox1.Controls.Add(this.btn_regContrato);
-            this.groupBox1.Controls.Add(this.cbx_tipoContrato);
+            this.groupBox1.Controls.Add(this.cbx_tipoEvento);
             this.groupBox1.Controls.Add(this.txt_direccionContrato);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -632,7 +636,7 @@ namespace WindowsFormsApp1
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(18, 309);
+            this.label25.Location = new System.Drawing.Point(15, 348);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(68, 13);
             this.label25.TabIndex = 38;
@@ -641,7 +645,7 @@ namespace WindowsFormsApp1
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(18, 284);
+            this.label24.Location = new System.Drawing.Point(18, 322);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(55, 13);
             this.label24.TabIndex = 37;
@@ -650,7 +654,7 @@ namespace WindowsFormsApp1
             // txt_observaciones
             // 
             this.txt_observaciones.Enabled = false;
-            this.txt_observaciones.Location = new System.Drawing.Point(132, 337);
+            this.txt_observaciones.Location = new System.Drawing.Point(130, 376);
             this.txt_observaciones.Name = "txt_observaciones";
             this.txt_observaciones.Size = new System.Drawing.Size(358, 20);
             this.txt_observaciones.TabIndex = 36;
@@ -658,7 +662,7 @@ namespace WindowsFormsApp1
             // txt_participantes
             // 
             this.txt_participantes.Enabled = false;
-            this.txt_participantes.Location = new System.Drawing.Point(132, 306);
+            this.txt_participantes.Location = new System.Drawing.Point(130, 341);
             this.txt_participantes.Name = "txt_participantes";
             this.txt_participantes.Size = new System.Drawing.Size(100, 20);
             this.txt_participantes.TabIndex = 35;
@@ -777,7 +781,7 @@ namespace WindowsFormsApp1
             // txt_asistentes
             // 
             this.txt_asistentes.Enabled = false;
-            this.txt_asistentes.Location = new System.Drawing.Point(132, 281);
+            this.txt_asistentes.Location = new System.Drawing.Point(130, 315);
             this.txt_asistentes.Name = "txt_asistentes";
             this.txt_asistentes.Size = new System.Drawing.Size(100, 20);
             this.txt_asistentes.TabIndex = 21;
@@ -787,7 +791,7 @@ namespace WindowsFormsApp1
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 344);
+            this.label9.Location = new System.Drawing.Point(18, 383);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 13);
             this.label9.TabIndex = 19;
@@ -814,24 +818,19 @@ namespace WindowsFormsApp1
             this.btn_regContrato.UseVisualStyleBackColor = true;
             this.btn_regContrato.Click += new System.EventHandler(this.btn_regContrato_Click);
             // 
-            // cbx_tipoContrato
+            // cbx_tipoEvento
             // 
-            this.cbx_tipoContrato.AutoCompleteCustomSource.AddRange(new string[] {
+            this.cbx_tipoEvento.AutoCompleteCustomSource.AddRange(new string[] {
             "1",
             "2",
             "3",
             "4"});
-            this.cbx_tipoContrato.Enabled = false;
-            this.cbx_tipoContrato.FormattingEnabled = true;
-            this.cbx_tipoContrato.Items.AddRange(new object[] {
-            "Matrimonio",
-            "Bautizo",
-            "Cumpleaños",
-            "Aniversario"});
-            this.cbx_tipoContrato.Location = new System.Drawing.Point(132, 247);
-            this.cbx_tipoContrato.Name = "cbx_tipoContrato";
-            this.cbx_tipoContrato.Size = new System.Drawing.Size(121, 21);
-            this.cbx_tipoContrato.TabIndex = 15;
+            this.cbx_tipoEvento.Enabled = false;
+            this.cbx_tipoEvento.FormattingEnabled = true;
+            this.cbx_tipoEvento.Location = new System.Drawing.Point(132, 247);
+            this.cbx_tipoEvento.Name = "cbx_tipoEvento";
+            this.cbx_tipoEvento.Size = new System.Drawing.Size(121, 21);
+            this.cbx_tipoEvento.TabIndex = 15;
             // 
             // txt_direccionContrato
             // 
@@ -846,9 +845,9 @@ namespace WindowsFormsApp1
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(18, 250);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 13);
+            this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Tipo";
+            this.label8.Text = "Tipo Evento";
             // 
             // label7
             // 
@@ -913,6 +912,24 @@ namespace WindowsFormsApp1
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(866, 451);
             this.tabControl1.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 281);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 13);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Modalidad Evento";
+            // 
+            // cbx_modalidadEvento
+            // 
+            this.cbx_modalidadEvento.FormattingEnabled = true;
+            this.cbx_modalidadEvento.Location = new System.Drawing.Point(132, 281);
+            this.cbx_modalidadEvento.Name = "cbx_modalidadEvento";
+            this.cbx_modalidadEvento.Size = new System.Drawing.Size(121, 21);
+            this.cbx_modalidadEvento.TabIndex = 41;
+            this.cbx_modalidadEvento.SelectedIndexChanged += new System.EventHandler(this.cbx_modalidadEvento_SelectedIndexChanged);
             // 
             // FrmContrato
             // 
@@ -988,7 +1005,7 @@ namespace WindowsFormsApp1
         private Label label9;
         private Button btn_buscarCC;
         private Button btn_regContrato;
-        private ComboBox cbx_tipoContrato;
+        private ComboBox cbx_tipoEvento;
         private TextBox txt_direccionContrato;
         private Label label8;
         private Label label7;
@@ -1017,5 +1034,7 @@ namespace WindowsFormsApp1
         private Button btn_Salir3;
         private GroupBox groupBox5;
         private Button btn_Salir4;
+        private ComboBox cbx_modalidadEvento;
+        private Label label10;
     }
 }
