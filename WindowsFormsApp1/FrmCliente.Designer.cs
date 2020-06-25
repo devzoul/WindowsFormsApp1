@@ -200,15 +200,6 @@
             "6"});
             this.cbx_actividadB.Cursor = System.Windows.Forms.Cursors.Default;
             this.cbx_actividadB.FormattingEnabled = true;
-            this.cbx_actividadB.Items.AddRange(new object[] {
-            "Agropecuaria",
-            "Minería",
-            "Manufactura",
-            "Comercio",
-            "Hoteleria",
-            "Alimentos",
-            "Transporte",
-            "Servicios"});
             this.cbx_actividadB.Location = new System.Drawing.Point(93, 172);
             this.cbx_actividadB.Name = "cbx_actividadB";
             this.cbx_actividadB.Size = new System.Drawing.Size(121, 21);
@@ -234,15 +225,11 @@
             "5",
             "6"});
             this.cbx_tipoB.FormattingEnabled = true;
-            this.cbx_tipoB.Items.AddRange(new object[] {
-            "SPA",
-            "EIRL",
-            "Limitada",
-            "Sociedad Anónima"});
             this.cbx_tipoB.Location = new System.Drawing.Point(93, 205);
             this.cbx_tipoB.Name = "cbx_tipoB";
             this.cbx_tipoB.Size = new System.Drawing.Size(121, 21);
             this.cbx_tipoB.TabIndex = 33;
+            this.cbx_tipoB.SelectedIndexChanged += new System.EventHandler(this.cbx_tipoB_SelectedIndexChanged);
             // 
             // label13
             // 

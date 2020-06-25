@@ -59,8 +59,10 @@ namespace WindowsFormsApp1
                 itemEmpresa.Text = tipoEmpresas.Descripcion;
                 itemEmpresa.Value = tipoEmpresas.idTipoEmpresa;
                 cbx_tipoCliente.Items.Add(itemEmpresa);
-             }
+                cbx_tipoB.Items.Add(itemEmpresa);
+            }
             cbx_tipoCliente.SelectedIndex = -1;
+            cbx_tipoB.SelectedIndex = -1;
 
             List<ActividadEmpresa> actividadEmpresa;
             actividadEmpresa = TActividadEmpresa.ListarTipoActividadEmpresa();
@@ -71,8 +73,10 @@ namespace WindowsFormsApp1
                 itemActividad.Text = actividadEmpresas.Descripcion;
                 itemActividad.Value = actividadEmpresas.IdActividadEmpresa;
                 cbx_actividad.Items.Add(itemActividad);
+                cbx_actividadB.Items.Add(itemActividad);
             }
             cbx_actividad.SelectedIndex = -1;
+            cbx_actividadB.SelectedIndex = -1;
 
 
 
@@ -188,6 +192,9 @@ namespace WindowsFormsApp1
             }
             else
             {
+                
+
+
                 TCliente tcliente = new TCliente();
                 Cliente cliente = new Cliente();
                 cliente = tcliente.buscarCliente(txt_rutBusc.Text);
@@ -198,8 +205,34 @@ namespace WindowsFormsApp1
                 txt_mailB.Text = cliente.mailContacto;
                 txt_direccionCB.Text = cliente.direccionCli;
                 txt_telefonoB.Text = cliente.telefono.ToString();
-                cbx_actividadB.SelectedItem = cliente.actividad;
-                cbx_tipoB.SelectedItem = cliente.tipoCli;
+
+                foreach (ComboboxItem2 CmbItem in cbx_actividadB.Items)
+                {
+                    var tempMeasured = CmbItem.Value.ToString();
+                    if (tempMeasured == cliente.actividad)
+                    {
+                        cbx_actividadB.SelectedIndex = cbx_actividadB.FindString(CmbItem.ToString());
+                            break;
+                    }
+
+
+                }
+
+                foreach (ComboboxItem CmbItem in cbx_tipoB.Items)
+                {
+                    var temp2 = CmbItem.Value.ToString();
+                    if (temp2 == cliente.tipoCli)
+                    {
+                        cbx_tipoB.SelectedIndex = cbx_tipoB.FindString(CmbItem.ToString());
+                        break;
+                    }
+
+
+                }
+
+
+                //cbx_actividadB.SelectedIndex = cbx_actividadB.FindString(cliente.actividad);
+                //cbx_tipoB.SelectedItem = cliente.tipoCli;
 
                 if (txt_rutB.Text == (""))
                 {
@@ -330,8 +363,10 @@ namespace WindowsFormsApp1
                 cliente.mailContacto = txt_mailB.Text;
                 cliente.direccionCli = txt_direccionCB.Text;
                 cliente.telefono = Int32.Parse(txt_telefonoB.Text);
-                cliente.actividad = cbx_actividadB.Text;
-                cliente.tipoCli = cbx_tipoB.Text;
+
+                cliente.tipoCli = (cbx_tipoB.SelectedItem as ComboboxItem).Value.ToString();
+                cliente.actividad = (cbx_actividadB.SelectedItem as ComboboxItem2).Value.ToString();
+        
                 if (tcliente.modificarCliente(cliente))
                 {
                     LimpiarDatosBS();
@@ -373,8 +408,35 @@ namespace WindowsFormsApp1
                     txt_direccionCB.Text = FrmListarClientes.rCliente.direccionCli;
                     txt_razonSocialB.Text = FrmListarClientes.rCliente.razon_social;
                     txt_mailB.Text = FrmListarClientes.rCliente.mailContacto;
-                    cbx_actividadB.SelectedItem = FrmListarClientes.rCliente.actividad;
-                    cbx_tipoB.SelectedItem = FrmListarClientes.rCliente.tipoCli;
+
+                    foreach (ComboboxItem2 CmbItem in cbx_actividadB.Items)
+                    {
+                        var tempMeasured = CmbItem.Value.ToString();
+                        if (tempMeasured == FrmListarClientes.rCliente.actividad)
+                        {
+                            cbx_actividadB.SelectedIndex = cbx_actividadB.FindString(CmbItem.ToString());
+                            break;
+                        }
+
+
+                    }
+
+                    foreach (ComboboxItem CmbItem in cbx_tipoB.Items)
+                    {
+                        var temp2 = CmbItem.Value.ToString();
+                        if (temp2 == FrmListarClientes.rCliente.tipoCli)
+                        {
+                            cbx_tipoB.SelectedIndex = cbx_tipoB.FindString(CmbItem.ToString());
+                            break;
+                        }
+
+
+                    }
+
+
+
+                    //cbx_actividadB.SelectedItem = FrmListarClientes.rCliente.actividad;
+                    //cbx_tipoB.SelectedItem = FrmListarClientes.rCliente.tipoCli;
 
                 }
             }
@@ -436,6 +498,11 @@ namespace WindowsFormsApp1
             FrmPrincipal frmPrincipal = new FrmPrincipal();
             frmPrincipal.Visible = true;
             Visible = false;
+        }
+
+        private void cbx_tipoB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
