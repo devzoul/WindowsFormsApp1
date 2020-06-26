@@ -23,17 +23,17 @@ namespace WindowsFormsApp1
             dt = new DataTable();            
             dt.Columns.Add("N°_Contrato");
             dt.Columns.Add("Rut_Cliente");
-            dt.Columns.Add("Tipo");
+            dt.Columns.Add("Tipo Evento");
+            dt.Columns.Add("Modalidad");
             dt.Columns.Add("Fecha Creacion");
             dt.Columns.Add("Fecha Termino");    
             dt.Columns.Add("Hora Inicio");
             dt.Columns.Add("Hora Termino");
-            dt.Columns.Add("Direccion");
             dt.Columns.Add("Está Vigente");
             dt.Columns.Add("Observaciones");
             dt.Columns.Add("Participantes");
             dt.Columns.Add("Asistentes");
-            dt.Columns.Add("Monto Total");
+            dt.Columns.Add("Valor Total");
 
 
 
@@ -55,18 +55,18 @@ namespace WindowsFormsApp1
             {
                 dt.Rows.Add(
                     contrato.numeroContrato,
-                    contrato.rutCli,
-                    contrato.nombreTipo,
+                    contrato.rutCliente,
+                    contrato.id_tipoevento,
+                    contrato.id_modalidad,
                     contrato.creacion,
                     contrato.termino,
                     contrato.fechaHoraInicio,
                     contrato.fechaHoraTermino,
-                    contrato.direccionCon,
                     contrato.estaVigente,                   
                     contrato.observaciones,
                     contrato.participantes,
                     contrato.asistentes,
-                    contrato.monto_total
+                    contrato.valortotalcontrato
                     );
             }
         
@@ -134,18 +134,18 @@ namespace WindowsFormsApp1
             {
                 rContrato = new Contrato();
                 rContrato.numeroContrato = Int64.Parse(txt_sContrato.Text);
-                rContrato.rutCli = txt_sRutC.Text;
-                rContrato.nombreTipo = txt_sTipoC.Text;
+                rContrato.rutCliente = txt_sRutC.Text;
+                
                 rContrato.creacion = txt_sFechaCreacion.Text;
                 rContrato.termino = txt_sFechaTermino.Text;
                 rContrato.fechaHoraInicio = txt_sHoraIni.Text;
                 rContrato.fechaHoraTermino = txt_sHoraFin.Text;
-                rContrato.direccionCon = txt_sDireccionC.Text;
+                
                 rContrato.estaVigente = txt_sVigente.Text;
                 rContrato.observaciones = txt_sObservaciones.Text;
                 rContrato.participantes = Int32.Parse(txt_sParticipantes.Text) ;
                 rContrato.asistentes = Int32.Parse(txt_sAsistentes.Text);
-                rContrato.monto_total = Int32.Parse(txt_sMontoTotal.Text);
+                rContrato.valortotalcontrato = Int32.Parse(txt_sMontoTotal.Text);
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
