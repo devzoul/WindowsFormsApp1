@@ -84,7 +84,8 @@ namespace WindowsFormsApp1
         {
             List<Cliente> lista = new List<Cliente>();
             MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM CLIENTE"), conexion);
+            MySqlCommand orden = new MySqlCommand(string.Format(
+                "SELECT CLIENTE.*, A.DESCRIPCION, T.DESCRIPCION FROM CLIENTE JOIN ACTIVIDADEMPRESA A ON A.IDACTIVIDADEMPRESA = CLIENTE.IDACTIVIDADEMPRESA JOIN TIPOEMPRESA T ON T.IDTIPOEMPRESA = CLIENTE.IDTIPOEMPRESA"), conexion);
             MySqlDataReader lector = orden.ExecuteReader();
             while (lector.Read())
             {
@@ -97,6 +98,8 @@ namespace WindowsFormsApp1
                 cliente.telefono = lector.GetInt32(5);
                 cliente.actividad = lector.GetString(6);
                 cliente.tipoCli = lector.GetString(7);
+                cliente.nom_actividad = lector.GetString(8);
+                cliente.nom_tipo = lector.GetString(9);
 
                 lista.Add(cliente);
             }

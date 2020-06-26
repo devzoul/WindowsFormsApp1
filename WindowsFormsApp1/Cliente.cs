@@ -16,11 +16,17 @@ namespace WindowsFormsApp1
         public int telefono { get; set; }
         public String actividad { get; set; }
         public String tipoCli { get; set; }
+        public String nom_tipo { get; set; }
+        public String nom_actividad { get; set; }
+
+
 
         public Cliente()
         {}
 
-        public Cliente(string rutCli, string razon_social, string nombreContactoCli, string mailContacto, string direccionCli, int telefono, string actividad, string tipoCli)
+        public Cliente(string rutCli, string razon_social, string nombreContactoCli, 
+                        string mailContacto, string direccionCli, int telefono, string actividad,
+                        string tipoCli, string nom_tipo, string nom_actividad)
         {
             this.rutCli = rutCli;
             this.razon_social = razon_social;
@@ -30,6 +36,8 @@ namespace WindowsFormsApp1
             this.telefono = telefono;
             this.actividad = actividad;
             this.tipoCli = tipoCli;
+            this.nom_tipo = nom_tipo;
+            this.nom_actividad = nom_actividad;
         }
     }
 }

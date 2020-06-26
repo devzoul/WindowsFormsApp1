@@ -29,12 +29,18 @@ namespace WindowsFormsApp1
             dt.Columns.Add("Mail");
             dt.Columns.Add("Direccion");
             dt.Columns.Add("Telefono");
+            dt.Columns.Add("idActividad");
+            dt.Columns.Add("idTipo");
+
             dv = new DataView(dt);
             fillDataTable(clientes);
             dtg_Clientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtg_Clientes.DataSource = dv;
-           
-            
+            dtg_Clientes.Columns["idActividad"].Visible = false;
+            dtg_Clientes.Columns["idTipo"].Visible = false;
+
+
+
 
 
         }        
@@ -42,7 +48,7 @@ namespace WindowsFormsApp1
         {
             foreach (var cliente in clientes)
             {
-                dt.Rows.Add(cliente.rutCli, cliente.nombreContactoCli, cliente.actividad,cliente.tipoCli,cliente.razon_social,cliente.mailContacto,cliente.direccionCli,cliente.telefono);
+                dt.Rows.Add(cliente.rutCli, cliente.nombreContactoCli, cliente.nom_actividad,cliente.nom_tipo,cliente.razon_social,cliente.mailContacto,cliente.direccionCli,cliente.telefono, cliente.actividad, cliente.tipoCli);
             }
         }
         public string SetValueForText1 { get; set; }
@@ -117,8 +123,8 @@ namespace WindowsFormsApp1
 
                 txt_sRut.Text = this.dtg_Clientes.Rows[e.RowIndex].Cells["Rut"].Value.ToString();
                 txt_sRazon.Text = this.dtg_Clientes.Rows[e.RowIndex].Cells["Razon Social"].Value.ToString();
-                txt_sActividad.Text = this.dtg_Clientes.Rows[e.RowIndex].Cells["Actividad"].Value.ToString();
-                txt_sTipo.Text = this.dtg_Clientes.Rows[e.RowIndex].Cells["Tipo"].Value.ToString();
+                txt_sActividad.Text = this.dtg_Clientes.Rows[e.RowIndex].Cells["idActividad"].Value.ToString();
+                txt_sTipo.Text = this.dtg_Clientes.Rows[e.RowIndex].Cells["idTipo"].Value.ToString();
                 txt_sMail.Text = this.dtg_Clientes.Rows[e.RowIndex].Cells["Mail"].Value.ToString();
                 txt_sDireccion.Text = this.dtg_Clientes.Rows[e.RowIndex].Cells["Direccion"].Value.ToString();
                 txt_sTelefono.Text = this.dtg_Clientes.Rows[e.RowIndex].Cells["Telefono"].Value.ToString();
