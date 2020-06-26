@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
                 contrato.termino = lector.GetString(2);
                 contrato.fechaHoraInicio = lector.GetString(3);
                 contrato.fechaHoraTermino = lector.GetString(4);
-                contrato.id_modalidad = lector.GetInt32(5);
+                contrato.id_modalidad = lector.GetString(5);
                 contrato.estaVigente = lector.GetString(6);
                 contrato.id_tipoevento = lector.GetInt32(7);
                 contrato.observaciones = lector.GetString(8);
@@ -109,7 +109,7 @@ namespace WindowsFormsApp1
                 contrato.termino = lector.GetString(2);
                 contrato.fechaHoraInicio = lector.GetString(3);
                 contrato.fechaHoraTermino = lector.GetString(4);
-                contrato.id_modalidad = lector.GetInt16(5);
+                contrato.id_modalidad = lector.GetString(5);
                 contrato.id_tipoevento = lector.GetInt16(6);
                 contrato.estaVigente = lector.GetString(7);
                 contrato.observaciones = lector.GetString(8);

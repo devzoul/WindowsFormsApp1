@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
             TipoEvento tipoEvento = new TipoEvento();
             TTipoEvento ttipoEvento = new TTipoEvento();
             int uf = 28702;
-            int recargo_asis = 0;
+            double recargo_asis = 0;
             double recargo_parti = 0;
 
 
@@ -118,7 +118,7 @@ namespace WindowsFormsApp1
                                     {
                                         if (txt_rutCliente.Text != "")
                                         {
-                                            contrato.id_modalidad = Int16.Parse(cbx_modalidadEvento.SelectedValue.ToString());
+                                            contrato.id_modalidad = cbx_modalidadEvento.SelectedValue.ToString();
                                             contrato.id_tipoevento = Int16.Parse(cbx_tipoEvento.SelectedValue.ToString());
                                             contrato.estaVigente = cbx_vigente.SelectedItem.ToString();
                                             contrato.observaciones = txt_observaciones.Text;
@@ -165,7 +165,7 @@ namespace WindowsFormsApp1
 
                                             tipoEvento = ttipoEvento.buscarTipoEvento(contrato.id_tipoevento);
 
-                                            contrato.valortotalcontrato = recargo_asis + Convert.ToInt32(recargo_parti) + tipoEvento.valorBase;
+                                            contrato.valortotalcontrato = Convert.ToInt32(recargo_asis) + Convert.ToInt32(recargo_parti) + tipoEvento.valorBase;
 
                                             DialogResult confirmacion = MessageBox.Show("El monto total del contrato es $" + contrato.valortotalcontrato + "Desea confirmar la operacion", "Resultado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                                             if (confirmacion == DialogResult.Yes)

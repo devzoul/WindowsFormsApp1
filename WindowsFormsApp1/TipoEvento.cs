@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
     {
         public int idTipo { get; set; }
         public String nombreTipo { get; set; }
-        public int valorBase { get; set; }
+        public float valorBase { get; set; }
         public int personalBase { get; set; }
 
 
