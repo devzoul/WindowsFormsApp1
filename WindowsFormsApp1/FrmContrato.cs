@@ -118,36 +118,17 @@ namespace WindowsFormsApp1
                                     {
                                         if (txt_rutCliente.Text != "")
                                         {
-                                            contrato.direccionCon = txt_direccionContrato.Text;
+                                            contrato.id_modalidad = Int16.Parse(cbx_modalidadEvento.SelectedValue.ToString());
+                                            contrato.id_tipoevento = Int16.Parse(cbx_tipoEvento.SelectedValue.ToString());
                                             contrato.estaVigente = cbx_vigente.SelectedItem.ToString();
                                             contrato.observaciones = txt_observaciones.Text;
                                             contrato.asistentes = Int32.Parse(txt_asistentes.Text);
                                             contrato.participantes = Int32.Parse(txt_participantes.Text);
-                                            contrato.rutCli = txt_rutCliente.Text;
+                                            contrato.rutCliente = txt_rutCliente.Text;
                                             String numeroid = (dtp_creacion.Value.ToString("yyyyMMdd") + dtp_horaIni.Value.ToString("HHmm"));
                                             contrato.numeroContrato = Int64.Parse(numeroid);
 
-
-
-                                            if (cbx_tipoEvento.SelectedItem.ToString() == "Matrimonio")
-                                            {
-                                                contrato.idTipo = 1;
-
-                                            }
-                                            else if (cbx_tipoEvento.SelectedItem.ToString() == "Bautizo")
-                                            {
-                                                contrato.idTipo = 2;
-                                            }
-
-                                            else if (cbx_tipoEvento.SelectedItem.ToString() == "Cumpleaños")
-                                            {
-                                                contrato.idTipo = 3;
-                                            }
-
-                                            else if (cbx_tipoEvento.SelectedItem.ToString() == "Aniversario")
-                                            {
-                                                contrato.idTipo = 4;
-                                            }
+                                            
 
 
                                             if (contrato.asistentes >= 1 && contrato.asistentes <= 20)
@@ -182,11 +163,11 @@ namespace WindowsFormsApp1
 
                                             }
 
-                                            tipoEvento = ttipoEvento.buscarTipoEvento(contrato.idTipo);
+                                            tipoEvento = ttipoEvento.buscarTipoEvento(contrato.id_tipoevento);
 
-                                            contrato.monto_total = recargo_asis + Convert.ToInt32(recargo_parti) + tipoEvento.valorBase;
+                                            contrato.valortotalcontrato = recargo_asis + Convert.ToInt32(recargo_parti) + tipoEvento.valorBase;
 
-                                            DialogResult confirmacion = MessageBox.Show("El monto total del contrato es $" + contrato.monto_total + "Desea confirmar la operacion", "Resultado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                            DialogResult confirmacion = MessageBox.Show("El monto total del contrato es $" + contrato.valortotalcontrato + "Desea confirmar la operacion", "Resultado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                                             if (confirmacion == DialogResult.Yes)
                                             {
                                                 if (tcontraro.ingresarContrato(contrato))
@@ -313,41 +294,26 @@ namespace WindowsFormsApp1
                 else
                 {
                     MessageBox.Show("Registro encontrado con exito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txt_buscarut.Text = contrato.rutCli;
+                    txt_buscarut.Text = contrato.rutCliente;
 
                     dtp_buscacreacion.Value = DateTime.Parse(contrato.creacion);
                     dtp_buscatermino.Value = DateTime.Parse(contrato.termino);
                     dtp_buscahoraini.Value = DateTime.Parse(contrato.fechaHoraInicio);
                     dtp_buscahorafin.Value = DateTime.Parse(contrato.fechaHoraTermino);
-                    txt_buscadir.Text = contrato.direccionCon;
+                    
                     cbx_buscavig.Text = contrato.estaVigente;
                     txt_buscaobs.Text = contrato.observaciones;
                     txt_buscaasis.Text = contrato.asistentes.ToString();
                     txt_buscaparti.Text = contrato.participantes.ToString();
-                    txt_buscamonto.Text = contrato.monto_total.ToString();
+                    txt_buscamonto.Text = contrato.valortotalcontrato.ToString();
 
 
-                    if (contrato.idTipo == 1)
-                    {
-                        cbx_buscatipo.Text = "Matrimonio";
-                    }
-                    else if (contrato.idTipo == 2)
-                    {
-                        cbx_buscatipo.Text = "Bautizo";
-                    }
-                    else if (contrato.idTipo == 3)
-                    {
-                        cbx_buscatipo.Text = "Cumpleaños";
-                    }
-                    else if (contrato.idTipo == 4)
-                    {
-                        cbx_buscatipo.Text = "Aniversario";
-                    }
+
 
                     TCliente tcliente = new TCliente();
                     Cliente cliente = new Cliente();
 
-                    cliente = tcliente.buscarCliente(contrato.rutCli);
+                    cliente = tcliente.buscarCliente(contrato.rutCliente);
 
                     txt_buscarz.Text = cliente.nombreContactoCli;
 
@@ -420,18 +386,18 @@ namespace WindowsFormsApp1
                 {
 
                     txt_numeroContrato.Text = frmListarContratos.rContrato.numeroContrato.ToString();
-                    txt_buscarut.Text = frmListarContratos.rContrato.rutCli;
+                    txt_buscarut.Text = frmListarContratos.rContrato.rutCliente;
                     dtp_buscacreacion.Value = DateTime.Parse(frmListarContratos.rContrato.creacion);
                     dtp_buscatermino.Value = DateTime.Parse(frmListarContratos.rContrato.termino);
                     dtp_buscahoraini.Value = DateTime.Parse(frmListarContratos.rContrato.fechaHoraInicio);
                     dtp_buscahorafin.Value = DateTime.Parse(frmListarContratos.rContrato.fechaHoraTermino);
-                    txt_buscadir.Text = frmListarContratos.rContrato.direccionCon;
+                    
                     cbx_buscavig.SelectedItem = frmListarContratos.rContrato.estaVigente;
-                    cbx_buscatipo.SelectedItem = frmListarContratos.rContrato.nombreTipo;
+                    cbx_buscatipo.SelectedItem = frmListarContratos.rContrato.id_modalidad;
                     txt_buscaobs.Text = frmListarContratos.rContrato.observaciones;
                     txt_buscaasis.Text = frmListarContratos.rContrato.asistentes.ToString();
                     txt_buscaparti.Text = frmListarContratos.rContrato.participantes.ToString();
-                    txt_buscamonto.Text = frmListarContratos.rContrato.monto_total.ToString();
+                    txt_buscamonto.Text = frmListarContratos.rContrato.valortotalcontrato.ToString();
 
 
 
