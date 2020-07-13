@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.btn_exit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -35,6 +36,7 @@
             this.btn_ListarClientes = new System.Windows.Forms.Button();
             this.btn_contratos = new System.Windows.Forms.Button();
             this.btn_clientes = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +134,12 @@
             this.btn_clientes.UseVisualStyleBackColor = false;
             this.btn_clientes.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,6 +169,7 @@
         private System.Windows.Forms.Button btn_ListarContratos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 
