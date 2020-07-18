@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             {
 
                 MySqlConnection conexion = Conexion.abrirURL();
-                MySqlCommand orden = new MySqlCommand(string.Format("INSERT INTO CONTRATO (numeroContrato, creacion, termino, fechaHoraInicio, fechaHoraTermino, estaVigente, id_modalidad, id_tipoevento, observaciones, asistentes, participantes, valortotalcontrato, rutCliente  ) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}', '{7}', '{8}', '{9}', '{10}', '{11}','{12}')",
+                MySqlCommand orden = new MySqlCommand(string.Format("INSERT INTO CONTRATO (Numero, creacion, termino, fechaHoraInicio, fechaHoraTermino, Vigente, IdModalidad, IdTipoEvento, observaciones, asistentes, PersonalAdicional, valortotalcontrato, rutCliente  ) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}', '{7}', '{8}', '{9}', '{10}', '{11}','{12}')",
                     contrato.numeroContrato, contrato.creacion, contrato.termino, contrato.fechaHoraInicio, contrato.fechaHoraTermino, contrato.estaVigente, contrato.id_modalidad,contrato.id_tipoevento, contrato.observaciones, contrato.asistentes, contrato.participantes, contrato.valortotalcontrato, contrato.rutCliente), conexion);
                 MySqlDataReader lector = orden.ExecuteReader();
                 lector.Close();
@@ -152,9 +152,10 @@ namespace WindowsFormsApp1
 
         }
 
-
-        public int valorBase()
+        
+        public int valorBase(String id_modalidad)
         {
+            Contrato contrato = new Contrato();
             int valorBase =0;
 
             try
@@ -162,7 +163,7 @@ namespace WindowsFormsApp1
 
                 MySqlConnection conexion = Conexion.abrirURL();
                 MySqlCommand orden = new MySqlCommand(string.Format("SELECT m.ValorBase from modalidadservicio m JOIN TIPOEVENTO TP ON M.IDTIPOEVENTO = TP.IDTIPOEVENTO WHERE idModalidad=@idModalidad"), conexion);
-                orden.Parameters.AddWithValue("@idModalidad", "CB001");
+                orden.Parameters.AddWithValue("@idModalidad",id_modalidad);
                 object result = orden.ExecuteScalar();
                 valorBase = Convert.ToInt32(result);
                                 
@@ -178,6 +179,59 @@ namespace WindowsFormsApp1
                                    
         }
 
+        public int valorAsistente(int IdTipoEvento, int asistentes)
+        {
+            Contrato contrato = new Contrato();
+            int valorAsistente = 0;
+
+            try
+            {
+
+                MySqlConnection conexion = Conexion.abrirURL();
+                MySqlCommand orden = new MySqlCommand(string.Format("select CASE WHEN IdTipoEvento = 30  THEN @asistentes * a.Recargo WHEN @asistentes > 50 then a.recargo * TRUNCATE(@asistentes / 20, 0) else a.Recargo end as Recargo from rango_asistentes a where @asistentes BETWEEN a.minasist and a.maxasist and IdTipoEvento = @IdTipoEvento"), conexion);
+                orden.Parameters.AddWithValue("@IdTipoEvento", IdTipoEvento);
+                orden.Parameters.AddWithValue("@asistentes", asistentes);
+                object result = orden.ExecuteScalar();
+                valorAsistente = Convert.ToInt32(result);
+
+                conexion.Close();
+
+                return valorAsistente;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problema obtener Valor Asistentes " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+
+        }
+
+        public int valorParticipante(int IdTipoEvento, int participantes)
+        {
+            Contrato contrato = new Contrato();
+            int valorParticipantes = 0;
+
+            try
+            {
+
+                MySqlConnection conexion = Conexion.abrirURL();
+                MySqlCommand orden = new MySqlCommand(string.Format("select a.Recargo + a.rec_adic * (@participantes - (a.minper-1)) as recargo from rango_personal a where a.IdTipoEvento = @IdTipoEvento and @participantes BETWEEN a.minper and a.maxper"), conexion);
+                orden.Parameters.AddWithValue("@IdTipoEvento", IdTipoEvento);
+                orden.Parameters.AddWithValue("@participantes", participantes);
+                object result = orden.ExecuteScalar();
+                valorParticipantes = Convert.ToInt32(result);
+
+                conexion.Close();
+
+                return valorParticipantes;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problema obtener Valor  Participantes " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+
+        }
 
     }
 }

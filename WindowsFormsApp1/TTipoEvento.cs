@@ -25,8 +25,7 @@ namespace WindowsFormsApp1
             {
                 tipoEvento.idTipo = lector.GetInt32(0);
                 tipoEvento.nombreTipo = lector.GetString(1);
-                tipoEvento.valorBase = lector.GetFloat(2);
-                tipoEvento.personalBase = lector.GetInt32(3);
+                                
 
             }
             return tipoEvento;

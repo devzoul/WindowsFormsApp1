@@ -620,7 +620,7 @@ namespace WindowsFormsApp1
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(20, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(496, 412);
+            this.groupBox1.Size = new System.Drawing.Size(661, 412);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Contrato";
@@ -645,7 +645,7 @@ namespace WindowsFormsApp1
             // 
             // btn_buscarListCliente
             // 
-            this.btn_buscarListCliente.Location = new System.Drawing.Point(364, 58);
+            this.btn_buscarListCliente.Location = new System.Drawing.Point(562, 72);
             this.btn_buscarListCliente.Name = "btn_buscarListCliente";
             this.btn_buscarListCliente.Size = new System.Drawing.Size(93, 42);
             this.btn_buscarListCliente.TabIndex = 39;
@@ -665,7 +665,7 @@ namespace WindowsFormsApp1
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(18, 322);
+            this.label24.Location = new System.Drawing.Point(22, 315);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(55, 13);
             this.label24.TabIndex = 37;
@@ -710,7 +710,7 @@ namespace WindowsFormsApp1
             // 
             // btn_limpiarCC
             // 
-            this.btn_limpiarCC.Location = new System.Drawing.Point(364, 128);
+            this.btn_limpiarCC.Location = new System.Drawing.Point(562, 128);
             this.btn_limpiarCC.Name = "btn_limpiarCC";
             this.btn_limpiarCC.Size = new System.Drawing.Size(93, 31);
             this.btn_limpiarCC.TabIndex = 32;
@@ -801,7 +801,7 @@ namespace WindowsFormsApp1
             // txt_asistentes
             // 
             this.txt_asistentes.Enabled = false;
-            this.txt_asistentes.Location = new System.Drawing.Point(130, 315);
+            this.txt_asistentes.Location = new System.Drawing.Point(130, 308);
             this.txt_asistentes.Name = "txt_asistentes";
             this.txt_asistentes.Size = new System.Drawing.Size(100, 20);
             this.txt_asistentes.TabIndex = 21;
@@ -819,7 +819,7 @@ namespace WindowsFormsApp1
             // 
             // btn_buscarCC
             // 
-            this.btn_buscarCC.Location = new System.Drawing.Point(364, 22);
+            this.btn_buscarCC.Location = new System.Drawing.Point(562, 29);
             this.btn_buscarCC.Name = "btn_buscarCC";
             this.btn_buscarCC.Size = new System.Drawing.Size(93, 30);
             this.btn_buscarCC.TabIndex = 18;
@@ -830,7 +830,7 @@ namespace WindowsFormsApp1
             // btn_regContrato
             // 
             this.btn_regContrato.Enabled = false;
-            this.btn_regContrato.Location = new System.Drawing.Point(364, 174);
+            this.btn_regContrato.Location = new System.Drawing.Point(562, 174);
             this.btn_regContrato.Name = "btn_regContrato";
             this.btn_regContrato.Size = new System.Drawing.Size(93, 53);
             this.btn_regContrato.TabIndex = 17;
@@ -936,7 +936,7 @@ namespace WindowsFormsApp1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(364, 261);
+            this.button1.Location = new System.Drawing.Point(562, 240);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 23);
             this.button1.TabIndex = 42;

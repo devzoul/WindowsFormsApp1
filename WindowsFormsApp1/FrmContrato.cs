@@ -88,7 +88,7 @@ namespace WindowsFormsApp1
 
         private void btn_regContrato_Click(object sender, EventArgs e)
         {
-            TContrato tcontraro = new TContrato();
+            TContrato tcontrato = new TContrato();
             Contrato contrato = new Contrato();
             TipoEvento tipoEvento = new TipoEvento();
             TTipoEvento ttipoEvento = new TTipoEvento();
@@ -101,6 +101,8 @@ namespace WindowsFormsApp1
             contrato.termino = dtp_termino.Value.ToString("yyyy-MM-dd HH:mm:ss");
             contrato.fechaHoraInicio = dtp_horaIni.Value.ToString("yyyy-MM-dd HH:mm:ss");
             contrato.fechaHoraTermino = dtp_horaTerm.Value.ToString("yyyy-MM-dd HH:mm:ss");
+            
+            
 
             if (dtp_creacion.Value < dtp_termino.Value)
             {
@@ -118,8 +120,6 @@ namespace WindowsFormsApp1
                                     {
                                         if (txt_rutCliente.Text != "")
                                         {
-                                            contrato.id_modalidad = cbx_modalidadEvento.SelectedValue.ToString();
-                                            contrato.id_tipoevento = Int16.Parse(cbx_tipoEvento.SelectedValue.ToString());
                                             contrato.estaVigente = cbx_vigente.SelectedItem.ToString();
                                             contrato.observaciones = txt_observaciones.Text;
                                             contrato.asistentes = Int32.Parse(txt_asistentes.Text);
@@ -127,50 +127,18 @@ namespace WindowsFormsApp1
                                             contrato.rutCliente = txt_rutCliente.Text;
                                             String numeroid = (dtp_creacion.Value.ToString("yyyyMMdd") + dtp_horaIni.Value.ToString("HHmm"));
                                             contrato.numeroContrato = Int64.Parse(numeroid);
-
-                                            
-
-
-                                            if (contrato.asistentes >= 1 && contrato.asistentes <= 20)
-                                            {
-                                                recargo_asis = (3 * uf);
-                                            }
-                                            else if (contrato.asistentes >= 21 && contrato.asistentes <= 50)
-                                            {
-                                                recargo_asis = (5 * uf);
-                                            }
-                                            else
-                                            {
-                                                recargo_asis = (((contrato.asistentes) / 20) * 2) * uf;
-                                            }
-
-                                            if (contrato.participantes == 2)
-                                            {
-                                                recargo_parti = 2 * uf;
-                                            }
-                                            else if (contrato.participantes == 3)
-                                            {
-                                                recargo_parti = 3 * uf;
-                                            }
-                                            else if (contrato.participantes == 4)
-                                            {
-                                                recargo_parti = 3.5 * uf;
-                                            }
-
-                                            else
-                                            {
-                                                recargo_parti = Math.Round(3.5 * uf + (((contrato.participantes - 4) * 0.5) * uf));
-
-                                            }
-
-                                            tipoEvento = ttipoEvento.buscarTipoEvento(contrato.id_tipoevento);
-
-                                            contrato.valortotalcontrato = Convert.ToInt32(recargo_asis) + Convert.ToInt32(recargo_parti) + tipoEvento.valorBase;
+                                            contrato.id_modalidad = cbx_modalidadEvento.SelectedValue.ToString();
+                                            int valorBase = tcontrato.valorBase(contrato.id_modalidad)*uf;
+                                            contrato.asistentes = Int32.Parse(txt_asistentes.Text.ToString());
+                                            contrato.id_tipoevento = Int32.Parse(cbx_tipoEvento.SelectedValue.ToString());
+                                            int asistentes = tcontrato.valorAsistente(contrato.id_tipoevento, contrato.asistentes)*uf;
+                                            int participantes = tcontrato.valorParticipante(contrato.id_tipoevento, contrato.participantes)*uf;
+                                            contrato.valortotalcontrato = valorBase+ asistentes+participantes;
 
                                             DialogResult confirmacion = MessageBox.Show("El monto total del contrato es $" + contrato.valortotalcontrato + "Desea confirmar la operacion", "Resultado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                                             if (confirmacion == DialogResult.Yes)
                                             {
-                                                if (tcontraro.ingresarContrato(contrato))
+                                                if (tcontrato.ingresarContrato(contrato))
                                                 {
                                                     MessageBox.Show("Contrato ingresado con exito", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                     LimpiardatosCt();
@@ -550,11 +518,20 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             TContrato tcontrato = new TContrato();
+            Contrato contrato = new Contrato();
+            contrato.id_modalidad = cbx_modalidadEvento.SelectedValue.ToString();
+            contrato.asistentes = Int32.Parse(txt_asistentes.Text.ToString());
+            contrato.id_tipoevento = Int32.Parse(cbx_tipoEvento.SelectedValue.ToString());
+            contrato.participantes = Int32.Parse(txt_participantes.Text.ToString());
 
+
+            int valorBase = tcontrato.valorBase(contrato.id_modalidad);
+            int asistentes = tcontrato.valorAsistente(contrato.id_tipoevento, contrato.asistentes);
+            int participantes = tcontrato.valorParticipante(contrato.id_tipoevento, contrato.participantes);
             
-            int valor = tcontrato.valorBase();
 
-            DialogResult confirmacion = MessageBox.Show("El monto total del contrato es $" + valor + "Desea confirmar la operacion", "Resultado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            DialogResult confirmacion = MessageBox.Show("PARTICIPANTES VALOR "+ participantes + "asistente  :"+asistentes + "El monto total del contrato es $" + valorBase + "Desea confirmar la operacion", "Resultado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
         }
     }
 }
