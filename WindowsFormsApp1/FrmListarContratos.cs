@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
             dt = new DataTable();            
             dt.Columns.Add("N°_Contrato");
             dt.Columns.Add("Rut_Cliente");
-            dt.Columns.Add("Tipo Evento");
+            dt.Columns.Add("Tipo_Evento");
             dt.Columns.Add("Modalidad");
             dt.Columns.Add("Fecha Creacion");
             dt.Columns.Add("Fecha Termino");    
@@ -34,7 +34,8 @@ namespace WindowsFormsApp1
             dt.Columns.Add("Participantes");
             dt.Columns.Add("Asistentes");
             dt.Columns.Add("Valor Total");
-
+            dt.Columns.Add("ID Modalidad");
+            dt.Columns.Add("ID Tipo Evento");
 
 
 
@@ -44,11 +45,13 @@ namespace WindowsFormsApp1
             fillDataTable(contratos);
             dtg_Contratos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtg_Contratos.DataSource = dv;
-           
-            
+
+            dtg_Contratos.Columns["ID Tipo Evento"].Visible = false;
+            dtg_Contratos.Columns["ID Modalidad"].Visible = false;
 
 
-        }        
+
+        }
         private void fillDataTable(List<Contrato> contratos)
         {
             foreach (var contrato in contratos)
@@ -56,8 +59,8 @@ namespace WindowsFormsApp1
                 dt.Rows.Add(
                     contrato.numeroContrato,
                     contrato.rutCliente,
-                    contrato.id_tipoevento,
-                    contrato.id_modalidad,
+                    contrato.tipoevent_nombre,
+                    contrato.modalidad_nombre,
                     contrato.creacion,
                     contrato.termino,
                     contrato.fechaHoraInicio,
@@ -66,7 +69,9 @@ namespace WindowsFormsApp1
                     contrato.observaciones,
                     contrato.participantes,
                     contrato.asistentes,
-                    contrato.valortotalcontrato
+                    contrato.valortotalcontrato,
+                    contrato.id_modalidad,
+                    contrato.id_tipoevento
                     );
             }
         
@@ -74,9 +79,14 @@ namespace WindowsFormsApp1
 
         private void btn_cancelarLc_Click(object sender, EventArgs e)
         {
-            FrmPrincipal frmPrincipal = new FrmPrincipal();
-            frmPrincipal.Visible = true;
-            Visible = false;
+
+            if (btn_cancelarLc.Text == "Volver")
+            {
+                FrmPrincipal frmPrincipal = new FrmPrincipal();
+                frmPrincipal.Visible = true;
+                Visible = false;
+            }
+            this.Close();
         }
 
         private void dtg_Contratos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -99,7 +109,7 @@ namespace WindowsFormsApp1
 
         private void txt_tipoCbusc_TextChanged(object sender, EventArgs e)
         {
-            dv.RowFilter = string.Format("Tipo Like '%{0}%'", txt_tipoCbusc.Text);
+            dv.RowFilter = string.Format("Tipo_Evento Like '%{0}%'", txt_tipoCbusc.Text);
             dtg_Contratos.DataSource = dv;
         }
 
@@ -111,17 +121,21 @@ namespace WindowsFormsApp1
 
                 txt_sContrato.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["N°_Contrato"].Value.ToString();
                 txt_sRutC.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Rut_Cliente"].Value.ToString();
-                txt_sTipoC.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Tipo"].Value.ToString();
+                txt_sTipoC.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["ID Tipo Evento"].Value.ToString();
                 txt_sFechaCreacion.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Fecha Creacion"].Value.ToString();
                 txt_sFechaTermino.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Fecha Termino"].Value.ToString();
                 txt_sHoraIni.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Hora Inicio"].Value.ToString();
                 txt_sHoraFin.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Hora Termino"].Value.ToString();
-                txt_sDireccionC.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Direccion"].Value.ToString();
+                //txt_sDireccionC.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Direccion"].Value.ToString();
                 txt_sVigente.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Está Vigente"].Value.ToString();
                 txt_sObservaciones.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Observaciones"].Value.ToString();
                 txt_sParticipantes.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Participantes"].Value.ToString();
                 txt_sAsistentes.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Asistentes"].Value.ToString();
-                txt_sMontoTotal.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Monto Total"].Value.ToString();
+                txt_sMontoTotal.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Valor Total"].Value.ToString();
+                txt_sTipoModalidad.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["ID Modalidad"].Value.ToString();
+                
+                txt_sNomTipoE.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Tipo_Evento"].Value.ToString();
+                txt_sNomModalidad.Text = this.dtg_Contratos.Rows[e.RowIndex].Cells["Modalidad"].Value.ToString();
 
 
 
@@ -146,12 +160,20 @@ namespace WindowsFormsApp1
                 rContrato.participantes = Int32.Parse(txt_sParticipantes.Text) ;
                 rContrato.asistentes = Int32.Parse(txt_sAsistentes.Text);
                 rContrato.valortotalcontrato = Int32.Parse(txt_sMontoTotal.Text);
+                rContrato.id_modalidad = txt_sTipoModalidad.Text;
+                rContrato.id_tipoevento =  Int32.Parse(txt_sTipoC.Text);
+                rContrato.tipoevent_nombre = txt_sNomTipoE.Text;
+                rContrato.modalidad_nombre = txt_sNomModalidad.Text;
+
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
         }
 
-        
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

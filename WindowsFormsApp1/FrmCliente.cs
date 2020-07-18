@@ -399,9 +399,10 @@ namespace WindowsFormsApp1
         {
             using (FrmListarClientes FrmListarClientes = new FrmListarClientes())
             {
+                FrmListarClientes.button1.Enabled = true;
                 if (FrmListarClientes.ShowDialog() == DialogResult.OK)
                 {
-
+                    
                     txt_rutB.Text = FrmListarClientes.rCliente.rutCli;
                     txt_nombreB.Text = FrmListarClientes.rCliente.nombreContactoCli;
                     txt_telefonoB.Text = FrmListarClientes.rCliente.telefono.ToString();

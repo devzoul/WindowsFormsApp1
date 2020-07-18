@@ -22,10 +22,12 @@ namespace WindowsFormsApp1
         public int participantes { get; set; }
         public float valortotalcontrato { get; set; }
 
+        public string modalidad_nombre { get; set; }
+        public string tipoevent_nombre { get; set; }
 
         public Contrato() { }
 
-        public Contrato(long numeroContrato, string creacion, string termino, string fechaHoraInicio, string fechaHoraTermino, string estaVigente, string id_modalidad, int id_tipoevento, string observaciones, string rutCliente, int asistentes, int participantes, float valortotalcontrato)
+        public Contrato(long numeroContrato, string creacion, string termino, string fechaHoraInicio, string fechaHoraTermino, string estaVigente, string id_modalidad, int id_tipoevento, string observaciones, string rutCliente, int asistentes, int participantes, float valortotalcontrato,string tipoevent_nombre, string modalidad_nombre)
         {
             this.numeroContrato = numeroContrato;
             this.creacion = creacion;
@@ -40,6 +42,8 @@ namespace WindowsFormsApp1
             this.asistentes = asistentes;
             this.participantes = participantes;
             this.valortotalcontrato = valortotalcontrato;
+            this.tipoevent_nombre = tipoevent_nombre;
+            this.modalidad_nombre = modalidad_nombre;
         }
     }
     

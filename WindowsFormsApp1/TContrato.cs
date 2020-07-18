@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
 
             Contrato contrato = new Contrato();
             MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand(string.Format("SELECT * FROM CONTRATO WHERE numeroContrato =@numeroContrato"), conexion);
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT  Numero, Creacion, Termino, RutCliente, IdModalidad, IdTipoEvento, FechahoraInicio, FechahoraTermino, Asistentes, PersonalAdicional, Vigente, ValorTotalContrato, Observaciones FROM CONTRATO WHERE numero =@numeroContrato"), conexion);
             orden.Parameters.AddWithValue("@numeroContrato", numeroContrato);
             MySqlDataReader lector = orden.ExecuteReader();
             if (lector.Read())
@@ -48,16 +48,18 @@ namespace WindowsFormsApp1
                 contrato.numeroContrato = lector.GetInt64(0);
                 contrato.creacion = lector.GetString(1);
                 contrato.termino = lector.GetString(2);
-                contrato.fechaHoraInicio = lector.GetString(3);
-                contrato.fechaHoraTermino = lector.GetString(4);
-                contrato.id_modalidad = lector.GetString(5);
-                contrato.estaVigente = lector.GetString(6);
-                contrato.id_tipoevento = lector.GetInt32(7);
-                contrato.observaciones = lector.GetString(8);
-                contrato.asistentes = lector.GetInt32(9);
-                contrato.participantes = lector.GetInt32(10);
+                contrato.rutCliente = lector.GetString(3);
+                contrato.id_modalidad = lector.GetString(4);
+                contrato.id_tipoevento = lector.GetInt32(5);
+                contrato.fechaHoraInicio = lector.GetString(6);
+                contrato.fechaHoraTermino = lector.GetString(7);
+                contrato.asistentes = lector.GetInt32(8);
+                contrato.participantes = lector.GetInt32(9);
+                contrato.estaVigente = lector.GetString(10);     
+                
                 contrato.valortotalcontrato = lector.GetInt32(11);
-                contrato.rutCliente = lector.GetString(12);
+                contrato.observaciones = lector.GetString(12);
+
 
 
             }
@@ -98,7 +100,7 @@ namespace WindowsFormsApp1
         {
             List<Contrato> lista = new List<Contrato>();
             MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand(string.Format("SELECT contrato.numeroContrato, DATE_FORMAT(contrato.creacion, '%Y-%m-%d'), DATE_FORMAT(contrato.termino, '%Y-%m-%d'), DATE_FORMAT(contrato.fechaHoraInicio, '%H:%i'), DATE_FORMAT(contrato.fechaHoraTermino, '%H:%i'), contrato.IdModalidad,contrato.Idtipoevento, contrato.estaVigente,  contrato.observaciones, contrato.asistentes, contrato.participantes, contrato.valortotalcontrato, contrato.rutCliente,TIPOEVENTO.Descripcion FROM contrato join TIPOEVENTO ON TIPOEVENTO.IdTipoEvento = contrato.IdTipoEvento"), conexion);
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT contrato.NUMERO, DATE_FORMAT(contrato.creacion, '%Y-%m-%d'), DATE_FORMAT(contrato.termino, '%Y-%m-%d'), DATE_FORMAT(contrato.fechaHoraInicio, '%H:%i'), DATE_FORMAT(contrato.fechaHoraTermino, '%H:%i'), modalidadservicio.nombre as id_modalidad ,contrato.Idtipoevento, contrato.VIGENTE,  contrato.observaciones, contrato.asistentes, contrato.PERSONALADICIONAL, contrato.valortotalcontrato, contrato.rutCliente,TIPOEVENTO.Descripcion,contrato.IdModalidad FROM contrato join TIPOEVENTO ON TIPOEVENTO.IdTipoEvento = contrato.IdTipoEvento join modalidadservicio on modalidadservicio.idmodalidad = contrato.IdModalidad"), conexion);
             MySqlDataReader lector = orden.ExecuteReader();
             while (lector.Read())
             {
@@ -109,7 +111,7 @@ namespace WindowsFormsApp1
                 contrato.termino = lector.GetString(2);
                 contrato.fechaHoraInicio = lector.GetString(3);
                 contrato.fechaHoraTermino = lector.GetString(4);
-                contrato.id_modalidad = lector.GetString(5);
+                contrato.modalidad_nombre = lector.GetString(5);
                 contrato.id_tipoevento = lector.GetInt16(6);
                 contrato.estaVigente = lector.GetString(7);
                 contrato.observaciones = lector.GetString(8);
@@ -117,7 +119,8 @@ namespace WindowsFormsApp1
                 contrato.participantes = lector.GetInt32(10);
                 contrato.valortotalcontrato = lector.GetInt32(11);
                 contrato.rutCliente = lector.GetString(12);
-                
+                contrato.tipoevent_nombre = lector.GetString(13);
+                contrato.id_modalidad = lector.GetString(14);
 
                 lista.Add(contrato);
             }

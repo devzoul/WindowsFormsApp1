@@ -54,8 +54,11 @@ namespace WindowsFormsApp1
         public string SetValueForText1 { get; set; }
         //public static string SetValueForText1 = "";
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
+            //Form currentForm = Form.ActiveForm;
+
+            
             if (txt_sRut.Text != "")
             {
                 rCliente = new Cliente();
@@ -76,9 +79,14 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmPrincipal frmPrincipal = new FrmPrincipal();
-            frmPrincipal.Visible = true;
-            Visible = false;
+            if(btn_cancelar.Text == "Volver")
+            {
+                FrmPrincipal frmPrincipal = new FrmPrincipal();
+                frmPrincipal.Visible = true;
+                Visible = false;
+            }
+            this.Close();
+            
         }
 
         private void dtg_Clientes_CellContentClick(object sender, DataGridViewCellEventArgs e)

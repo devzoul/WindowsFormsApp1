@@ -46,6 +46,7 @@ namespace WindowsFormsApp1
         {
             FrmListarClientes frmListarClientes = new FrmListarClientes();
             frmListarClientes.Visible = true;
+            frmListarClientes.btn_cancelar.Text = "Volver";
             Visible = false;
         }
 
@@ -53,6 +54,7 @@ namespace WindowsFormsApp1
         {
             FrmListarContratos frmListarContratos = new FrmListarContratos();
             frmListarContratos.Visible = true;
+            frmListarContratos.btn_cancelarLc.Text = "Volver";
             Visible = false;
         }
 

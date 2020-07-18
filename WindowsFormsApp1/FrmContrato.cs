@@ -38,8 +38,16 @@ namespace WindowsFormsApp1
             cbx_tipoEvento.ValueMember = "IdTipoEvento";
 
 
+            
+            
 
-            }
+            cbx_buscatipo.DataSource = dt1;
+            cbx_buscatipo.DisplayMember = "Descripcion";
+            cbx_buscatipo.ValueMember = "IdTipoEvento";
+
+
+
+        }
 
         public void cargar_modalidad(String IdTipoEvento)
         {
@@ -59,8 +67,13 @@ namespace WindowsFormsApp1
             cbx_modalidadEvento.DataSource = dt1;
             cbx_modalidadEvento.ValueMember = "IdModalidad";
             cbx_modalidadEvento.DisplayMember = "Nombre";
-            
-                
+
+            cbx_buscaModalidad.DataSource = dt1;
+            cbx_buscaModalidad.ValueMember = "IdModalidad";
+            cbx_buscaModalidad.DisplayMember = "Nombre";
+
+
+
             conexion.Close();
 
         }
@@ -176,13 +189,14 @@ namespace WindowsFormsApp1
             txt_direccionContrato.Text = ("");
             cbx_vigente.ResetText();
             cbx_vigente.SelectedIndex = -1;
-            cbx_tipoEvento.ResetText();
+            //cbx_tipoEvento.ResetText();
             cbx_vigente.SelectedIndex = -1;
             txt_asistentes.Text = ("");
             txt_asistentes.Text = ("");
             txt_participantes.Text = ("");
             txt_observaciones.Text = ("");
-
+            cbx_modalidadEvento.SelectedIndex = 0;
+            cbx_tipoEvento.SelectedIndex = 0;
         }
 
         private void ActDes(Boolean estado)
@@ -201,7 +215,7 @@ namespace WindowsFormsApp1
             txt_rutCliente.Enabled = !estado;
             btn_buscarCC.Enabled = !estado;
             btn_buscarListCliente.Enabled = !estado;
-
+            cbx_modalidadEvento.Enabled = estado;
 
         }
 
@@ -314,8 +328,8 @@ namespace WindowsFormsApp1
             txt_direccionContrato.Text = ("");
             cbx_vigente.ResetText();
             cbx_vigente.SelectedIndex = -1;
-            cbx_tipoEvento.ResetText();
-            cbx_tipoEvento.SelectedIndex = -1;
+            //cbx_tipoEvento.ResetText();
+            cbx_tipoEvento.SelectedIndex = 0;
             txt_observaciones.Text = ("");                    
             txt_participantes.Text = ("");
             txt_asistentes.Text = ("");
@@ -334,6 +348,8 @@ namespace WindowsFormsApp1
                 cbx_buscavig.SelectedIndex = -1;
                 cbx_buscatipo.ResetText();
                 cbx_buscatipo.SelectedIndex = -1;
+                cbx_buscaModalidad.ResetText();
+                cbx_buscaModalidad.SelectedIndex = -1;
                 txt_buscaobs.Text = ("");
                 txt_buscacon.Text = ("");
                 txt_buscamonto.Text = ("");
@@ -350,6 +366,7 @@ namespace WindowsFormsApp1
         {
             using (FrmListarContratos frmListarContratos = new FrmListarContratos())
             {
+                frmListarContratos.btn_listc_ok.Enabled = true;
                 if (frmListarContratos.ShowDialog() == DialogResult.OK)
                 {
 
@@ -361,14 +378,18 @@ namespace WindowsFormsApp1
                     dtp_buscahorafin.Value = DateTime.Parse(frmListarContratos.rContrato.fechaHoraTermino);
                     
                     cbx_buscavig.SelectedItem = frmListarContratos.rContrato.estaVigente;
-                    cbx_buscatipo.SelectedItem = frmListarContratos.rContrato.id_modalidad;
+                    //cbx_buscatipo.SelectedItem = frmListarContratos.rContrato.id_modalidad;
                     txt_buscaobs.Text = frmListarContratos.rContrato.observaciones;
                     txt_buscaasis.Text = frmListarContratos.rContrato.asistentes.ToString();
                     txt_buscaparti.Text = frmListarContratos.rContrato.participantes.ToString();
                     txt_buscamonto.Text = frmListarContratos.rContrato.valortotalcontrato.ToString();
 
+                    cbx_buscatipo.SelectedIndex = cbx_buscatipo.FindStringExact(frmListarContratos.rContrato.tipoevent_nombre.ToString());
+                    
+                    
+                    cbx_buscaModalidad.SelectedIndex = cbx_buscaModalidad.FindStringExact(frmListarContratos.rContrato.modalidad_nombre.ToString());
 
-
+                 
                     TCliente tcliente = new TCliente();
                     Cliente cliente = new Cliente();
 
@@ -472,6 +493,7 @@ namespace WindowsFormsApp1
         {
             using (FrmListarClientes FrmListarClientes = new FrmListarClientes())
             {
+                FrmListarClientes.button1.Enabled = true;
                 if (FrmListarClientes.ShowDialog() == DialogResult.OK)
                 {
 
@@ -507,9 +529,13 @@ namespace WindowsFormsApp1
 
         private void cbx_tipoEvento_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cbx_tipoEvento.SelectedValue.ToString() !=null)
+            {
+                String IdTipoEvento = cbx_tipoEvento.SelectedValue.ToString();
+                cargar_modalidad(IdTipoEvento);
 
-            String IdTipoEvento = cbx_tipoEvento.SelectedValue.ToString();
-            cargar_modalidad(IdTipoEvento);
+            }
+            
 
 
 
@@ -532,6 +558,11 @@ namespace WindowsFormsApp1
 
 
             DialogResult confirmacion = MessageBox.Show("PARTICIPANTES VALOR "+ participantes + "asistente  :"+asistentes + "El monto total del contrato es $" + valorBase + "Desea confirmar la operacion", "Resultado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+        }
+
+        private void txt_buscacon_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

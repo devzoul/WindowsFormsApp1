@@ -52,6 +52,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(109, 378);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -243,9 +244,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dtg_Clientes;
-        private System.Windows.Forms.Button btn_cancelar;
+        public System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.TextBox txtRutbusc;
         private System.Windows.Forms.TextBox txtActividadbusc;
         private System.Windows.Forms.TextBox txtTipobusc;

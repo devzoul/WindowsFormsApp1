@@ -106,6 +106,8 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.cbx_buscaModalidad = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -207,6 +209,7 @@ namespace WindowsFormsApp1
             this.txt_buscacon.Name = "txt_buscacon";
             this.txt_buscacon.Size = new System.Drawing.Size(100, 20);
             this.txt_buscacon.TabIndex = 32;
+            this.txt_buscacon.TextChanged += new System.EventHandler(this.txt_buscacon_TextChanged);
             // 
             // label23
             // 
@@ -229,6 +232,8 @@ namespace WindowsFormsApp1
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbx_buscaModalidad);
+            this.groupBox2.Controls.Add(this.label28);
             this.groupBox2.Controls.Add(this.txt_numeroContrato);
             this.groupBox2.Controls.Add(this.txt_buscaparti);
             this.groupBox2.Controls.Add(this.txt_buscaasis);
@@ -274,7 +279,7 @@ namespace WindowsFormsApp1
             // txt_buscaparti
             // 
             this.txt_buscaparti.Enabled = false;
-            this.txt_buscaparti.Location = new System.Drawing.Point(130, 303);
+            this.txt_buscaparti.Location = new System.Drawing.Point(130, 332);
             this.txt_buscaparti.Name = "txt_buscaparti";
             this.txt_buscaparti.Size = new System.Drawing.Size(100, 20);
             this.txt_buscaparti.TabIndex = 36;
@@ -284,7 +289,7 @@ namespace WindowsFormsApp1
             // txt_buscaasis
             // 
             this.txt_buscaasis.Enabled = false;
-            this.txt_buscaasis.Location = new System.Drawing.Point(130, 277);
+            this.txt_buscaasis.Location = new System.Drawing.Point(130, 306);
             this.txt_buscaasis.Name = "txt_buscaasis";
             this.txt_buscaasis.Size = new System.Drawing.Size(100, 20);
             this.txt_buscaasis.TabIndex = 35;
@@ -293,7 +298,7 @@ namespace WindowsFormsApp1
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(18, 310);
+            this.label27.Location = new System.Drawing.Point(18, 339);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(68, 13);
             this.label27.TabIndex = 34;
@@ -302,7 +307,7 @@ namespace WindowsFormsApp1
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(18, 284);
+            this.label26.Location = new System.Drawing.Point(18, 313);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(55, 13);
             this.label26.TabIndex = 33;
@@ -347,7 +352,7 @@ namespace WindowsFormsApp1
             // txt_buscamonto
             // 
             this.txt_buscamonto.Enabled = false;
-            this.txt_buscamonto.Location = new System.Drawing.Point(130, 329);
+            this.txt_buscamonto.Location = new System.Drawing.Point(130, 358);
             this.txt_buscamonto.Name = "txt_buscamonto";
             this.txt_buscamonto.Size = new System.Drawing.Size(100, 20);
             this.txt_buscamonto.TabIndex = 29;
@@ -355,7 +360,7 @@ namespace WindowsFormsApp1
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(18, 336);
+            this.label13.Location = new System.Drawing.Point(18, 365);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(107, 13);
             this.label13.TabIndex = 28;
@@ -425,7 +430,7 @@ namespace WindowsFormsApp1
             // txt_buscaobs
             // 
             this.txt_buscaobs.Enabled = false;
-            this.txt_buscaobs.Location = new System.Drawing.Point(130, 361);
+            this.txt_buscaobs.Location = new System.Drawing.Point(130, 390);
             this.txt_buscaobs.Name = "txt_buscaobs";
             this.txt_buscaobs.Size = new System.Drawing.Size(303, 20);
             this.txt_buscaobs.TabIndex = 21;
@@ -433,7 +438,7 @@ namespace WindowsFormsApp1
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(18, 361);
+            this.label15.Location = new System.Drawing.Point(18, 390);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 13);
             this.label15.TabIndex = 19;
@@ -455,7 +460,7 @@ namespace WindowsFormsApp1
             "Bautizo",
             "Cumpleaños",
             "Aniversario"});
-            this.cbx_buscatipo.Location = new System.Drawing.Point(130, 250);
+            this.cbx_buscatipo.Location = new System.Drawing.Point(130, 247);
             this.cbx_buscatipo.Name = "cbx_buscatipo";
             this.cbx_buscatipo.Size = new System.Drawing.Size(121, 21);
             this.cbx_buscatipo.TabIndex = 15;
@@ -471,7 +476,7 @@ namespace WindowsFormsApp1
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(18, 258);
+            this.label16.Location = new System.Drawing.Point(18, 255);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(28, 13);
             this.label16.TabIndex = 7;
@@ -627,6 +632,7 @@ namespace WindowsFormsApp1
             // 
             // cbx_modalidadEvento
             // 
+            this.cbx_modalidadEvento.Enabled = false;
             this.cbx_modalidadEvento.FormattingEnabled = true;
             this.cbx_modalidadEvento.Location = new System.Drawing.Point(132, 281);
             this.cbx_modalidadEvento.Name = "cbx_modalidadEvento";
@@ -934,6 +940,24 @@ namespace WindowsFormsApp1
             this.tabControl1.Size = new System.Drawing.Size(866, 451);
             this.tabControl1.TabIndex = 1;
             // 
+            // cbx_buscaModalidad
+            // 
+            this.cbx_buscaModalidad.Enabled = false;
+            this.cbx_buscaModalidad.FormattingEnabled = true;
+            this.cbx_buscaModalidad.Location = new System.Drawing.Point(130, 278);
+            this.cbx_buscaModalidad.Name = "cbx_buscaModalidad";
+            this.cbx_buscaModalidad.Size = new System.Drawing.Size(174, 21);
+            this.cbx_buscaModalidad.TabIndex = 43;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(18, 286);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(93, 13);
+            this.label28.TabIndex = 42;
+            this.label28.Text = "Modalidad Evento";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(562, 240);
@@ -942,6 +966,7 @@ namespace WindowsFormsApp1
             this.button1.TabIndex = 42;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmContrato
@@ -1049,6 +1074,8 @@ namespace WindowsFormsApp1
         private Button btn_Salir4;
         private ComboBox cbx_modalidadEvento;
         private Label label10;
+        private ComboBox cbx_buscaModalidad;
+        private Label label28;
         private Button button1;
     }
 }

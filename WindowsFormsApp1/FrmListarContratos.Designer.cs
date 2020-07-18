@@ -51,6 +51,9 @@
             this.txt_sMontoTotal = new System.Windows.Forms.TextBox();
             this.txt_sParticipantes = new System.Windows.Forms.TextBox();
             this.txt_sAsistentes = new System.Windows.Forms.TextBox();
+            this.txt_sTipoModalidad = new System.Windows.Forms.TextBox();
+            this.txt_sNomModalidad = new System.Windows.Forms.TextBox();
+            this.txt_sNomTipoE = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Contratos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,9 +62,10 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(258, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 35;
-            this.label3.Text = "Tipo Contrato";
+            this.label3.Text = "Tipo Evento";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -178,7 +182,7 @@
             // 
             // btn_cancelarLc
             // 
-            this.btn_cancelarLc.Location = new System.Drawing.Point(362, 360);
+            this.btn_cancelarLc.Location = new System.Drawing.Point(624, 360);
             this.btn_cancelarLc.Name = "btn_cancelarLc";
             this.btn_cancelarLc.Size = new System.Drawing.Size(151, 23);
             this.btn_cancelarLc.TabIndex = 21;
@@ -191,14 +195,15 @@
             this.dtg_Contratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Contratos.Location = new System.Drawing.Point(19, 62);
             this.dtg_Contratos.Name = "dtg_Contratos";
-            this.dtg_Contratos.Size = new System.Drawing.Size(865, 280);
+            this.dtg_Contratos.Size = new System.Drawing.Size(1063, 281);
             this.dtg_Contratos.TabIndex = 20;
             this.dtg_Contratos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_Contratos_CellClick);
             this.dtg_Contratos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_Contratos_CellContentClick);
             // 
             // btn_listc_ok
             // 
-            this.btn_listc_ok.Location = new System.Drawing.Point(191, 360);
+            this.btn_listc_ok.Enabled = false;
+            this.btn_listc_ok.Location = new System.Drawing.Point(340, 360);
             this.btn_listc_ok.Name = "btn_listc_ok";
             this.btn_listc_ok.Size = new System.Drawing.Size(151, 23);
             this.btn_listc_ok.TabIndex = 19;
@@ -251,12 +256,42 @@
             this.txt_sAsistentes.TabIndex = 40;
             this.txt_sAsistentes.Visible = false;
             // 
+            // txt_sTipoModalidad
+            // 
+            this.txt_sTipoModalidad.Enabled = false;
+            this.txt_sTipoModalidad.Location = new System.Drawing.Point(340, 482);
+            this.txt_sTipoModalidad.Name = "txt_sTipoModalidad";
+            this.txt_sTipoModalidad.Size = new System.Drawing.Size(223, 20);
+            this.txt_sTipoModalidad.TabIndex = 41;
+            this.txt_sTipoModalidad.Visible = false;
+            // 
+            // txt_sNomModalidad
+            // 
+            this.txt_sNomModalidad.Enabled = false;
+            this.txt_sNomModalidad.Location = new System.Drawing.Point(106, 404);
+            this.txt_sNomModalidad.Name = "txt_sNomModalidad";
+            this.txt_sNomModalidad.Size = new System.Drawing.Size(223, 20);
+            this.txt_sNomModalidad.TabIndex = 42;
+            this.txt_sNomModalidad.Visible = false;
+            // 
+            // txt_sNomTipoE
+            // 
+            this.txt_sNomTipoE.Enabled = false;
+            this.txt_sNomTipoE.Location = new System.Drawing.Point(106, 430);
+            this.txt_sNomTipoE.Name = "txt_sNomTipoE";
+            this.txt_sNomTipoE.Size = new System.Drawing.Size(223, 20);
+            this.txt_sNomTipoE.TabIndex = 43;
+            this.txt_sNomTipoE.Visible = false;
+            // 
             // FrmListarContratos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 527);
+            this.ClientSize = new System.Drawing.Size(1094, 590);
             this.ControlBox = false;
+            this.Controls.Add(this.txt_sNomTipoE);
+            this.Controls.Add(this.txt_sNomModalidad);
+            this.Controls.Add(this.txt_sTipoModalidad);
             this.Controls.Add(this.txt_sAsistentes);
             this.Controls.Add(this.txt_sParticipantes);
             this.Controls.Add(this.txt_sMontoTotal);
@@ -304,13 +339,16 @@
         private System.Windows.Forms.TextBox txt_tipoCbusc;
         private System.Windows.Forms.TextBox txt_rutCbusc;
         private System.Windows.Forms.TextBox txt_contratoBusc;
-        private System.Windows.Forms.Button btn_cancelarLc;
+        public System.Windows.Forms.Button btn_cancelarLc;
         private System.Windows.Forms.DataGridView dtg_Contratos;
-        private System.Windows.Forms.Button btn_listc_ok;
+        public System.Windows.Forms.Button btn_listc_ok;
         private System.Windows.Forms.TextBox txt_sVigente;
         private System.Windows.Forms.TextBox txt_sObservaciones;
         private System.Windows.Forms.TextBox txt_sMontoTotal;
         private System.Windows.Forms.TextBox txt_sParticipantes;
         private System.Windows.Forms.TextBox txt_sAsistentes;
+        private System.Windows.Forms.TextBox txt_sTipoModalidad;
+        private System.Windows.Forms.TextBox txt_sNomModalidad;
+        private System.Windows.Forms.TextBox txt_sNomTipoE;
     }
 }
