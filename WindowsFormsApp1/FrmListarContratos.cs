@@ -49,6 +49,22 @@ namespace WindowsFormsApp1
             dtg_Contratos.Columns["ID Tipo Evento"].Visible = false;
             dtg_Contratos.Columns["ID Modalidad"].Visible = false;
 
+            dtg_Contratos.Columns["N°_Contrato"].ReadOnly = true;
+            dtg_Contratos.Columns["Rut_Cliente"].ReadOnly = true;
+            dtg_Contratos.Columns["Tipo_Evento"].ReadOnly = true;
+            dtg_Contratos.Columns["Modalidad"].ReadOnly = true;
+            dtg_Contratos.Columns["Fecha Creacion"].ReadOnly = true;
+            dtg_Contratos.Columns["Fecha Termino"].ReadOnly = true;
+            dtg_Contratos.Columns["Hora Inicio"].ReadOnly = true;
+            dtg_Contratos.Columns["Hora Termino"].ReadOnly = true;
+            dtg_Contratos.Columns["Está Vigente"].ReadOnly = true;
+            dtg_Contratos.Columns["Observaciones"].ReadOnly = true;
+            dtg_Contratos.Columns["Participantes"].ReadOnly = true;
+            dtg_Contratos.Columns["Asistentes"].ReadOnly = true;
+            dtg_Contratos.Columns["Valor Total"].ReadOnly = true;
+            dtg_Contratos.Columns["ID Modalidad"].ReadOnly = true;
+            dtg_Contratos.Columns["ID Tipo Evento"].ReadOnly = true;
+
 
 
         }

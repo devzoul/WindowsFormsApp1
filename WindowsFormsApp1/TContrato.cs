@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
 
             Contrato contrato = new Contrato();
             MySqlConnection conexion = Conexion.abrirURL();
-            MySqlCommand orden = new MySqlCommand(string.Format("SELECT  Numero, Creacion, Termino, RutCliente, IdModalidad, IdTipoEvento, FechahoraInicio, FechahoraTermino, Asistentes, PersonalAdicional, Vigente, ValorTotalContrato, Observaciones FROM CONTRATO WHERE numero =@numeroContrato"), conexion);
+            MySqlCommand orden = new MySqlCommand(string.Format("SELECT  Numero, Creacion, Termino, RutCliente, contrato.IdModalidad, contrato.IdTipoEvento, FechahoraInicio, FechahoraTermino, Asistentes, PersonalAdicional, Vigente, ValorTotalContrato, Observaciones,TIPOEVENTO.descripcion, modalidadservicio.nombre FROM CONTRATO join TIPOEVENTO ON TIPOEVENTO.IdTipoEvento = contrato.IdTipoEvento join modalidadservicio on modalidadservicio.idmodalidad = contrato.IdModalidad WHERE contrato.numero =@numeroContrato"), conexion);
             orden.Parameters.AddWithValue("@numeroContrato", numeroContrato);
             MySqlDataReader lector = orden.ExecuteReader();
             if (lector.Read())
@@ -59,6 +59,8 @@ namespace WindowsFormsApp1
                 
                 contrato.valortotalcontrato = lector.GetInt32(11);
                 contrato.observaciones = lector.GetString(12);
+                contrato.tipoevent_nombre = lector.GetString(13);
+                contrato.modalidad_nombre = lector.GetString(14);
 
 
 

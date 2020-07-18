@@ -20,7 +20,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             clientes = TCliente.ListarCliente();
-            dt = new DataTable();            
+            dt = new DataTable();      
+            
             dt.Columns.Add("Rut");
             dt.Columns.Add("Nombre");
             dt.Columns.Add("Actividad");
@@ -36,9 +37,19 @@ namespace WindowsFormsApp1
             fillDataTable(clientes);
             dtg_Clientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtg_Clientes.DataSource = dv;
+            
             dtg_Clientes.Columns["idActividad"].Visible = false;
             dtg_Clientes.Columns["idTipo"].Visible = false;
-
+            dtg_Clientes.Columns["Rut"].ReadOnly = true;
+            dtg_Clientes.Columns["Nombre"].ReadOnly = true;
+            dtg_Clientes.Columns["Actividad"].ReadOnly = true;
+            dtg_Clientes.Columns["Tipo"].ReadOnly = true;
+            dtg_Clientes.Columns["Razon Social"].ReadOnly = true;
+            dtg_Clientes.Columns["Mail"].ReadOnly = true;
+            dtg_Clientes.Columns["Direccion"].ReadOnly = true;
+            dtg_Clientes.Columns["Telefono"].ReadOnly = true;
+            dtg_Clientes.Columns["idActividad"].ReadOnly = true;
+            dtg_Clientes.Columns["idTipo"].ReadOnly = true;
 
 
 

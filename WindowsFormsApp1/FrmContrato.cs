@@ -289,6 +289,9 @@ namespace WindowsFormsApp1
                     txt_buscaparti.Text = contrato.participantes.ToString();
                     txt_buscamonto.Text = contrato.valortotalcontrato.ToString();
 
+                    cbx_buscatipo.SelectedIndex = cbx_buscatipo.FindStringExact(contrato.tipoevent_nombre.ToString());
+                    cbx_buscaModalidad.SelectedIndex = cbx_buscaModalidad.FindStringExact(contrato.modalidad_nombre.ToString());
+
 
 
 
