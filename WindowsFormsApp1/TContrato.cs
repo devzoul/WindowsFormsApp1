@@ -152,5 +152,32 @@ namespace WindowsFormsApp1
 
         }
 
+
+        public int valorBase()
+        {
+            int valorBase =0;
+
+            try
+            {
+
+                MySqlConnection conexion = Conexion.abrirURL();
+                MySqlCommand orden = new MySqlCommand(string.Format("SELECT m.ValorBase from modalidadservicio m JOIN TIPOEVENTO TP ON M.IDTIPOEVENTO = TP.IDTIPOEVENTO WHERE idModalidad=@idModalidad"), conexion);
+                orden.Parameters.AddWithValue("@idModalidad", "CB001");
+                object result = orden.ExecuteScalar();
+                valorBase = Convert.ToInt32(result);
+                                
+                conexion.Close();
+
+                return valorBase;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problema obtener Valor Base de Contrato " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+                                   
+        }
+
+
     }
 }

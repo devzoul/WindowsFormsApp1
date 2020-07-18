@@ -106,6 +106,7 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -586,6 +587,7 @@ namespace WindowsFormsApp1
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cbx_modalidadEvento);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.btn_buscarListCliente);
@@ -856,7 +858,7 @@ namespace WindowsFormsApp1
             this.txt_direccionContrato.Enabled = false;
             this.txt_direccionContrato.Location = new System.Drawing.Point(132, 191);
             this.txt_direccionContrato.Name = "txt_direccionContrato";
-            this.txt_direccionContrato.Size = new System.Drawing.Size(100, 20);
+            this.txt_direccionContrato.Size = new System.Drawing.Size(174, 20);
             this.txt_direccionContrato.TabIndex = 13;
             // 
             // label8
@@ -931,6 +933,16 @@ namespace WindowsFormsApp1
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(866, 451);
             this.tabControl1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(364, 261);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 23);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmContrato
             // 
@@ -1037,5 +1049,6 @@ namespace WindowsFormsApp1
         private Button btn_Salir4;
         private ComboBox cbx_modalidadEvento;
         private Label label10;
+        private Button button1;
     }
 }

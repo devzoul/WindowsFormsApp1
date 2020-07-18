@@ -546,5 +546,15 @@ namespace WindowsFormsApp1
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TContrato tcontrato = new TContrato();
+
+            
+            int valor = tcontrato.valorBase();
+
+            DialogResult confirmacion = MessageBox.Show("El monto total del contrato es $" + valor + "Desea confirmar la operacion", "Resultado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+        }
     }
 }
