@@ -235,6 +235,7 @@
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListarClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OnBreak Listar Cliente";
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Clientes)).EndInit();
             this.ResumeLayout(false);
