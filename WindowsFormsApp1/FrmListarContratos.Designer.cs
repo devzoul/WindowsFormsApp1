@@ -316,6 +316,7 @@
             this.Controls.Add(this.btn_listc_ok);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListarContratos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OnBreak Listar Contrato";
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Contratos)).EndInit();
             this.ResumeLayout(false);

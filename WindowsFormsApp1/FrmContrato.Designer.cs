@@ -42,6 +42,8 @@ namespace WindowsFormsApp1
             this.label23 = new System.Windows.Forms.Label();
             this.btn_limpiarC = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbx_buscaModalidad = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.txt_numeroContrato = new System.Windows.Forms.TextBox();
             this.txt_buscaparti = new System.Windows.Forms.TextBox();
             this.txt_buscaasis = new System.Windows.Forms.TextBox();
@@ -75,6 +77,7 @@ namespace WindowsFormsApp1
             this.btn_Salir3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.cbx_modalidadEvento = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btn_buscarListCliente = new System.Windows.Forms.Button();
@@ -106,9 +109,6 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.cbx_buscaModalidad = new System.Windows.Forms.ComboBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -267,6 +267,24 @@ namespace WindowsFormsApp1
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Contrato";
+            // 
+            // cbx_buscaModalidad
+            // 
+            this.cbx_buscaModalidad.Enabled = false;
+            this.cbx_buscaModalidad.FormattingEnabled = true;
+            this.cbx_buscaModalidad.Location = new System.Drawing.Point(130, 278);
+            this.cbx_buscaModalidad.Name = "cbx_buscaModalidad";
+            this.cbx_buscaModalidad.Size = new System.Drawing.Size(174, 21);
+            this.cbx_buscaModalidad.TabIndex = 43;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(18, 286);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(93, 13);
+            this.label28.TabIndex = 42;
+            this.label28.Text = "Modalidad Evento";
             // 
             // txt_numeroContrato
             // 
@@ -630,6 +648,17 @@ namespace WindowsFormsApp1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Contrato";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(562, 240);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 23);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // cbx_modalidadEvento
             // 
             this.cbx_modalidadEvento.Enabled = false;
@@ -940,35 +969,6 @@ namespace WindowsFormsApp1
             this.tabControl1.Size = new System.Drawing.Size(866, 451);
             this.tabControl1.TabIndex = 1;
             // 
-            // cbx_buscaModalidad
-            // 
-            this.cbx_buscaModalidad.Enabled = false;
-            this.cbx_buscaModalidad.FormattingEnabled = true;
-            this.cbx_buscaModalidad.Location = new System.Drawing.Point(130, 278);
-            this.cbx_buscaModalidad.Name = "cbx_buscaModalidad";
-            this.cbx_buscaModalidad.Size = new System.Drawing.Size(174, 21);
-            this.cbx_buscaModalidad.TabIndex = 43;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(18, 286);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(93, 13);
-            this.label28.TabIndex = 42;
-            this.label28.Text = "Modalidad Evento";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(562, 240);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 23);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FrmContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -978,6 +978,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmContrato";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OnBreak Administrar Contrato";
             this.Load += new System.EventHandler(this.FrmContrato_Load);
             this.tabPage2.ResumeLayout(false);

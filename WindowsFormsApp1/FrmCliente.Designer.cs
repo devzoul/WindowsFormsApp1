@@ -691,6 +691,7 @@
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OnBreak Administrar Cliente";
             this.tabPage2.ResumeLayout(false);
             this.txt_raz.ResumeLayout(false);
